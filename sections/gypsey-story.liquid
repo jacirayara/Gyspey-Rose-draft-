@@ -4,6 +4,111 @@
   assign india_image = images['WhatsApp_Image_2026-03-03_at_14.47.16.jpg']
 %}
 
+{% style %}
+  .gypsey-story {
+    --gypsey-pink: #eb3fa0;
+    --gypsey-coral: #f25f4c;
+    --gypsey-teal: #087f7b;
+    --gypsey-ink: #211a1d;
+    --gypsey-sun: #f7b733;
+    background:
+      linear-gradient(135deg, rgba(235, 63, 160, 0.12), rgba(8, 127, 123, 0.08)),
+      #fff;
+    overflow: hidden;
+  }
+
+  .gypsey-story__inner {
+    align-items: center;
+    display: grid;
+    gap: clamp(2.4rem, 5vw, 7rem);
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+    padding-block: clamp(3.6rem, 7vw, 7.2rem);
+  }
+
+  .gypsey-story__copy h2 {
+    color: var(--gypsey-ink);
+    font-size: clamp(3.2rem, 6vw, 6.4rem);
+    letter-spacing: 0;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 9.5em;
+  }
+
+  .gypsey-story__eyebrow {
+    color: var(--gypsey-teal);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .gypsey-story__lead {
+    color: rgba(33, 26, 29, 0.78);
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    line-height: 1.6;
+    margin: 2rem 0 2.4rem;
+    max-width: 38em;
+  }
+
+  .gypsey-story__proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 0 0 2.6rem;
+  }
+
+  .gypsey-story__proof span {
+    border: 0.1rem solid rgba(8, 127, 123, 0.24);
+    border-radius: 999px;
+    color: var(--gypsey-ink);
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .gypsey-story__media {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.8rem);
+    grid-template-columns: 1.35fr 0.85fr;
+    min-height: 42rem;
+  }
+
+  .gypsey-story__image {
+    background: var(--gypsey-sun);
+    margin: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .gypsey-story__image--large {
+    grid-row: span 2;
+  }
+
+  .gypsey-story__image img {
+    display: block;
+    height: 100%;
+    min-height: 20rem;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .gypsey-story__inner,
+    .gypsey-story__media {
+      grid-template-columns: 1fr;
+    }
+
+    .gypsey-story__media {
+      min-height: auto;
+    }
+
+    .gypsey-story__image--large {
+      grid-row: auto;
+    }
+  }
+{% endstyle %}
+
 <section class="gypsey-story" aria-labelledby="gypsey-story-title">
   <div class="gypsey-story__inner page-width">
     <div class="gypsey-story__copy">

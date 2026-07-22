@@ -1,3 +1,87 @@
+{% style %}
+  .gypsey-trust-faq {
+    --gypsey-pink: #eb3fa0;
+    --gypsey-teal: #087f7b;
+    --gypsey-ink: #211a1d;
+    background: #fff8fb;
+    border-block: 0.1rem solid rgba(235, 63, 160, 0.18);
+  }
+
+  .gypsey-trust-faq .page-width {
+    padding-block: clamp(3.2rem, 6vw, 6.4rem);
+  }
+
+  .gypsey-trust-faq__intro {
+    max-width: 72rem;
+  }
+
+  .gypsey-trust-faq__intro h2 {
+    color: var(--gypsey-ink);
+    font-size: clamp(2.8rem, 4vw, 4.8rem);
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .gypsey-trust-faq__intro p {
+    color: rgba(33, 26, 29, 0.76);
+    font-size: 1.7rem;
+    line-height: 1.6;
+  }
+
+  .gypsey-trust-faq__eyebrow {
+    color: var(--gypsey-teal);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .gypsey-trust-faq__signals {
+    display: grid;
+    gap: 0.1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 2.6rem 0;
+  }
+
+  .gypsey-trust-faq__signals span {
+    background: #fff;
+    border-top: 0.35rem solid var(--gypsey-pink);
+    color: var(--gypsey-ink);
+    font-weight: 700;
+    min-height: 8rem;
+    padding: 1.6rem;
+  }
+
+  .gypsey-trust-faq__questions {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .gypsey-trust-faq__questions details {
+    background: #fff;
+    border: 0.1rem solid rgba(33, 26, 29, 0.12);
+  }
+
+  .gypsey-trust-faq__questions summary {
+    cursor: pointer;
+    font-weight: 800;
+    padding: 1.8rem 2rem;
+  }
+
+  .gypsey-trust-faq__questions p {
+    color: rgba(33, 26, 29, 0.74);
+    margin: 0;
+    padding: 0 2rem 2rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .gypsey-trust-faq__signals {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
 <section class="gypsey-trust-faq" aria-labelledby="gypsey-faq-title">
   <div class="page-width">
     <div class="gypsey-trust-faq__intro">
