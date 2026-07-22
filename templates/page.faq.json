@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "faq": {
+      "type": "gypsey-trust-faq",
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Shipping, returns, cotton care, and sizing.",
+        "text": "Quick answers for shoppers discovering Gypsey Rose from social, search, or a recommendation."
+      }
+    }
+  },
+  "order": [
+    "faq"
+  ]
+}

@@ -1,0 +1,66 @@
+<section class="gypsey-trust-faq" aria-labelledby="gypsey-faq-title">
+  <div class="page-width">
+    <div class="gypsey-trust-faq__intro">
+      <p class="gypsey-trust-faq__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 id="gypsey-faq-title">{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+    </div>
+
+    <div class="gypsey-trust-faq__signals" aria-label="Store trust signals">
+      <span>Ships from South Africa</span>
+      <span>7-day returns</span>
+      <span>Cool wash cotton care</span>
+      <span>Size guide available</span>
+    </div>
+
+    <div class="gypsey-trust-faq__questions">
+      <details open>
+        <summary>How long does shipping take?</summary>
+        <p>Orders are prepared with care from South Africa. Final delivery times are confirmed at checkout and may vary by address and courier availability.</p>
+      </details>
+      <details>
+        <summary>What is the return policy?</summary>
+        <p>Items can be returned within 7 days if labels are attached and the garment is in the same condition as received.</p>
+      </details>
+      <details>
+        <summary>How do I wash 100% cotton?</summary>
+        <p>Use a cool machine wash, avoid wringing, and hang garments in the shade. Hand wash jackets in cold water to protect the fabric and embroidery.</p>
+      </details>
+      <details>
+        <summary>How do I choose my size?</summary>
+        <p>Use the size guide on each product page and choose the fit you prefer. Cotton pieces are designed to feel breathable and easy on the body.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gypsey trust and FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Before you buy"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything you need to feel confident."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Intro text",
+      "default": "Clear shipping, returns, cotton care, and sizing details help first-time visitors move from discovery to checkout with less hesitation."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey trust and FAQ"
+    }
+  ]
+}
+{% endschema %}

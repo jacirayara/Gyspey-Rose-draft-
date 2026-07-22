@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "story": {
+      "type": "gypsey-story",
+      "settings": {
+        "eyebrow": "Our Story",
+        "heading": "A mother-daughter brand rooted in colour, cotton, and India.",
+        "lead": "Gypsey Rose is not only about clothes. It is the story of a mother and daughter sourcing face-to-face, choosing breathable natural cotton, and bringing home pieces with texture, memory, and joy.",
+        "button_label": "Shop the Collection",
+        "button_link": "/collections"
+      }
+    },
+    "trust": {
+      "type": "gypsey-trust-faq",
+      "settings": {
+        "eyebrow": "Why it matters",
+        "heading": "Natural fabrics, human sourcing, and clothes with a life beyond the hanger.",
+        "text": "Every first-time visitor should understand what makes Gypsey Rose different before they reach a product page."
+      }
+    }
+  },
+  "order": [
+    "story",
+    "trust"
+  ]
+}

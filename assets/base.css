@@ -2880,3 +2880,238 @@ background: #eb3fa0 !important;
 span.badge.price__badge-sale{
 background: #eb3fa0 !important;
 }
+
+.gypsey-story,
+.gypsey-trust-faq,
+.gypsey-cart-upsell {
+  --gypsey-pink: #eb3fa0;
+  --gypsey-coral: #f25f4c;
+  --gypsey-teal: #087f7b;
+  --gypsey-ink: #211a1d;
+  --gypsey-sun: #f7b733;
+}
+
+.gypsey-story {
+  background:
+    linear-gradient(135deg, rgba(235, 63, 160, 0.12), rgba(8, 127, 123, 0.08)),
+    #fff;
+  overflow: hidden;
+}
+
+.gypsey-story__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  gap: clamp(2.4rem, 5vw, 7rem);
+  align-items: center;
+  padding-block: clamp(3.6rem, 7vw, 7.2rem);
+}
+
+.gypsey-story__copy h2,
+.gypsey-trust-faq__intro h2,
+.gypsey-cart-upsell h2 {
+  color: var(--gypsey-ink);
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.gypsey-story__copy h2 {
+  font-size: clamp(3.2rem, 6vw, 6.4rem);
+  line-height: 0.98;
+  max-width: 9.5em;
+}
+
+.gypsey-story__eyebrow,
+.gypsey-trust-faq__eyebrow,
+.gypsey-cart-upsell__eyebrow {
+  color: var(--gypsey-teal);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+}
+
+.gypsey-story__lead {
+  color: rgba(33, 26, 29, 0.78);
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  line-height: 1.6;
+  margin: 2rem 0 2.4rem;
+  max-width: 38em;
+}
+
+.gypsey-story__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0 0 2.6rem;
+}
+
+.gypsey-story__proof span {
+  border: 0.1rem solid rgba(8, 127, 123, 0.24);
+  border-radius: 999px;
+  color: var(--gypsey-ink);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0.8rem 1.2rem;
+}
+
+.gypsey-story__media {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: clamp(1rem, 2vw, 1.8rem);
+  min-height: 42rem;
+}
+
+.gypsey-story__image {
+  background: var(--gypsey-sun);
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.gypsey-story__image--large {
+  grid-row: span 2;
+}
+
+.gypsey-story__image img {
+  display: block;
+  height: 100%;
+  min-height: 20rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gypsey-trust-faq {
+  background: #fff8fb;
+  border-block: 0.1rem solid rgba(235, 63, 160, 0.18);
+}
+
+.gypsey-trust-faq .page-width {
+  padding-block: clamp(3.2rem, 6vw, 6.4rem);
+}
+
+.gypsey-trust-faq__intro {
+  max-width: 72rem;
+}
+
+.gypsey-trust-faq__intro h2 {
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
+}
+
+.gypsey-trust-faq__intro p {
+  color: rgba(33, 26, 29, 0.76);
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+
+.gypsey-trust-faq__signals {
+  display: grid;
+  gap: 0.1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 2.6rem 0;
+}
+
+.gypsey-trust-faq__signals span {
+  background: #fff;
+  border-top: 0.35rem solid var(--gypsey-pink);
+  color: var(--gypsey-ink);
+  font-weight: 700;
+  min-height: 8rem;
+  padding: 1.6rem;
+}
+
+.gypsey-trust-faq__questions {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.gypsey-trust-faq__questions details {
+  background: #fff;
+  border: 0.1rem solid rgba(33, 26, 29, 0.12);
+}
+
+.gypsey-trust-faq__questions summary {
+  cursor: pointer;
+  font-weight: 800;
+  padding: 1.8rem 2rem;
+}
+
+.gypsey-trust-faq__questions p {
+  color: rgba(33, 26, 29, 0.74);
+  margin: 0;
+  padding: 0 2rem 2rem;
+}
+
+.gypsey-cart-upsell {
+  margin-top: 1.6rem;
+}
+
+.gypsey-cart-upsell__inner {
+  align-items: center;
+  background: linear-gradient(120deg, #211a1d, #087f7b);
+  color: #fff;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: clamp(2rem, 4vw, 3.2rem);
+}
+
+.gypsey-cart-upsell h2 {
+  color: #fff;
+  font-size: clamp(2.2rem, 3vw, 3.6rem);
+}
+
+.gypsey-cart-upsell p {
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0.8rem 0 0;
+}
+
+.gypsey-cart-upsell .button {
+  min-width: max-content;
+}
+
+.gypsey-product-note {
+  border-block: 0.1rem solid rgba(235, 63, 160, 0.24);
+  margin: 1.8rem 0;
+  padding: 1.6rem 0;
+}
+
+.gypsey-product-note__eyebrow {
+  color: #087f7b;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+.gypsey-product-note p {
+  margin: 0.6rem 0 0;
+}
+
+.gypsey-product-note a {
+  color: #eb3fa0;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 749px) {
+  .gypsey-story__inner,
+  .gypsey-story__media,
+  .gypsey-trust-faq__signals,
+  .gypsey-cart-upsell__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .gypsey-story__media {
+    min-height: auto;
+  }
+
+  .gypsey-story__image--large {
+    grid-row: auto;
+  }
+
+  .gypsey-cart-upsell__inner {
+    align-items: flex-start;
+    display: grid;
+  }
+}

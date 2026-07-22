@@ -1,0 +1,54 @@
+<section class="gypsey-cart-upsell" aria-labelledby="gypsey-cart-upsell-title">
+  <div class="page-width">
+    <div class="gypsey-cart-upsell__inner">
+      <div>
+        <p class="gypsey-cart-upsell__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 id="gypsey-cart-upsell-title">{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.text }}</p>
+      </div>
+      <a class="button button--secondary" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gypsey cart upsell",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Complete the look"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Add a hand-sourced Indian silver necklace."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A simple silver piece turns a cotton dress into a full Gypsey Rose outfit."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Accessories"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey cart upsell"
+    }
+  ]
+}
+{% endschema %}
