@@ -10,6 +10,28 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .section-{{ section.id }}-about-hero {
+    margin-bottom: clamp(2.4rem, 5vw, 5.6rem);
+    max-height: 78rem;
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }}-about-hero img {
+    display: block;
+    height: min(78rem, 72vw);
+    min-height: 42rem;
+    object-fit: cover;
+    object-position: 50% 45%;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-about-hero img {
+      height: 62rem;
+      object-position: 52% 42%;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -17,6 +39,18 @@
     }
   }
 {%- endstyle -%}
+
+{%- if page.handle == 'about-us' -%}
+  <div class="section-{{ section.id }}-about-hero">
+    <img
+      src="{{ 'gypsey-about-founders.png' | asset_url }}"
+      alt="Gypsey Rose mother and daughter founders wearing red floral cotton dresses"
+      width="1127"
+      height="2000"
+      loading="eager"
+    >
+  </div>
+{%- endif -%}
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
   <h1 class="main-page-title page-title h0">

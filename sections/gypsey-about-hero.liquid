@@ -1,0 +1,47 @@
+<section class="gypsey-about-hero" aria-labelledby="gypsey-about-hero-title">
+  <div class="gypsey-about-hero__media">
+    <img
+      src="{{ 'gypsey-about-founders.png' | asset_url }}"
+      alt="Gypsey Rose mother and daughter founders wearing red floral cotton dresses"
+      width="1127"
+      height="2000"
+      loading="eager"
+    >
+  </div>
+  <div class="gypsey-about-hero__copy page-width">
+    <p class="gypsey-about-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 id="gypsey-about-hero-title">{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.text }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gypsey about hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The mother-daughter heart of Gypsey Rose."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A brand built on colour, cotton, and the joy of finding beautiful pieces face-to-face."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey about hero"
+    }
+  ]
+}
+{% endschema %}
