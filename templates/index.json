@@ -49,7 +49,7 @@
         "slide_height": "large",
         "slider_visual": "dots",
         "auto_rotate": true,
-        "change_slides_speed": 6,
+        "change_slides_speed": 5,
         "show_text_below": false,
         "accessibility_info": "Story-led Gypsey Rose cotton clothing slideshow"
       }
