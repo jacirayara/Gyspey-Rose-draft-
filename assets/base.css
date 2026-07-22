@@ -3094,6 +3094,57 @@ background: #eb3fa0 !important;
   font-weight: 800;
 }
 
+.gypsey-about-hero {
+  --gypsey-about-ink: #211a1d;
+  --gypsey-about-pink: #eb3fa0;
+  --gypsey-about-teal: #087f7b;
+  background: #fff;
+}
+
+.gypsey-about-hero__media {
+  background: #f7f0f3;
+  max-height: 78rem;
+  overflow: hidden;
+}
+
+.gypsey-about-hero__media img {
+  display: block;
+  height: min(78rem, 72vw);
+  min-height: 42rem;
+  object-fit: cover;
+  object-position: 50% 45%;
+  width: 100%;
+}
+
+.gypsey-about-hero__copy {
+  padding-block: clamp(2.4rem, 5vw, 5.6rem);
+}
+
+.gypsey-about-hero__eyebrow {
+  color: var(--gypsey-about-teal);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+}
+
+.gypsey-about-hero h1 {
+  color: var(--gypsey-about-ink);
+  font-size: clamp(3.2rem, 6vw, 7.2rem);
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin: 0;
+  max-width: 10em;
+}
+
+.gypsey-about-hero__copy p:last-child {
+  color: rgba(33, 26, 29, 0.76);
+  font-size: clamp(1.6rem, 2vw, 2.1rem);
+  line-height: 1.55;
+  max-width: 46em;
+}
+
 @media screen and (max-width: 749px) {
   .gypsey-story__inner,
   .gypsey-story__media,
@@ -3113,5 +3164,10 @@ background: #eb3fa0 !important;
   .gypsey-cart-upsell__inner {
     align-items: flex-start;
     display: grid;
+  }
+
+  .gypsey-about-hero__media img {
+    height: 62rem;
+    object-position: 52% 42%;
   }
 }

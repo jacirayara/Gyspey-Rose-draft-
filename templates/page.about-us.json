@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "about_hero": {
+      "type": "gypsey-about-hero",
+      "settings": {
+        "eyebrow": "Our Story",
+        "heading": "The mother-daughter heart of Gypsey Rose.",
+        "text": "A brand built on colour, cotton, and the joy of finding beautiful pieces face-to-face."
+      }
+    },
     "story": {
       "type": "gypsey-story",
       "settings": {
@@ -29,6 +37,7 @@
     }
   },
   "order": [
+    "about_hero",
     "story",
     "trust"
   ]
