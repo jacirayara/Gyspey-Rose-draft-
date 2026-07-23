@@ -1,0 +1,173 @@
+{% style %}
+  .gypsey-story-chapters {
+    --gypsey-story-ink: #231819;
+    --gypsey-story-poppy: #d7192f;
+    --gypsey-story-teal: #0b7774;
+    --gypsey-story-cream: #fff5e5;
+    background:
+      linear-gradient(180deg, #fff 0%, #fff5e5 100%);
+    color: var(--gypsey-story-ink);
+  }
+
+  .gypsey-story-chapters__inner {
+    display: grid;
+    gap: clamp(2.8rem, 5vw, 6.4rem);
+    grid-template-columns: minmax(22rem, 0.72fr) minmax(0, 1.28fr);
+    padding-block: clamp(4rem, 8vw, 8rem);
+  }
+
+  .gypsey-story-chapters__intro {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .gypsey-story-chapters__eyebrow {
+    color: var(--gypsey-story-teal);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .gypsey-story-chapters h2 {
+    color: var(--gypsey-story-ink);
+    font-size: clamp(3.2rem, 5.5vw, 6.8rem);
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+    margin: 0;
+  }
+
+  .gypsey-story-chapters__lead {
+    color: rgba(35, 24, 25, 0.74);
+    font-size: 1.8rem;
+    line-height: 1.58;
+    margin-top: 2rem;
+  }
+
+  .gypsey-story-chapters__list {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .gypsey-story-chapters__chapter {
+    background: #fff;
+    border: 0.1rem solid rgba(35, 24, 25, 0.12);
+    box-shadow: 0 1.4rem 4rem rgba(35, 24, 25, 0.06);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    padding: clamp(2rem, 3.5vw, 3.4rem);
+  }
+
+  .gypsey-story-chapters__number {
+    align-items: center;
+    background: var(--gypsey-story-poppy);
+    border-radius: 999px;
+    color: #fff;
+    display: inline-flex;
+    font-size: 1.2rem;
+    font-weight: 900;
+    height: 5rem;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    width: 5rem;
+  }
+
+  .gypsey-story-chapters__chapter h3 {
+    color: var(--gypsey-story-ink);
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin: 0;
+  }
+
+  .gypsey-story-chapters__chapter p {
+    color: rgba(35, 24, 25, 0.76);
+    font-size: 1.6rem;
+    line-height: 1.62;
+    margin: 0.8rem 0 0;
+  }
+
+  @media screen and (max-width: 899px) {
+    .gypsey-story-chapters__inner,
+    .gypsey-story-chapters__chapter {
+      grid-template-columns: 1fr;
+    }
+
+    .gypsey-story-chapters__intro {
+      position: static;
+    }
+  }
+{% endstyle %}
+
+<section class="gypsey-story-chapters" aria-labelledby="gypsey-story-chapters-title">
+  <div class="gypsey-story-chapters__inner page-width">
+    <div class="gypsey-story-chapters__intro">
+      <p class="gypsey-story-chapters__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 id="gypsey-story-chapters-title">{{ section.settings.heading }}</h2>
+      <p class="gypsey-story-chapters__lead">{{ section.settings.lead }}</p>
+    </div>
+
+    <div class="gypsey-story-chapters__list">
+      {% for block in section.blocks %}
+        <article class="gypsey-story-chapters__chapter" {{ block.shopify_attributes }}>
+          <span class="gypsey-story-chapters__number">{{ forloop.index }}</span>
+          <div>
+            <h3>{{ block.settings.heading }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gypsey story chapters",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The story behind the clothes"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From a sourcing journey to a South African cotton lifestyle."
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead",
+      "default": "The new site should help customers feel the people, fabric, and values behind every print before they ever reach checkout."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chapter",
+      "name": "Chapter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Chapter heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Chapter copy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey story chapters"
+    }
+  ]
+}
+{% endschema %}

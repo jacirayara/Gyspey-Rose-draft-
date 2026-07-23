@@ -1,0 +1,325 @@
+{% liquid
+  assign hero_image = section.settings.hero_image
+  assign portrait_image = section.settings.portrait_image
+%}
+
+{% style %}
+  .gypsey-home-hero {
+    --gypsey-hero-ink: #231819;
+    --gypsey-hero-cream: #fff5e5;
+    --gypsey-hero-poppy: #d7192f;
+    --gypsey-hero-teal: #0b7774;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(215, 25, 47, 0.18), transparent 30rem),
+      linear-gradient(135deg, #fff8ee 0%, #ffe7ec 48%, #f8fffb 100%);
+    color: var(--gypsey-hero-ink);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gypsey-home-hero::before {
+    background-image:
+      linear-gradient(45deg, rgba(35, 24, 25, 0.07) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(35, 24, 25, 0.07) 25%, transparent 25%);
+    background-size: 2.4rem 2.4rem;
+    content: "";
+    inset: 0;
+    opacity: 0.42;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .gypsey-home-hero__inner {
+    align-items: center;
+    display: grid;
+    gap: clamp(2.8rem, 5vw, 7.2rem);
+    grid-template-columns: minmax(0, 0.94fr) minmax(28rem, 1.06fr);
+    min-height: min(82rem, calc(100vh - 8rem));
+    padding-block: clamp(4.8rem, 8vw, 9.6rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  .gypsey-home-hero__eyebrow {
+    color: var(--gypsey-hero-teal);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    margin: 0 0 1.4rem;
+    text-transform: uppercase;
+  }
+
+  .gypsey-home-hero h1 {
+    color: var(--gypsey-hero-ink);
+    font-size: clamp(4rem, 8vw, 9.2rem);
+    letter-spacing: -0.045em;
+    line-height: 0.9;
+    margin: 0;
+    max-width: 9em;
+  }
+
+  .gypsey-home-hero__text {
+    color: rgba(35, 24, 25, 0.78);
+    font-size: clamp(1.7rem, 2vw, 2.2rem);
+    line-height: 1.55;
+    margin: 2.4rem 0 0;
+    max-width: 42em;
+  }
+
+  .gypsey-home-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .gypsey-home-hero__secondary {
+    align-items: center;
+    color: var(--gypsey-hero-ink);
+    display: inline-flex;
+    font-weight: 800;
+    min-height: 4.7rem;
+    text-decoration-thickness: 0.18rem;
+    text-underline-offset: 0.45rem;
+  }
+
+  .gypsey-home-hero__proof {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: clamp(2.8rem, 4vw, 4.4rem);
+    max-width: 58rem;
+  }
+
+  .gypsey-home-hero__proof span {
+    background: rgba(255, 255, 255, 0.72);
+    border: 0.1rem solid rgba(35, 24, 25, 0.1);
+    border-radius: 999px;
+    color: var(--gypsey-hero-ink);
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 1rem 1.2rem;
+    text-align: center;
+  }
+
+  .gypsey-home-hero__media {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.45fr);
+    gap: clamp(1rem, 2vw, 1.8rem);
+    position: relative;
+  }
+
+  .gypsey-home-hero__image {
+    background: var(--gypsey-hero-poppy);
+    box-shadow: 0 2.4rem 7rem rgba(35, 24, 25, 0.18);
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .gypsey-home-hero__image--main {
+    border-radius: 0 9rem 0 9rem;
+    min-height: clamp(36rem, 52vw, 68rem);
+  }
+
+  .gypsey-home-hero__image--portrait {
+    align-self: end;
+    border-radius: 999px 999px 0 0;
+    margin-bottom: clamp(1rem, 6vw, 7rem);
+    min-height: clamp(22rem, 30vw, 38rem);
+  }
+
+  .gypsey-home-hero__image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .gypsey-home-hero__note {
+    background: var(--gypsey-hero-cream);
+    border: 0.1rem solid rgba(35, 24, 25, 0.12);
+    bottom: clamp(1rem, 4vw, 4rem);
+    box-shadow: 0 1.6rem 4rem rgba(35, 24, 25, 0.16);
+    color: var(--gypsey-hero-ink);
+    font-size: 1.35rem;
+    font-weight: 800;
+    left: clamp(1rem, 4vw, 4rem);
+    max-width: 22rem;
+    padding: 1.4rem 1.6rem;
+    position: absolute;
+  }
+
+  @media screen and (max-width: 899px) {
+    .gypsey-home-hero__inner,
+    .gypsey-home-hero__proof {
+      grid-template-columns: 1fr;
+    }
+
+    .gypsey-home-hero__inner {
+      min-height: auto;
+    }
+
+    .gypsey-home-hero__media {
+      grid-template-columns: 1fr;
+    }
+
+    .gypsey-home-hero__image--main {
+      border-radius: 0 5rem 0 5rem;
+      min-height: 42rem;
+    }
+
+    .gypsey-home-hero__image--portrait {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+<section class="gypsey-home-hero" aria-labelledby="gypsey-home-hero-title">
+  <div class="gypsey-home-hero__inner page-width">
+    <div class="gypsey-home-hero__copy">
+      <p class="gypsey-home-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1 id="gypsey-home-hero-title">{{ section.settings.heading }}</h1>
+      <p class="gypsey-home-hero__text">{{ section.settings.text }}</p>
+
+      <div class="gypsey-home-hero__actions">
+        {% if section.settings.primary_label != blank %}
+          <a class="button button--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
+        {% endif %}
+        {% if section.settings.secondary_label != blank %}
+          <a class="gypsey-home-hero__secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>
+        {% endif %}
+      </div>
+
+      <div class="gypsey-home-hero__proof" aria-label="Gypsey Rose values">
+        <span>100% cotton</span>
+        <span>Face-to-face sourcing</span>
+        <span>Mother-daughter led</span>
+      </div>
+    </div>
+
+    <div class="gypsey-home-hero__media">
+      <figure class="gypsey-home-hero__image gypsey-home-hero__image--main">
+        {% if hero_image != blank %}
+          <img
+            src="{{ hero_image | image_url: width: 1400 }}"
+            alt="{{ section.settings.hero_alt | escape }}"
+            width="1400"
+            height="1750"
+            loading="eager"
+          >
+        {% else %}
+          <img
+            src="{{ 'gypsey-about-founders.png' | asset_url }}"
+            alt="{{ section.settings.hero_alt | escape }}"
+            width="1127"
+            height="2000"
+            loading="eager"
+          >
+        {% endif %}
+      </figure>
+
+      <figure class="gypsey-home-hero__image gypsey-home-hero__image--portrait">
+        {% if portrait_image != blank %}
+          <img
+            src="{{ portrait_image | image_url: width: 700 }}"
+            alt="{{ section.settings.portrait_alt | escape }}"
+            width="700"
+            height="900"
+            loading="eager"
+          >
+        {% else %}
+          <img
+            src="{{ 'gypsey-about-founders.png' | asset_url }}"
+            alt="{{ section.settings.portrait_alt | escape }}"
+            width="700"
+            height="900"
+            loading="eager"
+          >
+        {% endif %}
+      </figure>
+
+      <div class="gypsey-home-hero__note">{{ section.settings.note }}</div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gypsey editorial hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "portrait_image",
+      "label": "Portrait image"
+    },
+    {
+      "type": "text",
+      "id": "hero_alt",
+      "label": "Main image alt text",
+      "default": "Vibrant Gypsey Rose cotton clothing"
+    },
+    {
+      "type": "text",
+      "id": "portrait_alt",
+      "label": "Portrait image alt text",
+      "default": "Gypsey Rose founder story"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sustainable cotton, sourced with heart"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Clothes with colour, memory, and a story worth wearing."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A mother-daughter brand bringing vibrant 100% cotton pieces from face-to-face sourcing trips in India into expressive South African wardrobes."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "Shop Cotton Dresses"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "Read Our Story"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Image note",
+      "default": "Chosen by hand, not by catalogue."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey editorial hero"
+    }
+  ]
+}
+{% endschema %}

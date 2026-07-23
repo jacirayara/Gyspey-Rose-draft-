@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "story_hero": {
+      "type": "gypsey-about-hero",
+      "settings": {
+        "eyebrow": "Our Story",
+        "heading": "The mother-daughter heart of Gypsey Rose.",
+        "text": "Before a dress reaches the rail, there is a journey: natural cotton, vibrant print, face-to-face sourcing, and a mother-daughter eye for pieces with soul."
+      }
+    },
+    "story_intro": {
+      "type": "gypsey-story",
+      "settings": {
+        "eyebrow": "From India, with heart",
+        "heading": "Not just clothing. A colourful lifestyle with values stitched in.",
+        "lead": "Gypsey Rose is built around sourcing in person, choosing breathable 100% cotton, and bringing home designs that feel alive. The brand story is the reason customers should remember, trust, and return.",
+        "button_label": "Shop the Collection",
+        "button_link": "/collections"
+      }
+    },
+    "chapters": {
+      "type": "gypsey-story-chapters",
+      "blocks": {
+        "mother_daughter": {
+          "type": "chapter",
+          "settings": {
+            "heading": "A mother-daughter point of view",
+            "text": "The heart of the brand is personal: two generations drawn to colour, travel, texture, and the joy of helping women feel expressive in natural fabrics."
+          }
+        },
+        "india": {
+          "type": "chapter",
+          "settings": {
+            "heading": "Face-to-face sourcing in India",
+            "text": "The clothing is not chosen from a distant catalogue. It comes from real sourcing journeys, textile discoveries, and relationships built with people behind the craft."
+          }
+        },
+        "cotton": {
+          "type": "chapter",
+          "settings": {
+            "heading": "100% cotton for real life",
+            "text": "Natural cotton is central to the promise: breathable, wearable, and suited to women who want comfort without losing colour, print, and personality."
+          }
+        },
+        "lifestyle": {
+          "type": "chapter",
+          "settings": {
+            "heading": "A lifestyle, not a hanger",
+            "text": "The revamp should make Gypsey Rose feel ready for Instagram and TikTok traffic: a brand customers can understand quickly, remember visually, and feel proud to support."
+          }
+        }
+      },
+      "block_order": [
+        "mother_daughter",
+        "india",
+        "cotton",
+        "lifestyle"
+      ],
+      "settings": {
+        "eyebrow": "Why it matters",
+        "heading": "The story gives the clothes their charge.",
+        "lead": "Modern customers buy the world around the product: who made it, where it came from, how it feels, and why it deserves a place in their wardrobe."
+      }
+    },
+    "trust": {
+      "type": "gypsey-trust-faq",
+      "settings": {
+        "eyebrow": "Shop with confidence",
+        "heading": "Sourcing story, cotton care, shipping, returns, and sizing in one place.",
+        "text": "This story page doubles as a trust page for new visitors arriving from social content, so they can understand the brand before they shop."
+      }
+    }
+  },
+  "order": [
+    "story_hero",
+    "story_intro",
+    "chapters",
+    "trust"
+  ]
+}

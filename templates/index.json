@@ -10,57 +10,20 @@
 {
   "sections": {
     "hero": {
-      "type": "slideshow",
-      "blocks": {
-        "origin_story": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
-            "heading": "Gypsey Rose Cotton Clothing",
-            "heading_size": "h0",
-            "subheading": "Vibrant 100% cotton pieces, hand-sourced through real relationships in India.",
-            "button_label": "Shop Cotton Dresses",
-            "link": "shopify://collections/dresses",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 20,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "mother_daughter": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
-            "heading": "Cotton, colour, and a mother-daughter story.",
-            "heading_size": "h1",
-            "subheading": "Clothing chosen face-to-face, made for breathable South African days and expressive everyday style.",
-            "button_label": "Read Our Story",
-            "link": "shopify://pages/about-us",
-            "button_style_secondary": true,
-            "box_align": "middle-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 30,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "origin_story",
-        "mother_daughter"
-      ],
+      "type": "gypsey-home-hero",
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "show_text_below": false,
-        "accessibility_info": "Story-led Gypsey Rose cotton clothing slideshow"
+        "hero_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
+        "portrait_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
+        "hero_alt": "Vibrant Gypsey Rose cotton pieces sourced in India",
+        "portrait_alt": "Gypsey Rose mother and daughter story",
+        "eyebrow": "100% cotton, sourced with heart",
+        "heading": "Wear the colour of a journey.",
+        "text": "Gypsey Rose is a mother-daughter cotton clothing brand built on face-to-face sourcing in India, joyful prints, and breathable pieces made for expressive South African days.",
+        "primary_label": "Shop Cotton Dresses",
+        "primary_link": "/collections/dresses",
+        "secondary_label": "Read Our Story",
+        "secondary_link": "/pages/about-us?view=our-story",
+        "note": "Chosen by hand, not by catalogue."
       }
     },
     "gypsey_story": {
@@ -68,9 +31,9 @@
       "settings": {
         "eyebrow": "From India, with heart",
         "heading": "A mother-daughter story told in vibrant cotton.",
-        "lead": "Gypsey Rose is built around face-to-face sourcing, breathable 100% cotton, and joyful pieces chosen for real women living bright, textured lives.",
+        "lead": "This is the shift the client asked for: not just selling clothes, but documenting a colourful, sustainable lifestyle rooted in real relationships, natural fabrics, and joyful dressing.",
         "button_label": "Read Our Story",
-        "button_link": "/pages/about-us"
+        "button_link": "/pages/about-us?view=our-story"
       }
     },
     "shop_categories": {
@@ -80,8 +43,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/6.jpg",
-            "title": "Dresses",
-            "text": "<p>Easy cotton silhouettes in confident prints.</p>",
+            "title": "Dresses with movement",
+            "text": "<p>Easy cotton silhouettes in confident prints for market mornings, holidays, and everyday colour.</p>",
             "link_label": "Shop Dresses",
             "link": "shopify://collections/dresses"
           }
@@ -90,8 +53,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/5_a71e2cfd-3286-4550-83c5-2f8b5b20c46f.jpg",
-            "title": "Jackets",
-            "text": "<p>Statement layers with a collected feel.</p>",
+            "title": "Collected jackets",
+            "text": "<p>Statement layers with a hand-sourced feel, designed to make a simple outfit memorable.</p>",
             "link_label": "Shop Jackets",
             "link": "shopify://collections/jackets"
           }
@@ -100,8 +63,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/PINK_BANANA_LEAF_PANTS_PRINT.jpg",
-            "title": "Pants",
-            "text": "<p>Relaxed cotton pieces for everyday movement.</p>",
+            "title": "Breathable pants",
+            "text": "<p>Relaxed cotton pieces that move easily through warm South African days.</p>",
             "link_label": "Shop Pants",
             "link": "shopify://collections/pants"
           }
@@ -110,8 +73,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/JUNGLI_TIERED_DRESS_COTTON.jpg",
-            "title": "Kaftans & Kimonos",
-            "text": "<p>Soft, expressive layers for travel, markets, and home.</p>",
+            "title": "Kaftans & kimonos",
+            "text": "<p>Soft, expressive layers for travel, markets, slow weekends, and resort dressing.</p>",
             "link_label": "Shop Kaftans",
             "link": "shopify://collections/kaftan-kimonos"
           }
