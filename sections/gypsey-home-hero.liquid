@@ -28,12 +28,14 @@
     grid-area: 1 / 1;
     margin: 0;
     min-height: 0;
+    min-width: 0;
     opacity: 0;
     overflow: hidden;
     pointer-events: none;
     position: relative;
     transition: opacity 700ms ease, visibility 700ms ease;
     visibility: hidden;
+    width: 100%;
   }
 
   #GypseyHero-{{ section.id }} .gypsey-hero__slide.is-active {
@@ -57,7 +59,9 @@
       linear-gradient(90deg, rgba(6, 28, 18, calc(var(--hero-overlay) + 0.26)) 0%, rgba(6, 28, 18, var(--hero-overlay)) 48%, rgba(6, 28, 18, 0.08) 100%),
       linear-gradient(0deg, rgba(6, 28, 18, 0.3), transparent 45%);
     min-height: 100%;
+    min-width: 0;
     position: relative;
+    width: 100%;
     z-index: 1;
   }
 
@@ -65,6 +69,7 @@
     align-self: center;
     box-sizing: border-box;
     margin-inline: auto;
+    min-width: 0;
     padding: clamp(4rem, 7vw, 10rem) clamp(5.8rem, 8vw, 12rem);
     position: relative;
     width: min(100%, 150rem);
@@ -72,6 +77,7 @@
 
   #GypseyHero-{{ section.id }} .gypsey-hero__copy {
     max-width: 70rem;
+    min-width: 0;
   }
 
   #GypseyHero-{{ section.id }} .gypsey-hero__eyebrow {
@@ -213,6 +219,7 @@
 
     #GypseyHero-{{ section.id }} .gypsey-hero__content {
       align-self: end;
+      max-width: 100%;
       padding: 6rem 5.4rem 8rem;
       text-align: center;
     }
@@ -229,6 +236,11 @@
     #GypseyHero-{{ section.id }} .gypsey-hero__text {
       font-size: 1.65rem;
       margin-inline: auto;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__button {
+      max-width: 100%;
+      white-space: normal;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__arrow {
