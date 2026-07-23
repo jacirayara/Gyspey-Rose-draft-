@@ -20,6 +20,8 @@
     "story_intro": {
       "type": "gypsey-story",
       "settings": {
+        "feature_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
+        "image_alt": "Gypsey Rose mother and daughter in vibrant cotton clothing",
         "eyebrow": "From India, with heart",
         "heading": "Not just clothing. A colourful lifestyle with values stitched in.",
         "lead": "Gypsey Rose is built around sourcing in person, choosing breathable 100% cotton, and bringing home designs that feel alive. The brand story is the reason customers should remember, trust, and return.",
