@@ -1,12 +1,53 @@
-<section class="gypsey-cart-upsell" aria-labelledby="gypsey-cart-upsell-title">
+{% render 'gypsey-brand' %}
+
+{% style %}
+  .gypsey-cart-upsell .page-width {
+    padding-block: clamp(2rem, 3vw, 3.2rem);
+  }
+
+  .gypsey-cart-upsell__inner {
+    align-items: center;
+    background: var(--gr-blush);
+    border: 0.1rem solid var(--gr-line);
+    border-radius: var(--gr-radius);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem 2.4rem;
+    justify-content: space-between;
+    padding: clamp(1.8rem, 3vw, 2.8rem);
+  }
+
+  .gypsey-cart-upsell__inner > div {
+    flex: 1 1 32rem;
+  }
+
+  .gypsey-cart-upsell h2 {
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    line-height: 1.1;
+    margin: 0.4rem 0 0;
+  }
+
+  .gypsey-cart-upsell p {
+    color: var(--gr-body-soft);
+    font-size: 1.6rem;
+    line-height: 1.55;
+    margin: 0.8rem 0 0;
+  }
+{% endstyle %}
+
+<section class="gr-section gypsey-cart-upsell" aria-labelledby="gypsey-cart-upsell-title">
   <div class="page-width">
     <div class="gypsey-cart-upsell__inner">
       <div>
-        <p class="gypsey-cart-upsell__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% if section.settings.eyebrow != blank %}
+          <p class="gr-eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
         <h2 id="gypsey-cart-upsell-title">{{ section.settings.heading }}</h2>
         <p>{{ section.settings.text }}</p>
       </div>
-      <a class="button button--secondary" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% if section.settings.button_label != blank %}
+        <a class="gr-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
     </div>
   </div>
 </section>

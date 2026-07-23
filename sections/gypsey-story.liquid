@@ -4,49 +4,34 @@
   assign india_image = images['WhatsApp_Image_2026-03-03_at_14.47.16.jpg']
 %}
 
+{% render 'gypsey-brand' %}
+
 {% style %}
   .gypsey-story {
-    --gypsey-pink: #eb3fa0;
-    --gypsey-coral: #f25f4c;
-    --gypsey-teal: #087f7b;
-    --gypsey-ink: #211a1d;
-    --gypsey-sun: #f7b733;
     background:
-      linear-gradient(135deg, rgba(235, 63, 160, 0.12), rgba(8, 127, 123, 0.08)),
-      #fff;
+      linear-gradient(180deg, var(--gr-white) 0%, var(--gr-blush) 100%);
     overflow: hidden;
   }
 
   .gypsey-story__inner {
     align-items: center;
     display: grid;
-    gap: clamp(2.4rem, 5vw, 7rem);
-    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
-    padding-block: clamp(3.6rem, 7vw, 7.2rem);
+    gap: clamp(2.8rem, 5vw, 6.4rem);
+    grid-template-columns: minmax(0, 0.92fr) minmax(28rem, 1.08fr);
+    padding-block: clamp(4rem, 7vw, 7.6rem);
   }
 
   .gypsey-story__copy h2 {
-    color: var(--gypsey-ink);
-    font-size: clamp(3.2rem, 6vw, 6.4rem);
-    letter-spacing: 0;
-    line-height: 0.98;
+    font-size: clamp(3.2rem, 5.4vw, 5.8rem);
+    line-height: 1.04;
     margin: 0;
-    max-width: 9.5em;
-  }
-
-  .gypsey-story__eyebrow {
-    color: var(--gypsey-teal);
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    margin: 0 0 1.2rem;
-    text-transform: uppercase;
+    max-width: 10em;
   }
 
   .gypsey-story__lead {
-    color: rgba(33, 26, 29, 0.78);
-    font-size: clamp(1.6rem, 2vw, 2rem);
-    line-height: 1.6;
+    color: var(--gr-body-soft);
+    font-size: clamp(1.6rem, 1.8vw, 1.9rem);
+    line-height: 1.62;
     margin: 2rem 0 2.4rem;
     max-width: 38em;
   }
@@ -55,30 +40,33 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin: 0 0 2.6rem;
+    margin: 0 0 2.8rem;
   }
 
   .gypsey-story__proof span {
-    border: 0.1rem solid rgba(8, 127, 123, 0.24);
+    background: var(--gr-white);
+    border: 0.1rem solid var(--gr-line);
     border-radius: 999px;
-    color: var(--gypsey-ink);
-    font-size: 1.3rem;
+    color: var(--gr-green);
+    font-size: 1.2rem;
     font-weight: 700;
-    padding: 0.8rem 1.2rem;
+    letter-spacing: 0.04em;
+    padding: 0.9rem 1.6rem;
   }
 
   .gypsey-story__media {
     display: grid;
-    gap: clamp(1rem, 2vw, 1.8rem);
-    grid-template-columns: 1.35fr 0.85fr;
-    min-height: 42rem;
+    gap: clamp(1rem, 1.6vw, 1.6rem);
+    grid-template-columns: 1.3fr 0.9fr;
+    grid-template-rows: repeat(2, 1fr);
   }
 
   .gypsey-story__image {
-    background: var(--gypsey-sun);
+    background: var(--gr-blush-deep);
+    border-radius: var(--gr-radius);
     margin: 0;
-    min-height: 0;
     overflow: hidden;
+    position: relative;
   }
 
   .gypsey-story__image--large {
@@ -86,41 +74,50 @@
   }
 
   .gypsey-story__image img {
-    display: block;
     height: 100%;
-    min-height: 20rem;
+    inset: 0;
     object-fit: cover;
+    position: absolute;
     width: 100%;
   }
 
   @media screen and (max-width: 749px) {
-    .gypsey-story__inner,
-    .gypsey-story__media {
+    .gypsey-story__inner {
       grid-template-columns: 1fr;
     }
 
     .gypsey-story__media {
-      min-height: auto;
+      grid-template-rows: none;
+    }
+
+    .gypsey-story__image {
+      aspect-ratio: 4 / 5;
     }
 
     .gypsey-story__image--large {
+      grid-column: span 2;
       grid-row: auto;
+      aspect-ratio: 16 / 10;
     }
   }
 {% endstyle %}
 
-<section class="gypsey-story" aria-labelledby="gypsey-story-title">
+<section class="gr-section gypsey-story" aria-labelledby="gypsey-story-title">
   <div class="gypsey-story__inner page-width">
     <div class="gypsey-story__copy">
-      <p class="gypsey-story__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% if section.settings.eyebrow != blank %}
+        <p class="gr-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
       <h2 id="gypsey-story-title">{{ section.settings.heading }}</h2>
       <p class="gypsey-story__lead">{{ section.settings.lead }}</p>
       <div class="gypsey-story__proof" aria-label="Gypsey Rose values">
-        <span>100% cotton</span>
-        <span>Mother-daughter led</span>
-        <span>Ethically sourced in India</span>
+        <span>100% Pure Cotton</span>
+        <span>Handmade in India</span>
+        <span>Custom made</span>
       </div>
-      <a class="button button--primary" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% if section.settings.button_label != blank %}
+        <a class="gr-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
     </div>
 
     <div class="gypsey-story__media" aria-label="Gypsey Rose lifestyle imagery">
@@ -128,7 +125,7 @@
         {% if hero_image != blank %}
           <img
             src="{{ hero_image | image_url: width: 1000 }}"
-            alt="Vibrant Gypsey Rose cotton clothing"
+            alt="Gypsey Rose cotton clothing, handmade in India"
             loading="lazy"
             width="1000"
             height="1250"
@@ -136,7 +133,7 @@
         {% else %}
           <img
             src="{{ 'sample_0_dresses.jpg' | asset_url }}"
-            alt="Vibrant cotton dresses"
+            alt="Cotton dresses"
             loading="lazy"
             width="1000"
             height="1250"
@@ -147,7 +144,7 @@
         {% if founder_image != blank %}
           <img
             src="{{ founder_image | image_url: width: 700 }}"
-            alt="Gypsey Rose founder lifestyle moment"
+            alt="Gypsey Rose founder"
             loading="lazy"
             width="700"
             height="700"
@@ -193,19 +190,19 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "From India, with heart"
+      "default": "Handmade in India, with heart"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "A mother-daughter story told in vibrant cotton."
+      "default": "A mother-daughter story, told in pure cotton."
     },
     {
       "type": "textarea",
       "id": "lead",
       "label": "Lead text",
-      "default": "Gypsey Rose is built around face-to-face sourcing, breathable 100% cotton, and joyful pieces chosen for real women living bright, textured lives."
+      "default": "Gypsey Rose is built around face-to-face sourcing, breathable 100% pure cotton, and joyful pieces chosen for real women living bright, textured lives."
     },
     {
       "type": "text",

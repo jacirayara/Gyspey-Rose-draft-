@@ -1,77 +1,76 @@
+{% render 'gypsey-brand' %}
+
 {% style %}
   .gypsey-about-hero {
-    --gypsey-about-ink: #211a1d;
-    --gypsey-about-pink: #eb3fa0;
-    --gypsey-about-teal: #087f7b;
-    background: #fff;
+    background: var(--gr-white);
+  }
+
+  .gypsey-about-hero__inner {
+    align-items: center;
+    display: grid;
+    gap: clamp(2.4rem, 4vw, 5.6rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-block: clamp(3.6rem, 6vw, 7.2rem);
   }
 
   .gypsey-about-hero__media {
-    background: #f7f0f3;
-    max-height: 78rem;
+    background: var(--gr-blush-deep);
+    border-radius: var(--gr-radius);
+    margin: 0;
     overflow: hidden;
+    position: relative;
+    aspect-ratio: 4 / 5;
   }
 
   .gypsey-about-hero__media img {
-    display: block;
-    height: min(78rem, 72vw);
-    min-height: 42rem;
+    height: 100%;
+    inset: 0;
     object-fit: cover;
-    object-position: 50% 45%;
+    object-position: 50% 40%;
+    position: absolute;
     width: 100%;
   }
 
-  .gypsey-about-hero__copy {
-    padding-block: clamp(2.4rem, 5vw, 5.6rem);
-  }
-
-  .gypsey-about-hero__eyebrow {
-    color: var(--gypsey-about-teal);
-    font-size: 1.2rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    margin: 0 0 1.2rem;
-    text-transform: uppercase;
-  }
-
   .gypsey-about-hero h1 {
-    color: var(--gypsey-about-ink);
-    font-size: clamp(3.2rem, 6vw, 7.2rem);
-    letter-spacing: 0;
-    line-height: 0.98;
+    font-size: clamp(3.2rem, 5.4vw, 6.4rem);
+    line-height: 1.04;
     margin: 0;
-    max-width: 10em;
+    max-width: 11em;
   }
 
-  .gypsey-about-hero__copy p:last-child {
-    color: rgba(33, 26, 29, 0.76);
-    font-size: clamp(1.6rem, 2vw, 2.1rem);
-    line-height: 1.55;
-    max-width: 46em;
+  .gypsey-about-hero__text {
+    color: var(--gr-body-soft);
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    line-height: 1.6;
+    margin-top: 1.8rem;
+    max-width: 40em;
   }
 
   @media screen and (max-width: 749px) {
-    .gypsey-about-hero__media img {
-      height: 62rem;
-      object-position: 52% 42%;
+    .gypsey-about-hero__inner {
+      grid-template-columns: 1fr;
     }
   }
 {% endstyle %}
 
-<section class="gypsey-about-hero" aria-labelledby="gypsey-about-hero-title">
-  <div class="gypsey-about-hero__media">
-    <img
-      src="{{ 'gypsey-about-founders.png' | asset_url }}"
-      alt="Gypsey Rose mother and daughter founders wearing red floral cotton dresses"
-      width="1127"
-      height="2000"
-      loading="eager"
-    >
-  </div>
-  <div class="gypsey-about-hero__copy page-width">
-    <p class="gypsey-about-hero__eyebrow">{{ section.settings.eyebrow }}</p>
-    <h1 id="gypsey-about-hero-title">{{ section.settings.heading }}</h1>
-    <p>{{ section.settings.text }}</p>
+<section class="gr-section gypsey-about-hero" aria-labelledby="gypsey-about-hero-title">
+  <div class="gypsey-about-hero__inner page-width">
+    <figure class="gypsey-about-hero__media">
+      <img
+        src="{{ 'gypsey-about-founders.png' | asset_url }}"
+        alt="Gypsey Rose mother and daughter founders wearing red floral cotton dresses"
+        width="1127"
+        height="2000"
+        loading="eager"
+      >
+    </figure>
+    <div class="gypsey-about-hero__copy">
+      {% if section.settings.eyebrow != blank %}
+        <p class="gr-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h1 id="gypsey-about-hero-title">{{ section.settings.heading }}</h1>
+      <p class="gypsey-about-hero__text">{{ section.settings.text }}</p>
+    </div>
   </div>
 </section>
 
@@ -95,7 +94,7 @@
       "type": "textarea",
       "id": "text",
       "label": "Text",
-      "default": "A brand built on colour, cotton, and the joy of finding beautiful pieces face-to-face."
+      "default": "A brand built on colour, 100% pure cotton, and the joy of finding beautiful pieces face-to-face in India."
     }
   ],
   "presets": [
