@@ -56,6 +56,8 @@
     "gypsey_story": {
       "type": "gypsey-story",
       "settings": {
+        "feature_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
+        "image_alt": "Gypsey Rose mother and daughter in India-inspired cotton clothing with an India travel book",
         "eyebrow": "From India, with love",
         "heading": "A mother-daughter story told in vibrant cotton.",
         "lead": "This is the shift the client asked for: not just selling clothes, but documenting a colourful, sustainable lifestyle rooted in real relationships, natural fabrics, and joyful dressing.",

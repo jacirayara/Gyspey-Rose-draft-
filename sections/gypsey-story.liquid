@@ -53,7 +53,7 @@
   }
 
   .gypsey-story__media {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10;
     background: var(--gr-blush-deep);
     border-radius: var(--gr-radius);
     margin: 0;
@@ -65,7 +65,7 @@
     height: 100%;
     inset: 0;
     object-fit: cover;
-    object-position: 50% 35%;
+    object-position: center;
     position: absolute;
     width: 100%;
   }
@@ -73,6 +73,10 @@
   @media screen and (max-width: 749px) {
     .gypsey-story__inner {
       grid-template-columns: 1fr;
+    }
+
+    .gypsey-story__media {
+      aspect-ratio: 4 / 3;
     }
   }
 {% endstyle %}
