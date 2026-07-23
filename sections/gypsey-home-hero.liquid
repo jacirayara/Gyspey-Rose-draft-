@@ -1,6 +1,5 @@
 {% liquid
   assign hero_image = section.settings.hero_image
-  assign portrait_image = section.settings.portrait_image
 %}
 
 {% render 'gypsey-brand' %}
@@ -18,7 +17,7 @@
     align-items: center;
     display: grid;
     gap: clamp(2.8rem, 5vw, 6.4rem);
-    grid-template-columns: minmax(0, 1fr) minmax(28rem, 1.02fr);
+    grid-template-columns: minmax(0, 1fr) minmax(30rem, 0.92fr);
     min-height: min(78rem, calc(100vh - 8rem));
     padding-block: clamp(4.8rem, 8vw, 9.2rem);
     position: relative;
@@ -68,13 +67,11 @@
   }
 
   .gypsey-home-hero__media {
-    display: grid;
-    gap: clamp(1.2rem, 2vw, 2rem);
-    grid-template-columns: minmax(0, 1fr) minmax(11rem, 0.44fr);
     position: relative;
   }
 
   .gypsey-home-hero__image {
+    aspect-ratio: 4 / 5;
     background: var(--gr-blush-deep);
     border-radius: var(--gr-radius);
     margin: 0;
@@ -82,20 +79,11 @@
     position: relative;
   }
 
-  .gypsey-home-hero__image--main {
-    aspect-ratio: 4 / 5;
-  }
-
-  .gypsey-home-hero__image--portrait {
-    align-self: end;
-    aspect-ratio: 3 / 4;
-    margin-bottom: clamp(1.2rem, 6vw, 6rem);
-  }
-
   .gypsey-home-hero__image img {
     height: 100%;
     inset: 0;
     object-fit: cover;
+    object-position: 50% 35%;
     position: absolute;
     width: 100%;
   }
@@ -120,14 +108,6 @@
     .gypsey-home-hero__inner {
       grid-template-columns: 1fr;
       min-height: auto;
-    }
-
-    .gypsey-home-hero__media {
-      grid-template-columns: 1fr;
-    }
-
-    .gypsey-home-hero__image--portrait {
-      display: none;
     }
   }
 {% endstyle %}
@@ -158,12 +138,12 @@
     </div>
 
     <div class="gypsey-home-hero__media">
-      <figure class="gypsey-home-hero__image gypsey-home-hero__image--main">
+      <figure class="gypsey-home-hero__image">
         {% if hero_image != blank %}
           <img
-            src="{{ hero_image | image_url: width: 1400 }}"
-            srcset="{{ hero_image | image_url: width: 700 }} 700w, {{ hero_image | image_url: width: 1400 }} 1400w"
-            sizes="(min-width: 900px) 46vw, 100vw"
+            src="{{ hero_image | image_url: width: 1200 }}"
+            srcset="{{ hero_image | image_url: width: 600 }} 600w, {{ hero_image | image_url: width: 1200 }} 1200w"
+            sizes="(min-width: 900px) 44vw, 100vw"
             alt="{{ section.settings.hero_alt | escape }}"
             width="1120"
             height="1400"
@@ -175,26 +155,6 @@
             alt="{{ section.settings.hero_alt | escape }}"
             width="1127"
             height="2000"
-            loading="eager"
-          >
-        {% endif %}
-      </figure>
-
-      <figure class="gypsey-home-hero__image gypsey-home-hero__image--portrait">
-        {% if portrait_image != blank %}
-          <img
-            src="{{ portrait_image | image_url: width: 700 }}"
-            alt="{{ section.settings.portrait_alt | escape }}"
-            width="600"
-            height="800"
-            loading="eager"
-          >
-        {% else %}
-          <img
-            src="{{ 'gypsey-about-founders.png' | asset_url }}"
-            alt="{{ section.settings.portrait_alt | escape }}"
-            width="600"
-            height="800"
             loading="eager"
           >
         {% endif %}
@@ -214,24 +174,14 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "Main image"
-    },
-    {
-      "type": "image_picker",
-      "id": "portrait_image",
-      "label": "Portrait image"
+      "label": "Hero image",
+      "info": "Use the mother-and-daughter photo. Leave empty to use the founders image included with the theme."
     },
     {
       "type": "text",
       "id": "hero_alt",
-      "label": "Main image alt text",
-      "default": "Gypsey Rose 100% cotton clothing, handmade in India"
-    },
-    {
-      "type": "text",
-      "id": "portrait_alt",
-      "label": "Portrait image alt text",
-      "default": "Gypsey Rose mother and daughter"
+      "label": "Hero image alt text",
+      "default": "Gypsey Rose mother and daughter in cotton clothing, handmade in India"
     },
     {
       "type": "text",

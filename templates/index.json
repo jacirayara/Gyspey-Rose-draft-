@@ -12,10 +12,7 @@
     "hero": {
       "type": "gypsey-home-hero",
       "settings": {
-        "hero_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
-        "portrait_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
-        "hero_alt": "Vibrant Gypsey Rose cotton pieces sourced in India",
-        "portrait_alt": "Gypsey Rose mother and daughter story",
+        "hero_alt": "Gypsey Rose mother and daughter in cotton clothing, handmade in India",
         "eyebrow": "100% Pure Cotton, handmade in India",
         "heading": "Cotton made joyful.",
         "text": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear — or custom made just for you.",
@@ -29,9 +26,9 @@
     "gypsey_story": {
       "type": "gypsey-story",
       "settings": {
-        "eyebrow": "From India, with heart",
-        "heading": "A mother-daughter story told in vibrant cotton.",
-        "lead": "This is the shift the client asked for: not just selling clothes, but documenting a colourful, sustainable lifestyle rooted in real relationships, natural fabrics, and joyful dressing.",
+        "eyebrow": "From India, with love",
+        "heading": "A mother-daughter story, told in pure cotton.",
+        "lead": "Every piece begins with a journey — mother and daughter sourcing fabric face-to-face in India, choosing prints by hand, and bringing home 100% pure cotton made for magical, everyday moments.",
         "button_label": "Read Our Story",
         "button_link": "/pages/about-us?view=our-story"
       }
