@@ -266,7 +266,9 @@
 <section class="gypsey-home-hero" aria-labelledby="gypsey-home-hero-title">
   <div class="gypsey-home-hero__inner page-width">
     <div class="gypsey-home-hero__copy">
-      <p class="gypsey-home-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% if section.settings.eyebrow != blank %}
+        <p class="gypsey-home-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
       <h1 id="gypsey-home-hero-title">{{ section.settings.heading }}</h1>
       <p class="gypsey-home-hero__text">{{ section.settings.text }}</p>
 
@@ -279,11 +281,19 @@
         {% endif %}
       </div>
 
-      <div class="gypsey-home-hero__proof" aria-label="Gypsey Rose values">
-        <span>{{ section.settings.proof_one }}</span>
-        <span>{{ section.settings.proof_two }}</span>
-        <span>{{ section.settings.proof_three }}</span>
-      </div>
+      {% if section.settings.proof_one != blank or section.settings.proof_two != blank or section.settings.proof_three != blank %}
+        <div class="gypsey-home-hero__proof" aria-label="Gypsey Rose values">
+          {% if section.settings.proof_one != blank %}
+            <span>{{ section.settings.proof_one }}</span>
+          {% endif %}
+          {% if section.settings.proof_two != blank %}
+            <span>{{ section.settings.proof_two }}</span>
+          {% endif %}
+          {% if section.settings.proof_three != blank %}
+            <span>{{ section.settings.proof_three }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
 
     <div class="gypsey-home-hero__media">

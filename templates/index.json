@@ -40,23 +40,23 @@
         "slide_dress"
       ],
       "settings": {
-        "eyebrow": "100% pure cotton, handmade in India",
+        "eyebrow": "",
         "heading": "Cotton made joyful.",
         "text": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear.",
         "primary_label": "Shop Cotton Dresses",
         "primary_link": "/collections/dresses",
-        "secondary_label": "Read Our Story",
-        "secondary_link": "/pages/about-us?view=our-story",
-        "proof_one": "100% Pure Cotton",
-        "proof_two": "Handmade in India",
-        "proof_three": "Custom made for you",
+        "secondary_label": "",
+        "secondary_link": "",
+        "proof_one": "",
+        "proof_two": "",
+        "proof_three": "",
         "note": "Chosen by hand, not by catalogue."
       }
     },
     "gypsey_story": {
       "type": "gypsey-story",
       "settings": {
-        "eyebrow": "From India, with heart",
+        "eyebrow": "From India, with love",
         "heading": "A mother-daughter story told in vibrant cotton.",
         "lead": "This is the shift the client asked for: not just selling clothes, but documenting a colourful, sustainable lifestyle rooted in real relationships, natural fabrics, and joyful dressing.",
         "button_label": "Read Our Story",
