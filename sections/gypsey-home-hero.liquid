@@ -1,14 +1,18 @@
 {% liquid
-  assign hero_image = section.settings.hero_image
+  assign slide_count = section.blocks.size
 %}
-
-{% render 'gypsey-brand' %}
 
 {% style %}
   .gypsey-home-hero {
+    --gypsey-hero-ink: #386b35;
+    --gypsey-hero-body: #657269;
+    --gypsey-hero-cream: #fff7ee;
+    --gypsey-hero-pink: #e737a4;
+    --gypsey-hero-green: #064b2d;
     background:
-      radial-gradient(120% 90% at 88% 8%, var(--gr-blush) 0%, rgba(251, 240, 246, 0) 58%),
-      var(--gr-white);
+      radial-gradient(circle at 82% 18%, rgba(231, 55, 164, 0.13), transparent 31rem),
+      linear-gradient(90deg, #ffffff 0%, #fffdf8 54%, #fff4fb 100%);
+    color: var(--gypsey-hero-ink);
     overflow: hidden;
     position: relative;
   }
@@ -16,27 +20,38 @@
   .gypsey-home-hero__inner {
     align-items: center;
     display: grid;
-    gap: clamp(2.8rem, 5vw, 6.4rem);
-    grid-template-columns: minmax(0, 1fr) minmax(30rem, 0.92fr);
-    min-height: min(78rem, calc(100vh - 8rem));
-    padding-block: clamp(4.8rem, 8vw, 9.2rem);
+    gap: clamp(3rem, 5vw, 7rem);
+    grid-template-columns: minmax(0, 0.92fr) minmax(32rem, 1.08fr);
+    min-height: min(74rem, calc(100vh - 8rem));
+    padding-block: clamp(3.2rem, 6vw, 7rem);
     position: relative;
     z-index: 1;
   }
 
+  .gypsey-home-hero__eyebrow {
+    color: var(--gypsey-hero-green);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.24em;
+    margin: 0 0 2.2rem;
+    text-transform: uppercase;
+  }
+
   .gypsey-home-hero h1 {
-    font-size: clamp(4rem, 7.4vw, 8.4rem);
-    line-height: 1.02;
+    color: var(--gypsey-hero-ink);
+    font-size: clamp(5.2rem, 8.8vw, 10.6rem);
+    letter-spacing: -0.055em;
+    line-height: 0.86;
     margin: 0;
-    max-width: 10em;
+    max-width: 7.8em;
   }
 
   .gypsey-home-hero__text {
-    color: var(--gr-body-soft);
-    font-size: clamp(1.6rem, 1.6vw, 1.9rem);
-    line-height: 1.62;
+    color: var(--gypsey-hero-body);
+    font-size: clamp(1.7rem, 1.7vw, 2.15rem);
+    line-height: 1.6;
     margin: 2.4rem 0 0;
-    max-width: 40em;
+    max-width: 34em;
   }
 
   .gypsey-home-hero__actions {
@@ -44,125 +59,273 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
-    margin-top: 3.2rem;
+    margin-top: 3.4rem;
+  }
+
+  .gypsey-home-hero .button {
+    background: var(--gypsey-hero-pink);
+    border-color: var(--gypsey-hero-pink);
+    border-radius: 0.7rem;
+    color: #fff;
+    font-weight: 900;
+    min-height: 5rem;
+    padding-inline: 2.7rem;
+  }
+
+  .gypsey-home-hero__secondary {
+    align-items: center;
+    color: var(--gypsey-hero-green);
+    display: inline-flex;
+    font-weight: 900;
+    min-height: 4.7rem;
+    text-decoration-color: rgba(231, 55, 164, 0.55);
+    text-decoration-thickness: 0.18rem;
+    text-underline-offset: 0.45rem;
   }
 
   .gypsey-home-hero__proof {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: clamp(2.8rem, 4vw, 4rem);
-    max-width: 54rem;
+    gap: 1rem;
+    margin-top: clamp(3rem, 4vw, 4.4rem);
   }
 
   .gypsey-home-hero__proof span {
-    background: var(--gr-blush);
-    border: 0.1rem solid var(--gr-line);
+    background: #fff7fb;
+    border: 0.1rem solid rgba(6, 75, 45, 0.16);
     border-radius: 999px;
-    color: var(--gr-green);
+    color: var(--gypsey-hero-green);
     font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 0.9rem 1.6rem;
+    font-weight: 900;
+    padding: 1rem 1.7rem;
+    text-align: center;
   }
 
   .gypsey-home-hero__media {
+    align-items: center;
+    display: grid;
     position: relative;
   }
 
-  .gypsey-home-hero__image {
+  .gypsey-home-hero__carousel {
     aspect-ratio: 4 / 5;
-    background: var(--gr-blush-deep);
-    border-radius: var(--gr-radius);
-    margin: 0;
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: 0.8rem;
+    box-shadow: 0 2.4rem 7rem rgba(35, 24, 25, 0.13);
+    display: grid;
+    max-height: 67rem;
     overflow: hidden;
     position: relative;
   }
 
-  .gypsey-home-hero__image img {
+  .gypsey-home-hero__slide {
+    animation: gypseyHeroSlide 18s infinite;
+    grid-area: 1 / 1;
+    margin: 0;
+    opacity: 0;
+    transform: scale(1.015);
+  }
+
+  .gypsey-home-hero__slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .gypsey-home-hero__slide:nth-child(2) {
+    animation-delay: 6s;
+  }
+
+  .gypsey-home-hero__slide:nth-child(3) {
+    animation-delay: 12s;
+  }
+
+  .gypsey-home-hero__slide img {
+    display: block;
     height: 100%;
-    inset: 0;
-    object-fit: cover;
-    object-position: 50% 35%;
-    position: absolute;
+    object-fit: contain;
+    object-position: center;
     width: 100%;
   }
 
   .gypsey-home-hero__note {
-    background: var(--gr-white);
-    border: 0.1rem solid var(--gr-line);
-    border-radius: var(--gr-radius);
-    bottom: clamp(1rem, 3vw, 2.4rem);
-    box-shadow: 0 1.2rem 3.2rem rgba(63, 107, 56, 0.1);
-    color: var(--gr-green);
-    font-family: var(--gr-serif);
-    font-size: 1.5rem;
+    background: var(--gypsey-hero-cream);
+    border: 0.1rem solid rgba(6, 75, 45, 0.13);
+    bottom: clamp(1rem, 4vw, 3rem);
+    box-shadow: 0 1.6rem 4rem rgba(35, 24, 25, 0.16);
+    color: var(--gypsey-hero-green);
+    font-family: Georgia, serif;
+    font-size: 1.55rem;
     font-style: italic;
-    left: clamp(1rem, 3vw, 2.4rem);
-    max-width: 21rem;
-    padding: 1.4rem 1.8rem;
+    left: clamp(1rem, 4vw, 3rem);
+    line-height: 1.45;
+    max-width: 23rem;
+    padding: 1.5rem 1.8rem;
     position: absolute;
+    z-index: 2;
   }
 
-  @media screen and (max-width: 899px) {
+  .gypsey-home-hero__dots {
+    bottom: 1.4rem;
+    display: flex;
+    gap: 0.7rem;
+    position: absolute;
+    right: 1.6rem;
+    z-index: 3;
+  }
+
+  .gypsey-home-hero__dot {
+    animation: gypseyHeroDot 18s infinite;
+    background: rgba(6, 75, 45, 0.35);
+    border-radius: 999px;
+    display: block;
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+
+  .gypsey-home-hero__dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .gypsey-home-hero__dot:nth-child(2) {
+    animation-delay: 6s;
+  }
+
+  .gypsey-home-hero__dot:nth-child(3) {
+    animation-delay: 12s;
+  }
+
+  @keyframes gypseyHeroSlide {
+    0%,
+    28% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    34%,
+    100% {
+      opacity: 0;
+      transform: scale(1.015);
+    }
+  }
+
+  @keyframes gypseyHeroDot {
+    0%,
+    28% {
+      background: var(--gypsey-hero-pink);
+      width: 2.4rem;
+    }
+
+    34%,
+    100% {
+      background: rgba(6, 75, 45, 0.35);
+      width: 0.8rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gypsey-home-hero__slide,
+    .gypsey-home-hero__dot {
+      animation: none;
+    }
+
+    .gypsey-home-hero__slide:first-child {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
     .gypsey-home-hero__inner {
       grid-template-columns: 1fr;
       min-height: auto;
     }
+
+    .gypsey-home-hero__carousel {
+      aspect-ratio: 3 / 4;
+      max-height: none;
+    }
+  }
+
+  @media screen and (max-width: 589px) {
+    .gypsey-home-hero h1 {
+      font-size: clamp(4.6rem, 18vw, 7.2rem);
+    }
+
+    .gypsey-home-hero__note {
+      font-size: 1.3rem;
+      max-width: 18rem;
+    }
   }
 {% endstyle %}
 
-<section class="gr-section gypsey-home-hero" aria-labelledby="gypsey-home-hero-title">
+<section class="gypsey-home-hero" aria-labelledby="gypsey-home-hero-title">
   <div class="gypsey-home-hero__inner page-width">
     <div class="gypsey-home-hero__copy">
-      {% if section.settings.eyebrow != blank %}
-        <p class="gr-eyebrow">{{ section.settings.eyebrow }}</p>
-      {% endif %}
+      <p class="gypsey-home-hero__eyebrow">{{ section.settings.eyebrow }}</p>
       <h1 id="gypsey-home-hero-title">{{ section.settings.heading }}</h1>
       <p class="gypsey-home-hero__text">{{ section.settings.text }}</p>
 
       <div class="gypsey-home-hero__actions">
         {% if section.settings.primary_label != blank %}
-          <a class="gr-btn" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
+          <a class="button button--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
         {% endif %}
         {% if section.settings.secondary_label != blank %}
-          <a class="gr-link" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>
+          <a class="gypsey-home-hero__secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>
         {% endif %}
       </div>
 
       <div class="gypsey-home-hero__proof" aria-label="Gypsey Rose values">
-        <span>100% Pure Cotton</span>
-        <span>Handmade in India</span>
-        <span>Custom made for you</span>
+        <span>{{ section.settings.proof_one }}</span>
+        <span>{{ section.settings.proof_two }}</span>
+        <span>{{ section.settings.proof_three }}</span>
       </div>
     </div>
 
     <div class="gypsey-home-hero__media">
-      <figure class="gypsey-home-hero__image">
-        {% if hero_image != blank %}
-          <img
-            src="{{ hero_image | image_url: width: 1200 }}"
-            srcset="{{ hero_image | image_url: width: 600 }} 600w, {{ hero_image | image_url: width: 1200 }} 1200w"
-            sizes="(min-width: 900px) 44vw, 100vw"
-            alt="{{ section.settings.hero_alt | escape }}"
-            width="1120"
-            height="1400"
-            loading="eager"
-          >
+      <div class="gypsey-home-hero__carousel" aria-label="Gypsey Rose image slideshow">
+        {% if slide_count > 0 %}
+          {% for block in section.blocks limit: 3 %}
+            <figure class="gypsey-home-hero__slide" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 1200 }}"
+                  alt="{{ block.settings.alt | escape }}"
+                  width="1200"
+                  height="1500"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                >
+              {% else %}
+                <img
+                  src="{{ 'gypsey-about-founders.png' | asset_url }}"
+                  alt="{{ block.settings.alt | escape }}"
+                  width="1127"
+                  height="2000"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                >
+              {% endif %}
+            </figure>
+          {% endfor %}
         {% else %}
-          <img
-            src="{{ 'gypsey-about-founders.png' | asset_url }}"
-            alt="{{ section.settings.hero_alt | escape }}"
-            width="1127"
-            height="2000"
-            loading="eager"
-          >
+          <figure class="gypsey-home-hero__slide">
+            <img
+              src="{{ 'gypsey-about-founders.png' | asset_url }}"
+              alt="{{ section.settings.heading | escape }}"
+              width="1127"
+              height="2000"
+              loading="eager"
+            >
+          </figure>
         {% endif %}
-      </figure>
 
-      {% if section.settings.note != blank %}
+        {% if slide_count > 1 %}
+          <div class="gypsey-home-hero__dots" aria-hidden="true">
+            {% for block in section.blocks limit: 3 %}
+              <span class="gypsey-home-hero__dot"></span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
         <div class="gypsey-home-hero__note">{{ section.settings.note }}</div>
-      {% endif %}
+      </div>
     </div>
   </div>
 </section>
@@ -172,22 +335,10 @@
   "name": "Gypsey editorial hero",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero image",
-      "info": "Use the mother-and-daughter photo. Leave empty to use the founders image included with the theme."
-    },
-    {
-      "type": "text",
-      "id": "hero_alt",
-      "label": "Hero image alt text",
-      "default": "Gypsey Rose mother and daughter in cotton clothing, handmade in India"
-    },
-    {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "100% Pure Cotton, handmade in India"
+      "default": "100% pure cotton, handmade in India"
     },
     {
       "type": "text",
@@ -199,7 +350,7 @@
       "type": "textarea",
       "id": "text",
       "label": "Text",
-      "default": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear — or custom made just for you."
+      "default": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear."
     },
     {
       "type": "text",
@@ -215,19 +366,57 @@
     {
       "type": "text",
       "id": "secondary_label",
-      "label": "Secondary link label",
+      "label": "Secondary button label",
       "default": "Read Our Story"
     },
     {
       "type": "url",
       "id": "secondary_link",
-      "label": "Secondary link"
+      "label": "Secondary button link"
+    },
+    {
+      "type": "text",
+      "id": "proof_one",
+      "label": "Proof point one",
+      "default": "100% Pure Cotton"
+    },
+    {
+      "type": "text",
+      "id": "proof_two",
+      "label": "Proof point two",
+      "default": "Handmade in India"
+    },
+    {
+      "type": "text",
+      "id": "proof_three",
+      "label": "Proof point three",
+      "default": "Custom made for you"
     },
     {
       "type": "text",
       "id": "note",
-      "label": "Floating note",
+      "label": "Image note",
       "default": "Chosen by hand, not by catalogue."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide image",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "default": "Gypsey Rose cotton clothing"
+        }
+      ]
     }
   ],
   "presets": [

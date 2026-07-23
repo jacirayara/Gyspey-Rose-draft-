@@ -11,24 +11,54 @@
   "sections": {
     "hero": {
       "type": "gypsey-home-hero",
+      "blocks": {
+        "slide_founder": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
+            "alt": "Gypsey Rose founder wearing vibrant cotton clothing"
+          }
+        },
+        "slide_india": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
+            "alt": "Colourful Gypsey Rose cotton clothing inspired by India"
+          }
+        },
+        "slide_dress": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/TESS_BRITZ_GYPSEY_ROSE.jpg",
+            "alt": "Gypsey Rose cotton clothing lifestyle image"
+          }
+        }
+      },
+      "block_order": [
+        "slide_founder",
+        "slide_india",
+        "slide_dress"
+      ],
       "settings": {
-        "hero_alt": "Gypsey Rose mother and daughter in cotton clothing, handmade in India",
-        "eyebrow": "100% Pure Cotton, handmade in India",
+        "eyebrow": "100% pure cotton, handmade in India",
         "heading": "Cotton made joyful.",
-        "text": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear — or custom made just for you.",
+        "text": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear.",
         "primary_label": "Shop Cotton Dresses",
         "primary_link": "/collections/dresses",
         "secondary_label": "Read Our Story",
         "secondary_link": "/pages/about-us?view=our-story",
+        "proof_one": "100% Pure Cotton",
+        "proof_two": "Handmade in India",
+        "proof_three": "Custom made for you",
         "note": "Chosen by hand, not by catalogue."
       }
     },
     "gypsey_story": {
       "type": "gypsey-story",
       "settings": {
-        "eyebrow": "From India, with love",
-        "heading": "A mother-daughter story, told in pure cotton.",
-        "lead": "Every piece begins with a journey — mother and daughter sourcing fabric face-to-face in India, choosing prints by hand, and bringing home 100% pure cotton made for magical, everyday moments.",
+        "eyebrow": "From India, with heart",
+        "heading": "A mother-daughter story told in vibrant cotton.",
+        "lead": "This is the shift the client asked for: not just selling clothes, but documenting a colourful, sustainable lifestyle rooted in real relationships, natural fabrics, and joyful dressing.",
         "button_label": "Read Our Story",
         "button_link": "/pages/about-us?view=our-story"
       }
