@@ -12,45 +12,69 @@
     "hero": {
       "type": "gypsey-home-hero",
       "blocks": {
-        "slide_founder": {
+        "slide_summer": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Pink_2.jpg",
-            "alt": "Pink Gypsey Rose cotton dress detail"
+            "image": "shopify://shop_images/6.jpg",
+            "alt": "Model wearing a vibrant Gypsey Rose cotton dress",
+            "eyebrow": "Spring and summer 2026",
+            "badge": "",
+            "heading": "Sun-Drenched Style: Pure Cotton Dresses",
+            "text": "Effortless, breathable 100% cotton dresses and vibrant jumpsuits designed for warm days.",
+            "button_label": "Shop Summer Dresses",
+            "button_link": "/collections/dresses"
           }
         },
-        "slide_india": {
+        "slide_layers": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
-            "alt": "Colourful Gypsey Rose cotton clothing inspired by India"
+            "image": "shopify://shop_images/JUNGLI_TIERED_DRESS_COTTON.jpg",
+            "alt": "Flowing Gypsey Rose cotton layer in a colourful print",
+            "eyebrow": "Resort-ready cotton",
+            "badge": "",
+            "heading": "Breezy Layers for Warm Evenings",
+            "text": "Lightweight cotton kaftans and kimonos perfect for sun-filled days and relaxed evenings.",
+            "button_label": "Explore Kaftans and Layers",
+            "button_link": "/collections/kaftans"
           }
         },
-        "slide_dress": {
+        "slide_separates": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/TESS_BRITZ_GYPSEY_ROSE.jpg",
-            "alt": "Gypsey Rose cotton clothing lifestyle image"
+            "alt": "Relaxed Gypsey Rose cotton blouse styled for summer",
+            "eyebrow": "Easy mix-and-match pieces",
+            "badge": "",
+            "heading": "Airy Separates Built for Comfort",
+            "text": "Versatile, hand-crafted cotton blouses and easy-wear tops made for mix-and-match summer styling.",
+            "button_label": "Shop Tops and Separates",
+            "button_link": "/collections/blouses"
+          }
+        },
+        "slide_sale": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Pink_2.jpg",
+            "alt": "Colourful Gypsey Rose cotton prints included in the end of season sale",
+            "eyebrow": "Limited stock",
+            "badge": "Final Sale - Up to 38% Off",
+            "heading": "End of Season Sale: Up to 38% Off",
+            "text": "Save on selected 100% cotton dresses, jumpsuits, and blouses. Final sale, while stocks last.",
+            "button_label": "Shop Sale Now",
+            "button_link": "/collections/christmas-gift-guide"
           }
         }
       },
       "block_order": [
-        "slide_founder",
-        "slide_india",
-        "slide_dress"
+        "slide_summer",
+        "slide_layers",
+        "slide_separates",
+        "slide_sale"
       ],
       "settings": {
-        "eyebrow": "",
-        "heading": "Cotton made joyful.",
-        "text": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear.",
-        "primary_label": "Shop Cotton Dresses",
-        "primary_link": "/collections/dresses",
-        "secondary_label": "",
-        "secondary_link": "",
-        "proof_one": "",
-        "proof_two": "",
-        "proof_three": "",
-        "note": "Chosen by hand, not by catalogue."
+        "autoplay": true,
+        "rotation_seconds": 5.5,
+        "overlay_opacity": 20
       }
     },
     "gypsey_story": {

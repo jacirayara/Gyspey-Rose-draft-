@@ -1,425 +1,444 @@
 {% liquid
   assign slide_count = section.blocks.size
+  assign rotation_ms = section.settings.rotation_seconds | times: 1000
 %}
 
 {% style %}
-  .gypsey-home-hero {
-    --gypsey-hero-ink: #386b35;
-    --gypsey-hero-body: #657269;
-    --gypsey-hero-cream: #fff7ee;
-    --gypsey-hero-pink: #e737a4;
-    --gypsey-hero-green: #064b2d;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(231, 55, 164, 0.13), transparent 31rem),
-      linear-gradient(90deg, #ffffff 0%, #fffdf8 54%, #fff4fb 100%);
-    color: var(--gypsey-hero-ink);
+  #GypseyHero-{{ section.id }} {
+    --hero-accent: #ec369f;
+    --hero-green: #164f35;
+    --hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    background: #173f2d;
+    color: #fff;
     overflow: hidden;
     position: relative;
   }
 
-  .gypsey-home-hero__inner {
-    align-items: center;
+  #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
+    aspect-ratio: 16 / 9;
     display: grid;
-    gap: clamp(3rem, 5vw, 7rem);
-    grid-template-columns: minmax(0, 0.92fr) minmax(32rem, 1.08fr);
-    min-height: min(74rem, calc(100vh - 8rem));
-    padding-block: clamp(3.2rem, 6vw, 7rem);
+    max-height: 78rem;
+    min-height: 54rem;
     position: relative;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__slide {
+    display: grid;
+    grid-area: 1 / 1;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: relative;
+    transition: opacity 700ms ease, visibility 700ms ease;
+    visibility: hidden;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
     z-index: 1;
   }
 
-  .gypsey-home-hero__eyebrow {
-    color: var(--gypsey-hero-green);
-    font-size: 1.2rem;
-    font-weight: 900;
+  #GypseyHero-{{ section.id }} .gypsey-hero__image,
+  #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+    grid-area: 1 / 1;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__veil {
+    background:
+      linear-gradient(90deg, rgba(6, 28, 18, calc(var(--hero-overlay) + 0.26)) 0%, rgba(6, 28, 18, var(--hero-overlay)) 48%, rgba(6, 28, 18, 0.08) 100%),
+      linear-gradient(0deg, rgba(6, 28, 18, 0.3), transparent 45%);
+    grid-area: 1 / 1;
+    position: relative;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__content {
+    align-self: center;
+    box-sizing: border-box;
+    margin-inline: auto;
+    padding: clamp(4rem, 7vw, 10rem) clamp(5.8rem, 8vw, 12rem);
+    position: relative;
+    width: min(100%, 150rem);
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__copy {
+    max-width: 70rem;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__eyebrow {
+    font-size: 1.25rem;
+    font-weight: 700;
     letter-spacing: 0.24em;
-    margin: 0 0 2.2rem;
+    margin: 0 0 1.7rem;
     text-transform: uppercase;
   }
 
-  .gypsey-home-hero h1 {
-    color: var(--gypsey-hero-ink);
-    font-size: clamp(5.2rem, 8.8vw, 10.6rem);
-    letter-spacing: -0.055em;
-    line-height: 0.86;
+  #GypseyHero-{{ section.id }} .gypsey-hero__heading {
+    color: inherit;
+    font-size: clamp(4.8rem, 6vw, 8.8rem);
+    letter-spacing: -0.045em;
+    line-height: 0.98;
     margin: 0;
-    max-width: 7.8em;
+    max-width: 10em;
+    text-wrap: balance;
   }
 
-  .gypsey-home-hero__text {
-    color: var(--gypsey-hero-body);
-    font-size: clamp(1.7rem, 1.7vw, 2.15rem);
-    line-height: 1.6;
-    margin: 2.4rem 0 0;
-    max-width: 34em;
+  #GypseyHero-{{ section.id }} .gypsey-hero__text {
+    font-size: clamp(1.7rem, 1.7vw, 2.2rem);
+    line-height: 1.55;
+    margin: 2.2rem 0 0;
+    max-width: 55rem;
+    text-shadow: 0 0.1rem 1.5rem rgba(0, 0, 0, 0.25);
   }
 
-  .gypsey-home-hero__actions {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.6rem;
-    margin-top: 3.4rem;
-  }
-
-  .gypsey-home-hero .button {
-    background: var(--gypsey-hero-pink);
-    border-color: var(--gypsey-hero-pink);
-    border-radius: 0.7rem;
-    color: #fff;
-    font-weight: 900;
-    min-height: 5rem;
-    padding-inline: 2.7rem;
-  }
-
-  .gypsey-home-hero__secondary {
-    align-items: center;
-    color: var(--gypsey-hero-green);
-    display: inline-flex;
-    font-weight: 900;
-    min-height: 4.7rem;
-    text-decoration-color: rgba(231, 55, 164, 0.55);
-    text-decoration-thickness: 0.18rem;
-    text-underline-offset: 0.45rem;
-  }
-
-  .gypsey-home-hero__proof {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: clamp(3rem, 4vw, 4.4rem);
-  }
-
-  .gypsey-home-hero__proof span {
-    background: #fff7fb;
-    border: 0.1rem solid rgba(6, 75, 45, 0.16);
+  #GypseyHero-{{ section.id }} .gypsey-hero__badge {
+    background: #fff0a6;
     border-radius: 999px;
-    color: var(--gypsey-hero-green);
+    color: #71361b;
+    display: inline-flex;
     font-size: 1.2rem;
     font-weight: 900;
-    padding: 1rem 1.7rem;
-    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.8rem;
+    padding: 0.9rem 1.5rem;
+    text-transform: uppercase;
   }
 
-  .gypsey-home-hero__media {
-    align-items: center;
-    display: grid;
-    position: relative;
-  }
-
-  .gypsey-home-hero__carousel {
-    aspect-ratio: 4 / 5;
-    background: rgba(255, 255, 255, 0.72);
-    border-radius: 0.8rem;
-    box-shadow: 0 2.4rem 7rem rgba(35, 24, 25, 0.13);
-    display: grid;
-    max-height: 67rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .gypsey-home-hero__slide {
-    animation: gypseyHeroSlide 18s infinite;
-    align-items: center;
-    background: #fff;
-    display: flex;
-    grid-area: 1 / 1;
+  #GypseyHero-{{ section.id }} .gypsey-hero__button {
+    background: var(--hero-accent);
+    border: 0.1rem solid var(--hero-accent);
+    border-radius: 0.5rem;
+    color: #fff;
+    display: inline-flex;
+    font-size: 1.5rem;
+    font-weight: 900;
     justify-content: center;
-    margin: 0;
-    opacity: 0;
-    transform: none;
+    margin-top: 3rem;
+    min-height: 5.2rem;
+    padding: 1.4rem 2.8rem;
+    text-decoration: none;
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
   }
 
-  .gypsey-home-hero__slide:nth-child(1) {
-    animation-delay: 0s;
+  #GypseyHero-{{ section.id }} .gypsey-hero__button:hover {
+    background: #c92487;
+    border-color: #c92487;
+    transform: translateY(-0.2rem);
   }
 
-  .gypsey-home-hero__slide:nth-child(2) {
-    animation-delay: 6s;
-  }
-
-  .gypsey-home-hero__slide:nth-child(3) {
-    animation-delay: 12s;
-  }
-
-  .gypsey-home-hero__slide img {
-    display: block;
-    height: auto;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: center;
-    width: auto;
-  }
-
-  .gypsey-home-hero__note {
-    background: var(--gypsey-hero-cream);
-    border: 0.1rem solid rgba(6, 75, 45, 0.13);
-    bottom: clamp(1rem, 4vw, 3rem);
-    box-shadow: 0 1.6rem 4rem rgba(35, 24, 25, 0.16);
-    color: var(--gypsey-hero-green);
-    font-family: Georgia, serif;
-    font-size: 1.55rem;
-    font-style: italic;
-    left: clamp(1rem, 4vw, 3rem);
-    line-height: 1.45;
-    max-width: 23rem;
-    padding: 1.5rem 1.8rem;
-    position: absolute;
-    z-index: 2;
-  }
-
-  .gypsey-home-hero__dots {
-    bottom: 1.4rem;
+  #GypseyHero-{{ section.id }} .gypsey-hero__arrow {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 0;
+    border-radius: 50%;
+    color: var(--hero-green);
+    cursor: pointer;
     display: flex;
-    gap: 0.7rem;
+    height: 4.6rem;
+    justify-content: center;
+    padding: 0;
     position: absolute;
-    right: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 180ms ease, transform 180ms ease;
+    width: 4.6rem;
     z-index: 3;
   }
 
-  .gypsey-home-hero__dot {
-    animation: gypseyHeroDot 18s infinite;
-    background: rgba(6, 75, 45, 0.35);
+  #GypseyHero-{{ section.id }} .gypsey-hero__arrow:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.06);
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__arrow--previous {
+    left: clamp(1.2rem, 2vw, 3rem);
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__arrow--next {
+    right: clamp(1.2rem, 2vw, 3rem);
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__arrow svg {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__dots {
+    bottom: 2.2rem;
+    display: flex;
+    gap: 0.9rem;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__dot {
+    background: rgba(255, 255, 255, 0.55);
+    border: 0;
     border-radius: 999px;
-    display: block;
-    height: 0.8rem;
-    width: 0.8rem;
+    cursor: pointer;
+    height: 0.9rem;
+    padding: 0;
+    transition: background 220ms ease, width 220ms ease;
+    width: 0.9rem;
   }
 
-  .gypsey-home-hero__dot:nth-child(1) {
-    animation-delay: 0s;
+  #GypseyHero-{{ section.id }} .gypsey-hero__dot.is-active {
+    background: #fff;
+    width: 3rem;
   }
 
-  .gypsey-home-hero__dot:nth-child(2) {
-    animation-delay: 6s;
-  }
-
-  .gypsey-home-hero__dot:nth-child(3) {
-    animation-delay: 12s;
-  }
-
-  @keyframes gypseyHeroSlide {
-    0%,
-    28% {
-      opacity: 1;
-      transform: none;
+  @media screen and (max-width: 749px) {
+    #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
+      aspect-ratio: 4 / 5;
+      max-height: none;
+      min-height: 58rem;
     }
 
-    34%,
-    100% {
-      opacity: 0;
-      transform: none;
-    }
-  }
-
-  @keyframes gypseyHeroDot {
-    0%,
-    28% {
-      background: var(--gypsey-hero-pink);
-      width: 2.4rem;
+    #GypseyHero-{{ section.id }} .gypsey-hero__veil {
+      background:
+        linear-gradient(0deg, rgba(6, 28, 18, 0.72) 0%, rgba(6, 28, 18, 0.3) 58%, rgba(6, 28, 18, 0.12) 100%),
+        rgba(6, 28, 18, var(--hero-overlay));
     }
 
-    34%,
-    100% {
-      background: rgba(6, 75, 45, 0.35);
-      width: 0.8rem;
+    #GypseyHero-{{ section.id }} .gypsey-hero__content {
+      align-self: end;
+      padding: 6rem 5.4rem 8rem;
+      text-align: center;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__copy {
+      margin-inline: auto;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__heading {
+      font-size: clamp(4rem, 12vw, 6.2rem);
+      margin-inline: auto;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__text {
+      font-size: 1.65rem;
+      margin-inline: auto;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__arrow {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__arrow--previous {
+      left: 0.8rem;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__arrow--next {
+      right: 0.8rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .gypsey-home-hero__slide,
-    .gypsey-home-hero__dot {
-      animation: none;
-    }
-
-    .gypsey-home-hero__slide:first-child {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @media screen and (max-width: 989px) {
-    .gypsey-home-hero__inner {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .gypsey-home-hero__carousel {
-      aspect-ratio: 3 / 4;
-      max-height: none;
-    }
-  }
-
-  @media screen and (max-width: 589px) {
-    .gypsey-home-hero h1 {
-      font-size: clamp(4.6rem, 18vw, 7.2rem);
-    }
-
-    .gypsey-home-hero__note {
-      font-size: 1.3rem;
-      max-width: 18rem;
+    #GypseyHero-{{ section.id }} .gypsey-hero__slide,
+    #GypseyHero-{{ section.id }} .gypsey-hero__button,
+    #GypseyHero-{{ section.id }} .gypsey-hero__arrow,
+    #GypseyHero-{{ section.id }} .gypsey-hero__dot {
+      transition: none;
     }
   }
 {% endstyle %}
 
-<section class="gypsey-home-hero" aria-labelledby="gypsey-home-hero-title">
-  <div class="gypsey-home-hero__inner page-width">
-    <div class="gypsey-home-hero__copy">
-      {% if section.settings.eyebrow != blank %}
-        <p class="gypsey-home-hero__eyebrow">{{ section.settings.eyebrow }}</p>
-      {% endif %}
-      <h1 id="gypsey-home-hero-title">{{ section.settings.heading }}</h1>
-      <p class="gypsey-home-hero__text">{{ section.settings.text }}</p>
-
-      <div class="gypsey-home-hero__actions">
-        {% if section.settings.primary_label != blank %}
-          <a class="button button--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
-        {% endif %}
-        {% if section.settings.secondary_label != blank %}
-          <a class="gypsey-home-hero__secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>
-        {% endif %}
-      </div>
-
-      {% if section.settings.proof_one != blank or section.settings.proof_two != blank or section.settings.proof_three != blank %}
-        <div class="gypsey-home-hero__proof" aria-label="Gypsey Rose values">
-          {% if section.settings.proof_one != blank %}
-            <span>{{ section.settings.proof_one }}</span>
-          {% endif %}
-          {% if section.settings.proof_two != blank %}
-            <span>{{ section.settings.proof_two }}</span>
-          {% endif %}
-          {% if section.settings.proof_three != blank %}
-            <span>{{ section.settings.proof_three }}</span>
-          {% endif %}
-        </div>
-      {% endif %}
-    </div>
-
-    <div class="gypsey-home-hero__media">
-      <div class="gypsey-home-hero__carousel" aria-label="Gypsey Rose image slideshow">
-        {% if slide_count > 0 %}
-          {% for block in section.blocks limit: 3 %}
-            <figure class="gypsey-home-hero__slide" {{ block.shopify_attributes }}>
-              {% if block.settings.image != blank %}
-                <img
-                  src="{{ block.settings.image | image_url: width: 1200 }}"
-                  alt="{{ block.settings.alt | escape }}"
-                  width="1200"
-                  height="1500"
-                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-                >
-              {% else %}
-                <img
-                  src="{{ 'gypsey-about-founders.png' | asset_url }}"
-                  alt="{{ block.settings.alt | escape }}"
-                  width="1127"
-                  height="2000"
-                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-                >
-              {% endif %}
-            </figure>
-          {% endfor %}
+<section
+  id="GypseyHero-{{ section.id }}"
+  class="gypsey-hero"
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-rotation="{{ rotation_ms }}"
+  aria-roledescription="carousel"
+  aria-label="Gypsey Rose seasonal highlights"
+>
+  <div class="gypsey-hero__viewport" aria-live="off">
+    {% for block in section.blocks %}
+      {% liquid
+        if forloop.first
+          assign heading_tag = 'h1'
+          assign image_loading = 'eager'
+          assign image_priority = 'high'
+        else
+          assign heading_tag = 'h2'
+          assign image_loading = 'lazy'
+          assign image_priority = 'auto'
+        endif
+      %}
+      <article
+        class="gypsey-hero__slide{% if forloop.first %} is-active{% endif %}"
+        data-slide
+        aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+        aria-label="Slide {{ forloop.index }} of {{ slide_count }}"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.image != blank %}
+          {{
+            block.settings.image
+            | image_url: width: 2000
+            | image_tag:
+              class: 'gypsey-hero__image',
+              widths: '750, 1100, 1500, 2000',
+              sizes: '100vw',
+              loading: image_loading,
+              fetchpriority: image_priority,
+              alt: block.settings.alt
+          }}
         {% else %}
-          <figure class="gypsey-home-hero__slide">
-            <img
-              src="{{ 'gypsey-about-founders.png' | asset_url }}"
-              alt="{{ section.settings.heading | escape }}"
-              width="1127"
-              height="2000"
-              loading="eager"
-            >
-          </figure>
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'gypsey-hero__placeholder' }}
         {% endif %}
 
-        {% if slide_count > 1 %}
-          <div class="gypsey-home-hero__dots" aria-hidden="true">
-            {% for block in section.blocks limit: 3 %}
-              <span class="gypsey-home-hero__dot"></span>
-            {% endfor %}
+        <div class="gypsey-hero__veil">
+          <div class="gypsey-hero__content">
+            <div class="gypsey-hero__copy">
+              {% if block.settings.badge != blank %}
+                <span class="gypsey-hero__badge">{{ block.settings.badge }}</span>
+              {% endif %}
+              {% if block.settings.eyebrow != blank %}
+                <p class="gypsey-hero__eyebrow">{{ block.settings.eyebrow }}</p>
+              {% endif %}
+              <{{ heading_tag }} class="gypsey-hero__heading">{{ block.settings.heading }}</{{ heading_tag }}>
+              {% if block.settings.text != blank %}
+                <p class="gypsey-hero__text">{{ block.settings.text }}</p>
+              {% endif %}
+              {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                <a class="gypsey-hero__button" href="{{ block.settings.button_link }}">
+                  {{ block.settings.button_label }}
+                </a>
+              {% endif %}
+            </div>
           </div>
-        {% endif %}
+        </div>
+      </article>
+    {% endfor %}
 
-        <div class="gypsey-home-hero__note">{{ section.settings.note }}</div>
+    {% if slide_count > 1 %}
+      <button class="gypsey-hero__arrow gypsey-hero__arrow--previous" type="button" data-previous aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 19-7-7 7-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+      </button>
+      <button class="gypsey-hero__arrow gypsey-hero__arrow--next" type="button" data-next aria-label="Next slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+      </button>
+
+      <div class="gypsey-hero__dots" role="tablist" aria-label="Choose a slide">
+        {% for block in section.blocks %}
+          <button
+            class="gypsey-hero__dot{% if forloop.first %} is-active{% endif %}"
+            type="button"
+            data-dot="{{ forloop.index0 }}"
+            aria-label="Show slide {{ forloop.index }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          ></button>
+        {% endfor %}
       </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 
+<script>
+  (() => {
+    const root = document.getElementById('GypseyHero-{{ section.id }}');
+    if (!root || root.dataset.ready === 'true') return;
+
+    const slides = Array.from(root.querySelectorAll('[data-slide]'));
+    const dots = Array.from(root.querySelectorAll('[data-dot]'));
+    const previous = root.querySelector('[data-previous]');
+    const next = root.querySelector('[data-next]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const autoplay = root.dataset.autoplay === 'true' && !reduceMotion && slides.length > 1;
+    const rotation = Number(root.dataset.rotation) || 5500;
+    let activeIndex = 0;
+    let timer;
+    let touchStartX = 0;
+
+    const showSlide = (newIndex, resetTimer = true) => {
+      activeIndex = (newIndex + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        const isActive = index === activeIndex;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach((dot, index) => {
+        const isActive = index === activeIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', String(isActive));
+      });
+      if (resetTimer) startAutoplay();
+    };
+
+    const stopAutoplay = () => window.clearInterval(timer);
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (autoplay) timer = window.setInterval(() => showSlide(activeIndex + 1, false), rotation);
+    };
+
+    previous?.addEventListener('click', () => showSlide(activeIndex - 1));
+    next?.addEventListener('click', () => showSlide(activeIndex + 1));
+    dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.dot))));
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+    root.addEventListener('focusin', stopAutoplay);
+    root.addEventListener('focusout', startAutoplay);
+    root.addEventListener('touchstart', (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    root.addEventListener('touchend', (event) => {
+      const distance = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(distance) > 50) showSlide(activeIndex + (distance < 0 ? 1 : -1));
+    }, { passive: true });
+    document.addEventListener('shopify:block:select', (event) => {
+      const selectedSlide = event.target.closest('[data-slide]');
+      if (selectedSlide && root.contains(selectedSlide)) showSlide(slides.indexOf(selectedSlide));
+    });
+
+    root.dataset.ready = 'true';
+    startAutoplay();
+  })();
+</script>
+
 {% schema %}
 {
-  "name": "Gypsey editorial hero",
+  "name": "Gypsey seasonal carousel",
   "settings": [
     {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "100% pure cotton, handmade in India"
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": true
     },
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Cotton made joyful."
+      "type": "range",
+      "id": "rotation_seconds",
+      "min": 4,
+      "max": 8,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Time per slide",
+      "default": 5.5
     },
     {
-      "type": "textarea",
-      "id": "text",
-      "label": "Text",
-      "default": "Gypsey Rose welcomes women into 100% pure cotton clothing that feels handmade, detailed, and naturally pleasurable to wear."
-    },
-    {
-      "type": "text",
-      "id": "primary_label",
-      "label": "Primary button label",
-      "default": "Shop Cotton Dresses"
-    },
-    {
-      "type": "url",
-      "id": "primary_link",
-      "label": "Primary button link"
-    },
-    {
-      "type": "text",
-      "id": "secondary_label",
-      "label": "Secondary button label",
-      "default": "Read Our Story"
-    },
-    {
-      "type": "url",
-      "id": "secondary_link",
-      "label": "Secondary button link"
-    },
-    {
-      "type": "text",
-      "id": "proof_one",
-      "label": "Proof point one",
-      "default": "100% Pure Cotton"
-    },
-    {
-      "type": "text",
-      "id": "proof_two",
-      "label": "Proof point two",
-      "default": "Handmade in India"
-    },
-    {
-      "type": "text",
-      "id": "proof_three",
-      "label": "Proof point three",
-      "default": "Custom made for you"
-    },
-    {
-      "type": "text",
-      "id": "note",
-      "label": "Image note",
-      "default": "Chosen by hand, not by catalogue."
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "%",
+      "label": "Image overlay",
+      "default": 20
     }
   ],
   "blocks": [
     {
       "type": "slide",
-      "name": "Slide image",
-      "limit": 3,
+      "name": "Campaign slide",
+      "limit": 4,
       "settings": [
         {
           "type": "image_picker",
@@ -429,15 +448,63 @@
         {
           "type": "text",
           "id": "alt",
-          "label": "Alt text",
+          "label": "Image alt text",
           "default": "Gypsey Rose cotton clothing"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "100% pure cotton"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (optional)"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Cotton made joyful"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Breathable cotton clothing made for colourful days."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Gypsey editorial hero"
+      "name": "Gypsey seasonal carousel",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
     }
   ]
 }
