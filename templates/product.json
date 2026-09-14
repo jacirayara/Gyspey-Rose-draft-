@@ -47,27 +47,28 @@
           "type": "description",
           "settings": {}
         },
-        "story_note": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"gypsey-product-note\"><p class=\"gypsey-product-note__eyebrow\">Why Gypsey Rose</p><p>100% cotton, vibrant prints, and pieces sourced through real relationships in India.</p><p><a href=\"/search?q=silver%20necklace\">Complete the look with hand-sourced Indian silver.</a></p></div>"
-          }
-        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Materials",
-            "icon": "leaf",
-            "content": "<p>100% pure cotton, selected for breathable everyday wear.</p>",
+            "icon": "leather",
+            "content": "<p>100% Pure Cotton</p>",
             "page": ""
+          }
+        },
+        "custom_liquid_Xij8xb": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "truck",
-            "content": "<p>Orders are prepared from South Africa. Items can be returned within 7 days with labels attached and in original condition.</p>",
+            "content": "",
             "page": ""
           }
         },
@@ -84,8 +85,8 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Care Instructions",
-            "icon": "washing",
-            "content": "<p>Cool machine wash, hang in the shade to dry, and avoid wringing. Hand wash jackets in cold water.</p>",
+            "icon": "heart",
+            "content": "<p>We recommend cool machine wash. Hang in the shade to dry. Please dont ring / squeeze. For jackets, please hand wash in cold water.</p>",
             "page": ""
           }
         },
@@ -105,8 +106,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "story_note",
         "collapsible-row-0",
+        "custom_liquid_Xij8xb",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
@@ -119,7 +120,7 @@
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 32,
+        "padding_top": 40,
         "padding_bottom": 12
       }
     },
@@ -136,7 +137,7 @@
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Gypsey Rose cotton clothes welcomes you to the place and space of <em><strong>Manifesting Mantras and Magical Moments</strong></em> through the pleasure and joy of wearing 100% cotton clothing.</p>",
+            "text": "<p>Gypsey Rose cotton clothes welcomes you to the place and space of <em><strong>Manifesting Mantras and Magical Moments</strong></em> through the pleasure and joy of wearing 100% cotton clothing</p>",
             "text_style": "body"
           }
         }
@@ -155,8 +156,8 @@
         "content_layout": "no-overlap",
         "color_scheme": "background-2",
         "mobile_content_alignment": "left",
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product-recommendations": {
@@ -172,7 +173,7 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 28,
+        "padding_top": 36,
         "padding_bottom": 28
       }
     }
