@@ -112,8 +112,9 @@
                 <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
                     {%- for link in section.settings.menu.links -%}
+                      {%- assign link_key = link.title | strip | downcase -%}
                       <li>
-                        {%- if link.links != blank -%}
+                        {%- if link.links != blank or link_key == 'jumpsuits' -%}
                           <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                             <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                               {{ link.title | escape }}
@@ -128,6 +129,8 @@
                                 </button>
                                 <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                   {%- for childlink in link.links -%}
+                                    {%- assign child_key = childlink.title | strip | downcase -%}
+                                    {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
                                     <li>
                                       {%- if childlink.links == blank -%}
                                         <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
@@ -158,7 +161,17 @@
                                         </details>
                                       {%- endif -%}
                                     </li>
+                                    {%- endunless -%}
                                   {%- endfor -%}
+                                  {%- if link_key == 'dresses' -%}
+                                    <li><a href="{{ routes.collections_url }}/lotus-dress-boho-chic-maxi-dress" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Lotus Dress</a></li>
+                                    <li><a href="{{ routes.collections_url }}/sammy-joy-2-0" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Sammy Joy 2.0</a></li>
+                                  {%- elsif link_key == 'jumpsuits' -%}
+                                    <li><a href="{{ routes.collections_url }}/jilly-jumpsuit" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Jilly Jumpsuit</a></li>
+                                  {%- elsif link_key == 'pants' -%}
+                                    <li><a href="{{ routes.collections_url }}/pondicherry-pants" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Pondicherry Pants</a></li>
+                                    <li><a href="{{ routes.root_url }}products/pondicherry-pants-black-white-check" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Black and White Gingham Pants</a></li>
+                                  {%- endif -%}
                                 </ul>
                               </div>
                             </div>
@@ -369,8 +382,9 @@
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
+              {%- assign link_key = link.title | strip | downcase -%}
               <li>
-                {%- if link.links != blank -%}
+                {%- if link.links != blank or link_key == 'jumpsuits' -%}
                   <header-menu>
                     <details id="Details-HeaderMenu-{{ forloop.index }}">
                       <summary class="header__menu-item list-menu__item link focus-inset">
@@ -379,6 +393,8 @@
                       </summary>
                       <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
                         {%- for childlink in link.links -%}
+                          {%- assign child_key = childlink.title | strip | downcase -%}
+                          {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
                           <li>
                             {%- if childlink.links == blank -%}
                               <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
@@ -402,7 +418,17 @@
                               </details>
                             {%- endif -%}
                           </li>
+                          {%- endunless -%}
                         {%- endfor -%}
+                        {%- if link_key == 'dresses' -%}
+                          <li><a href="{{ routes.collections_url }}/lotus-dress-boho-chic-maxi-dress" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Lotus Dress</a></li>
+                          <li><a href="{{ routes.collections_url }}/sammy-joy-2-0" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Sammy Joy 2.0</a></li>
+                        {%- elsif link_key == 'jumpsuits' -%}
+                          <li><a href="{{ routes.collections_url }}/jilly-jumpsuit" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Jilly Jumpsuit</a></li>
+                        {%- elsif link_key == 'pants' -%}
+                          <li><a href="{{ routes.collections_url }}/pondicherry-pants" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Pondicherry Pants</a></li>
+                          <li><a href="{{ routes.root_url }}products/pondicherry-pants-black-white-check" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Black and White Gingham Pants</a></li>
+                        {%- endif -%}
                       </ul>
                     </details>
                   </header-menu>
@@ -419,8 +445,9 @@
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
+              {%- assign link_key = link.title | strip | downcase -%}
               <li>
-                {%- if link.links != blank -%}
+                {%- if link.links != blank or link_key == 'jumpsuits' -%}
                   <header-menu>
                     <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
                       <summary class="header__menu-item list-menu__item link focus-inset">
@@ -430,6 +457,8 @@
                       <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup" tabindex="-1">
                         <ul class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
                           {%- for childlink in link.links -%}
+                            {%- assign child_key = childlink.title | strip | downcase -%}
+                            {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
                             <li>
                               <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                 {{ childlink.title | escape }}
@@ -446,7 +475,17 @@
                                 </ul>
                               {%- endif -%}
                             </li>
+                            {%- endunless -%}
                           {%- endfor -%}
+                          {%- if link_key == 'dresses' -%}
+                            <li><a href="{{ routes.collections_url }}/lotus-dress-boho-chic-maxi-dress" class="mega-menu__link mega-menu__link--level-2 link">Lotus Dress</a></li>
+                            <li><a href="{{ routes.collections_url }}/sammy-joy-2-0" class="mega-menu__link mega-menu__link--level-2 link">Sammy Joy 2.0</a></li>
+                          {%- elsif link_key == 'jumpsuits' -%}
+                            <li><a href="{{ routes.collections_url }}/jilly-jumpsuit" class="mega-menu__link mega-menu__link--level-2 link">Jilly Jumpsuit</a></li>
+                          {%- elsif link_key == 'pants' -%}
+                            <li><a href="{{ routes.collections_url }}/pondicherry-pants" class="mega-menu__link mega-menu__link--level-2 link">Pondicherry Pants</a></li>
+                            <li><a href="{{ routes.root_url }}products/pondicherry-pants-black-white-check" class="mega-menu__link mega-menu__link--level-2 link">Black and White Gingham Pants</a></li>
+                          {%- endif -%}
                         </ul>
                       </div>
                     </details>
