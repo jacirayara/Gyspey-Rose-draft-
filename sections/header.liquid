@@ -131,9 +131,17 @@
                                   {%- for childlink in link.links -%}
                                     {%- assign child_key = childlink.title | strip | downcase -%}
                                     {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
+                                    {%- assign child_url = childlink.url -%}
+                                    {%- if child_key == 'nighties' -%}
+                                      {%- assign child_url = routes.collections_url | append: '/sleepwear-ladies-nighties' -%}
+                                    {%- elsif child_key == 'kantha quilts' -%}
+                                      {%- assign child_url = routes.root_url | append: 'products/kantha-quilts' -%}
+                                    {%- elsif child_key == 'table cloths' -%}
+                                      {%- assign child_url = routes.root_url | append: 'products/lobster-tablecloth-with-frilled-edges' -%}
+                                    {%- endif -%}
                                     <li>
                                       {%- if childlink.links == blank -%}
-                                        <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                        <a href="{{ child_url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                           {{ childlink.title | escape }}
                                         </a>
                                       {%- else -%}
@@ -395,9 +403,17 @@
                         {%- for childlink in link.links -%}
                           {%- assign child_key = childlink.title | strip | downcase -%}
                           {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
+                          {%- assign child_url = childlink.url -%}
+                          {%- if child_key == 'nighties' -%}
+                            {%- assign child_url = routes.collections_url | append: '/sleepwear-ladies-nighties' -%}
+                          {%- elsif child_key == 'kantha quilts' -%}
+                            {%- assign child_url = routes.root_url | append: 'products/kantha-quilts' -%}
+                          {%- elsif child_key == 'table cloths' -%}
+                            {%- assign child_url = routes.root_url | append: 'products/lobster-tablecloth-with-frilled-edges' -%}
+                          {%- endif -%}
                           <li>
                             {%- if childlink.links == blank -%}
-                              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                              <a href="{{ child_url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                 {{ childlink.title | escape }}
                               </a>
                             {%- else -%}
@@ -459,8 +475,16 @@
                           {%- for childlink in link.links -%}
                             {%- assign child_key = childlink.title | strip | downcase -%}
                             {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
+                            {%- assign child_url = childlink.url -%}
+                            {%- if child_key == 'nighties' -%}
+                              {%- assign child_url = routes.collections_url | append: '/sleepwear-ladies-nighties' -%}
+                            {%- elsif child_key == 'kantha quilts' -%}
+                              {%- assign child_url = routes.root_url | append: 'products/kantha-quilts' -%}
+                            {%- elsif child_key == 'table cloths' -%}
+                              {%- assign child_url = routes.root_url | append: 'products/lobster-tablecloth-with-frilled-edges' -%}
+                            {%- endif -%}
                             <li>
-                              <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                              <a href="{{ child_url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                 {{ childlink.title | escape }}
                               </a>
                               {%- if childlink.links != blank -%}
