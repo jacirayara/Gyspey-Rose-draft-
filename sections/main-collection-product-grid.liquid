@@ -12,6 +12,16 @@
 {%- endif -%}
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
+<script>
+  (() => {
+    const url = new URL(window.location.href);
+    if (!url.searchParams.has('sort_by')) {
+      url.searchParams.set('sort_by', 'created-descending');
+      window.location.replace(url.toString());
+    }
+  })();
+</script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -37,7 +47,7 @@
               <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
             </h2>
             <div class="select">
-              {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+              {%- assign sort_by = collection.sort_by | default: 'created-descending' -%}
               <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
                 {%- for option in collection.sort_options -%}
                   <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
