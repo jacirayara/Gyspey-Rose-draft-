@@ -130,10 +130,12 @@
                                 <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                   {%- for childlink in link.links -%}
                                     {%- assign child_key = childlink.title | strip | downcase -%}
-                                    {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
+                                    {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' or child_key == 'kimonos' -%}
                                     {%- assign child_url = childlink.url -%}
                                     {%- if child_key == 'nighties' -%}
                                       {%- assign child_url = routes.collections_url | append: '/sleepwear-ladies-nighties' -%}
+                                    {%- elsif child_key == 'chelsea velvet jacket' -%}
+                                      {%- assign child_url = routes.collections_url | append: '/chelsea-velvet-jacket' -%}
                                     {%- elsif child_key == 'kantha quilts' -%}
                                       {%- assign child_url = routes.root_url | append: 'products/kantha-quilts' -%}
                                     {%- elsif child_key == 'table cloths' -%}
@@ -179,6 +181,12 @@
                                   {%- elsif link_key == 'pants' -%}
                                     <li><a href="{{ routes.collections_url }}/pondicherry-pants" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Pondicherry Pants</a></li>
                                     <li><a href="{{ routes.root_url }}products/pondicherry-pants-black-white-check" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Black and White Gingham Pants</a></li>
+                                  {%- elsif link_key == 'jackets' -%}
+                                    <li><a href="{{ routes.root_url }}search?q=Paddington%20Peru&type=product" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Paddington Peru Jackets</a></li>
+                                  {%- elsif link_key == 'sleepwear' -%}
+                                    <li><a href="{{ routes.collections_url }}/long-pyjamas" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Long Cotton Pyjamas</a></li>
+                                    <li><a href="{{ routes.collections_url }}/short-pyjamas" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Short Cotton Pyjamas</a></li>
+                                    <li><a href="{{ routes.collections_url }}/kimonos" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">Kimonos</a></li>
                                   {%- endif -%}
                                 </ul>
                               </div>
@@ -402,10 +410,12 @@
                       <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
                         {%- for childlink in link.links -%}
                           {%- assign child_key = childlink.title | strip | downcase -%}
-                          {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
+                          {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' or child_key == 'kimonos' -%}
                           {%- assign child_url = childlink.url -%}
                           {%- if child_key == 'nighties' -%}
                             {%- assign child_url = routes.collections_url | append: '/sleepwear-ladies-nighties' -%}
+                          {%- elsif child_key == 'chelsea velvet jacket' -%}
+                            {%- assign child_url = routes.collections_url | append: '/chelsea-velvet-jacket' -%}
                           {%- elsif child_key == 'kantha quilts' -%}
                             {%- assign child_url = routes.root_url | append: 'products/kantha-quilts' -%}
                           {%- elsif child_key == 'table cloths' -%}
@@ -444,6 +454,12 @@
                         {%- elsif link_key == 'pants' -%}
                           <li><a href="{{ routes.collections_url }}/pondicherry-pants" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Pondicherry Pants</a></li>
                           <li><a href="{{ routes.root_url }}products/pondicherry-pants-black-white-check" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Black and White Gingham Pants</a></li>
+                        {%- elsif link_key == 'jackets' -%}
+                          <li><a href="{{ routes.root_url }}search?q=Paddington%20Peru&type=product" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Paddington Peru Jackets</a></li>
+                        {%- elsif link_key == 'sleepwear' -%}
+                          <li><a href="{{ routes.collections_url }}/long-pyjamas" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Long Cotton Pyjamas</a></li>
+                          <li><a href="{{ routes.collections_url }}/short-pyjamas" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Short Cotton Pyjamas</a></li>
+                          <li><a href="{{ routes.collections_url }}/kimonos" class="header__menu-item list-menu__item link link--text focus-inset caption-large">Kimonos</a></li>
                         {%- endif -%}
                       </ul>
                     </details>
@@ -474,10 +490,12 @@
                         <ul class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
                           {%- for childlink in link.links -%}
                             {%- assign child_key = childlink.title | strip | downcase -%}
-                            {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' -%}
+                            {%- unless child_key == 'gypsey blouse' or child_key == 'candy lee dress' or child_key == 'sandy lee dress' or child_key == 'palazzo pants' or child_key == 'jilly jumpsuit' or child_key == 'kimonos' -%}
                             {%- assign child_url = childlink.url -%}
                             {%- if child_key == 'nighties' -%}
                               {%- assign child_url = routes.collections_url | append: '/sleepwear-ladies-nighties' -%}
+                            {%- elsif child_key == 'chelsea velvet jacket' -%}
+                              {%- assign child_url = routes.collections_url | append: '/chelsea-velvet-jacket' -%}
                             {%- elsif child_key == 'kantha quilts' -%}
                               {%- assign child_url = routes.root_url | append: 'products/kantha-quilts' -%}
                             {%- elsif child_key == 'table cloths' -%}
@@ -509,6 +527,12 @@
                           {%- elsif link_key == 'pants' -%}
                             <li><a href="{{ routes.collections_url }}/pondicherry-pants" class="mega-menu__link mega-menu__link--level-2 link">Pondicherry Pants</a></li>
                             <li><a href="{{ routes.root_url }}products/pondicherry-pants-black-white-check" class="mega-menu__link mega-menu__link--level-2 link">Black and White Gingham Pants</a></li>
+                          {%- elsif link_key == 'jackets' -%}
+                            <li><a href="{{ routes.root_url }}search?q=Paddington%20Peru&type=product" class="mega-menu__link mega-menu__link--level-2 link">Paddington Peru Jackets</a></li>
+                          {%- elsif link_key == 'sleepwear' -%}
+                            <li><a href="{{ routes.collections_url }}/long-pyjamas" class="mega-menu__link mega-menu__link--level-2 link">Long Cotton Pyjamas</a></li>
+                            <li><a href="{{ routes.collections_url }}/short-pyjamas" class="mega-menu__link mega-menu__link--level-2 link">Short Cotton Pyjamas</a></li>
+                            <li><a href="{{ routes.collections_url }}/kimonos" class="mega-menu__link mega-menu__link--level-2 link">Kimonos</a></li>
                           {%- endif -%}
                         </ul>
                       </div>
