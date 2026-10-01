@@ -24,7 +24,7 @@
         "image_alt": "Gypsey Rose mother and daughter in vibrant cotton clothing",
         "eyebrow": "From India, with heart",
         "heading": "Not just clothing. A colourful lifestyle with values stitched in.",
-        "lead": "Gypsey Rose is built around sourcing in person, choosing breathable 100% cotton, and bringing home designs that feel alive. The brand story is the reason customers should remember, trust, and return.",
+        "lead": "Gypsey Rose begins in South Africa, where each garment is designed with South African women in mind. The designs are then brought to life in India using breathable 100% cotton and traditional craftsmanship.",
         "button_label": "Shop the Collection",
         "button_link": "/collections"
       }
@@ -57,7 +57,7 @@
           "type": "chapter",
           "settings": {
             "heading": "A lifestyle, not a hanger",
-            "text": "The revamp should make Gypsey Rose feel ready for Instagram and TikTok traffic: a brand customers can understand quickly, remember visually, and feel proud to support."
+            "text": "Gypsey Rose is more than clothing—it is a celebration of colour, comfort and confidence, created for South African women who dress with joy."
           }
         }
       },
@@ -70,15 +70,15 @@
       "settings": {
         "eyebrow": "Why it matters",
         "heading": "The story gives the clothes their charge.",
-        "lead": "Modern customers buy the world around the product: who made it, where it came from, how it feels, and why it deserves a place in their wardrobe."
+        "lead": "Every Gypsey Rose garment carries a story of colour, travel, natural cotton and the hands that bring each design to life."
       }
     },
     "trust": {
       "type": "gypsey-trust-faq",
       "settings": {
         "eyebrow": "Shop with confidence",
-        "heading": "Sourcing story, cotton care, shipping, returns, and sizing in one place.",
-        "text": "This story page doubles as a trust page for new visitors arriving from social content, so they can understand the brand before they shop."
+        "heading": "Everything you need to shop with confidence.",
+        "text": "Discover the Gypsey Rose story and find helpful information about our cotton garments, sizing, care, delivery and returns."
       }
     }
   },
