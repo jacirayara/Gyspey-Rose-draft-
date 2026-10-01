@@ -28,7 +28,7 @@
         "slide_layers": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/JUNGLI_TIERED_DRESS_COTTON.jpg",
+            "image": "shopify://shop_images/BrightOrange_4.jpg",
             "alt": "Flowing Gypsey Rose cotton layer in a colourful print",
             "eyebrow": "Resort-ready cotton",
             "badge": "",
@@ -41,7 +41,7 @@
         "slide_separates": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/TESS_BRITZ_GYPSEY_ROSE.jpg",
+            "image": "shopify://shop_images/BrightPink_4.jpg",
             "alt": "Relaxed Gypsey Rose cotton blouse styled for summer",
             "eyebrow": "Easy mix-and-match pieces",
             "badge": "",
@@ -53,6 +53,7 @@
         },
         "slide_sale": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Pink_2.jpg",
             "alt": "Colourful Gypsey Rose cotton prints included in the end of season sale",
