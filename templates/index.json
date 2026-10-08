@@ -28,14 +28,14 @@
         "slide_layers": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/exec-b437a1cb-eb43-4e86-812b-526bbb06bb26.png",
-            "alt": "Flowing Gypsey Rose cotton layer in a colourful print",
-            "eyebrow": "Resort-ready cotton",
+            "image": "shopify://shop_images/Cobalt_blue_with_leopards_and_hot_pink_palms_with_Blouse.jpg",
+            "alt": "Woman wearing the cobalt-blue Rosie Wrap Skirt with matching Beverley Blouse on the beach",
+            "eyebrow": "Fresh styles for the new season",
             "badge": "",
-            "heading": "Colourful Cotton Layers",
-            "text": "Lightweight cotton kaftans and kimonos perfect for sun-filled days and relaxed evenings.",
-            "button_label": "Explore Kaftans and Layers",
-            "button_link": "/collections/kaftan-kimonos"
+            "heading": "Rosie Wrap Skirt with matching Beverley Blouse",
+            "text": "Discover our new 100% cotton Rosie Wrap Skirt, styled with the matching Beverley Blouse.",
+            "button_label": "SHOP SKIRTS",
+            "button_link": "/collections/rosie-wrap-skirt"
           }
         },
         "slide_separates": {
