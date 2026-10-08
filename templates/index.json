@@ -15,12 +15,12 @@
         "slide_summer": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/EmeraldGreen_4.jpg",
+            "image": "shopify://shop_images/image006.png",
             "alt": "Model wearing a vibrant Gypsey Rose cotton dress",
             "eyebrow": "Spring and summer 2026",
             "badge": "",
             "heading": "Colourful Cotton Dresses",
-            "text": "Colourful 100% cotton dresses and jumpsuits, designed in South Africa for South African women and made in India with traditional craftsmanship.",
+            "text": "Designed in South Africa, with South African women in mind. Enjoy exploring our extensive range.\n\nEvery piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
             "button_label": "Shop Summer Dresses",
             "button_link": "/collections/dresses"
           }
@@ -28,7 +28,7 @@
         "slide_layers": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BrightOrange_4.jpg",
+            "image": "shopify://shop_images/image007.png",
             "alt": "Flowing Gypsey Rose cotton layer in a colourful print",
             "eyebrow": "Resort-ready cotton",
             "badge": "",
