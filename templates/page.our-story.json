@@ -35,29 +35,29 @@
         "chapter_hdD9gD": {
           "type": "chapter",
           "settings": {
-            "heading": "The Calitz Collective",
-            "text": "Find Sam in Calitzdorp. Stop for coffee at KLEI(N), or stay for a weekend at Prashanthi – The Pink House. For enquiries, email sammyjoy@gypseyrose.co.za."
-          }
-        },
-        "mother_daughter": {
-          "type": "chapter",
-          "settings": {
             "heading": "The Journey Begins",
             "text": "More than ten years ago, Gypsey Rose started as a one-woman adventure to India. Founder Tess was fascinated by the ancient art of block printing, the purity of 100% cotton, intricate embroidery and the timeless skills of Indian artisans."
           }
         },
-        "india": {
+        "mother_daughter": {
           "type": "chapter",
           "settings": {
             "heading": "A Rare and Beautiful Partnership",
             "text": "Some years into the journey, Tess was joined by her daughter, Sam. Sharing a deep passion for the beauty India has to offer is a true gift, and together they have nurtured a rare and beautiful partnership. They travel to India twice a year to personally source and design fabrics, translating their shared inspiration into thoughtfully created garments."
           }
         },
-        "cotton": {
+        "india": {
           "type": "chapter",
           "settings": {
             "heading": "Crafted with Love",
             "text": "Over the years, Gypsey Rose has built close relationships with its manufacturers. Even when things are occasionally lost in translation, the journey continues with love, patience and passion. The brand embraces “Manifesting, Mantras, and Magical Moments” at every step."
+          }
+        },
+        "cotton": {
+          "type": "chapter",
+          "settings": {
+            "heading": "Travel with Tess",
+            "text": "Alongside the clothing business is Tess’s deep love for exploring India. For those who share her passion for travel, Tess facilitates and hosts small-group journeys to many of her favourite and diverse destinations across the country."
           }
         },
         "chapter_wXYdFC": {
@@ -70,8 +70,8 @@
         "lifestyle": {
           "type": "chapter",
           "settings": {
-            "heading": "Travel with Tess",
-            "text": "Alongside the clothing business is Tess’s deep love for exploring India. For those who share her passion for travel, Tess facilitates and hosts small-group journeys to many of her favourite and diverse destinations across the country."
+            "heading": "The Calitz Collective",
+            "text": "Find Sam in Calitzdorp. Stop for coffee at KLEI(N), or stay for a weekend at Prashanthi – The Pink House. For enquiries, email sammyjoy@gypseyrose.co.za."
           }
         }
       },
