@@ -32,11 +32,11 @@
     "chapters": {
       "type": "gypsey-story-chapters",
       "blocks": {
-        "chapter_wXYdFC": {
+        "chapter_hdD9gD": {
           "type": "chapter",
           "settings": {
-            "heading": "Where to Find Us",
-            "text": "Explore the garments at the Gypsey Rose Showroom in Roosevelt Park, Johannesburg. For collection or curated travel enquiries, email tess@gypseyrose.co.za. Find Sam in Calitzdorp at KLEI(N) for coffee, or stay at Prashanthi – The Pink House. Contact Sammy at sammyjoy@gypseyrose.co.za."
+            "heading": "The Calitz Collective",
+            "text": "Find Sam in Calitzdorp. Stop for coffee at KLEI(N), or stay for a weekend at Prashanthi – The Pink House. For enquiries, email sammyjoy@gypseyrose.co.za."
           }
         },
         "mother_daughter": {
@@ -60,6 +60,13 @@
             "text": "Over the years, Gypsey Rose has built close relationships with its manufacturers. Even when things are occasionally lost in translation, the journey continues with love, patience and passion. The brand embraces “Manifesting, Mantras, and Magical Moments” at every step."
           }
         },
+        "chapter_wXYdFC": {
+          "type": "chapter",
+          "settings": {
+            "heading": "The Johannesburg-Based Studio",
+            "text": "Explore the garments in person at the Gypsey Rose Showroom in Roosevelt Park, Johannesburg. For collection or curated travel enquiries, email tess@gypseyrose.co.za."
+          }
+        },
         "lifestyle": {
           "type": "chapter",
           "settings": {
@@ -69,10 +76,11 @@
         }
       },
       "block_order": [
-        "chapter_wXYdFC",
+        "chapter_hdD9gD",
         "mother_daughter",
         "india",
         "cotton",
+        "chapter_wXYdFC",
         "lifestyle"
       ],
       "settings": {
