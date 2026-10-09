@@ -23,7 +23,7 @@
         "feature_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
         "image_alt": "Gypsey Rose mother and daughter in vibrant cotton clothing",
         "eyebrow": "From India, with heart",
-        "heading": "Not just clothing. A colourful lifestyle with values stitched in.",
+        "heading": "A mother-daughter story of love, passion and style, told in colour.",
         "lead": "Gypsey Rose begins in South Africa, where each garment is designed with South African women in mind. The designs are then brought to life in India using breathable 100% cotton and traditional craftsmanship.",
         "button_label": "Shop the Collection",
         "button_link": "/collections"
@@ -35,35 +35,35 @@
         "chapter_wXYdFC": {
           "type": "chapter",
           "settings": {
-            "heading": "Chapter heading",
+            "heading": "Where to Find Us",
             "text": "Explore the garments at the Gypsey Rose Showroom in Roosevelt Park, Johannesburg. For collection or curated travel enquiries, email tess@gypseyrose.co.za. Find Sam in Calitzdorp at KLEI(N) for coffee, or stay at Prashanthi – The Pink House. Contact Sammy at sammyjoy@gypseyrose.co.za."
           }
         },
         "mother_daughter": {
           "type": "chapter",
           "settings": {
-            "heading": "A mother-daughter point of view",
+            "heading": "The Journey Begins",
             "text": "More than ten years ago, Gypsey Rose started as a one-woman adventure to India. Founder Tess was fascinated by the ancient art of block printing, the purity of 100% cotton, intricate embroidery and the timeless skills of Indian artisans."
           }
         },
         "india": {
           "type": "chapter",
           "settings": {
-            "heading": "Face-to-face sourcing in India",
+            "heading": "A Rare and Beautiful Partnership",
             "text": "Some years into the journey, Tess was joined by her daughter, Sam. Sharing a deep passion for the beauty India has to offer is a true gift, and together they have nurtured a rare and beautiful partnership. They travel to India twice a year to personally source and design fabrics, translating their shared inspiration into thoughtfully created garments."
           }
         },
         "cotton": {
           "type": "chapter",
           "settings": {
-            "heading": "100% cotton for real life",
+            "heading": "Crafted with Love",
             "text": "Over the years, Gypsey Rose has built close relationships with its manufacturers. Even when things are occasionally lost in translation, the journey continues with love, patience and passion. The brand embraces “Manifesting, Mantras, and Magical Moments” at every step."
           }
         },
         "lifestyle": {
           "type": "chapter",
           "settings": {
-            "heading": "A lifestyle, not a hanger",
+            "heading": "Travel with Tess",
             "text": "Alongside the clothing business is Tess’s deep love for exploring India. For those who share her passion for travel, Tess facilitates and hosts small-group journeys to many of her favourite and diverse destinations across the country."
           }
         }
