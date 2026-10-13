@@ -72,6 +72,10 @@
         "slide_separates",
         "slide_sale"
       ],
+      "custom_css": [
+        "h2 {font-size: 32px;}",
+        "img {object-position: center top;}"
+      ],
       "settings": {
         "autoplay": true,
         "rotation_seconds": 5.5,
