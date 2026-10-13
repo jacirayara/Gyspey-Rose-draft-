@@ -74,7 +74,7 @@
       ],
       "custom_css": [
         "h2 {font-size: 32px;}",
-        "img {object-position: center top;}"
+        "img {object-position: 75% top;}"
       ],
       "settings": {
         "autoplay": true,
