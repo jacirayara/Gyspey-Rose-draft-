@@ -19,8 +19,8 @@
             "alt": "Model wearing a vibrant Gypsey Rose cotton dress",
             "eyebrow": "Spring and summer 2026",
             "badge": "",
-            "heading": "Colourful cotton for everyday joy",
-            "text": "Designed in South Africa. Handmade in India. Discover breathable 100% cotton dresses in prints you’ll love.",
+            "heading": "Colourful sustainable cotton clothing for women with a passion for colour and style!",
+            "text": "Designed in South Africa, with South African women in mind. Enjoy exploring our extensive range.\n\nEvery piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
             "button_label": "Shop Summer Dresses",
             "button_link": "/collections/dresses"
           }
@@ -32,9 +32,9 @@
             "alt": "Woman wearing the cobalt-blue Rosie Wrap Skirt with matching Beverley Blouse on the beach",
             "eyebrow": "Fresh styles for the new season",
             "badge": "",
-            "heading": "Meet the Rosie Wrap Skirt",
-            "text": "Pair our 100% cotton wrap skirt with the matching Beverley blouse.",
-            "button_label": "Shop Rosie Skirts",
+            "heading": "Rosie Wrap Skirt with matching Beverley Blouse",
+            "text": "Discover our new 100% cotton Rosie Wrap Skirt, styled with the matching Beverley Blouse.",
+            "button_label": "SHOP SKIRTS",
             "button_link": "/collections/rosie-wrap-skirt"
           }
         },
@@ -45,10 +45,10 @@
             "alt": "Beverley Blouse in cobalt blue with leopards and hot pink palms, displayed on a hanger",
             "eyebrow": "Easy mix or match pieces",
             "badge": "",
-            "heading": "The Beverley Blouse",
-            "text": "Easy, breathable cotton. Wear it with your favourite skirts or pants.",
-            "button_label": "Shop Beverley Blouses",
-            "button_link": "/collections/beverley-blouse-2-0"
+            "heading": "Timeless Cotton separates to elevate your outfit",
+            "text": "Pair your Beverley blouse or Kimmie crop top with any of our skirts or pants. Versatile, easy-wearing and breathable cotton.",
+            "button_label": "Shop Blouses and Pants",
+            "button_link": "https://gypsey-rose-cotton-clothing.myshopify.com/collections/all"
           }
         },
         "slide_sale": {
@@ -72,7 +72,11 @@
         "slide_separates",
         "slide_sale"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".gypsey-hero__slide:nth-child(3) img{object-fit:contain;object-position:right}",
+        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{background:#173f2d;width:60%}",
+        "@media(max-width:749px){.gypsey-hero__viewport{min-height:1000px;grid-template-columns:minmax(0,1fr)}article:nth-child(3) img{height:300px;object-position:center!important}.gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{width:100%;margin-top:300px;min-height:0}article:nth-child(3) .gypsey-hero__content{padding:24px 24px 64px}}"
+      ],
       "settings": {
         "autoplay": true,
         "rotation_seconds": 5.5,
