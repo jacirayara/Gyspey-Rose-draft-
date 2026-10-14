@@ -4,267 +4,25 @@
 %}
 
 {% style %}
-  #GypseyHero-{{ section.id }} {
-    --hero-accent: #ec369f;
-    --hero-green: #164f35;
-    --hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
-    background: #173f2d;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
-    aspect-ratio: 16 / 9;
-    display: grid;
-    max-height: 78rem;
-    min-height: 54rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__slide {
-    display: grid;
-    grid-area: 1 / 1;
-    margin: 0;
-    min-height: 0;
-    min-width: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    position: relative;
-    transition: opacity 700ms ease, visibility 700ms ease;
-    visibility: hidden;
-    width: 100%;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__slide.is-active {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    z-index: 1;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__image,
-  #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
-    inset: 0;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__veil {
-    background:
-      linear-gradient(90deg, rgba(6, 28, 18, calc(var(--hero-overlay) + 0.26)) 0%, rgba(6, 28, 18, var(--hero-overlay)) 48%, rgba(6, 28, 18, 0.08) 100%),
-      linear-gradient(0deg, rgba(6, 28, 18, 0.3), transparent 45%);
-    min-height: 100%;
-    min-width: 0;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__content {
-    align-self: center;
-    box-sizing: border-box;
-    margin-inline: auto;
-    min-width: 0;
-    padding: clamp(4rem, 7vw, 10rem) clamp(5.8rem, 8vw, 12rem);
-    position: relative;
-    width: min(100%, 150rem);
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__copy {
-    max-width: 70rem;
-    min-width: 0;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__eyebrow {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.24em;
-    margin: 0 0 1.7rem;
-    text-transform: uppercase;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__heading {
-    color: inherit;
-    font-size: clamp(4.8rem, 6vw, 8.8rem);
-    letter-spacing: -0.045em;
-    line-height: 0.98;
-    margin: 0;
-    max-width: 10em;
-    text-wrap: balance;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__text {
-    font-size: clamp(1.7rem, 1.7vw, 2.2rem);
-    line-height: 1.55;
-    margin: 2.2rem 0 0;
-    max-width: 55rem;
-    text-shadow: 0 0.1rem 1.5rem rgba(0, 0, 0, 0.25);
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__badge {
-    background: #fff0a6;
-    border-radius: 999px;
-    color: #71361b;
-    display: inline-flex;
-    font-size: 1.2rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    margin-bottom: 1.8rem;
-    padding: 0.9rem 1.5rem;
-    text-transform: uppercase;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__button {
-    background: var(--hero-accent);
-    border: 0.1rem solid var(--hero-accent);
-    border-radius: 0.5rem;
-    color: #fff;
-    display: inline-flex;
-    font-size: 1.5rem;
-    font-weight: 900;
-    justify-content: center;
-    margin-top: 3rem;
-    min-height: 5.2rem;
-    padding: 1.4rem 2.8rem;
-    text-decoration: none;
-    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__button:hover {
-    background: #c92487;
-    border-color: #c92487;
-    transform: translateY(-0.2rem);
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__arrow {
-    align-items: center;
-    background: rgba(255, 255, 255, 0.92);
-    border: 0;
-    border-radius: 50%;
-    color: var(--hero-green);
-    cursor: pointer;
-    display: flex;
-    height: 4.6rem;
-    justify-content: center;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: background 180ms ease, transform 180ms ease;
-    width: 4.6rem;
-    z-index: 3;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__arrow:hover {
-    background: #fff;
-    transform: translateY(-50%) scale(1.06);
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__arrow--previous {
-    left: clamp(1.2rem, 2vw, 3rem);
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__arrow--next {
-    right: clamp(1.2rem, 2vw, 3rem);
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__arrow svg {
-    height: 1.8rem;
-    width: 1.8rem;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__dots {
-    bottom: 2.2rem;
-    display: flex;
-    gap: 0.9rem;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    z-index: 3;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__dot {
-    background: rgba(255, 255, 255, 0.55);
-    border: 0;
-    border-radius: 999px;
-    cursor: pointer;
-    height: 0.9rem;
-    padding: 0;
-    transition: background 220ms ease, width 220ms ease;
-    width: 0.9rem;
-  }
-
-  #GypseyHero-{{ section.id }} .gypsey-hero__dot.is-active {
-    background: #fff;
-    width: 3rem;
-  }
-
-  @media screen and (max-width: 749px) {
-    #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
-      aspect-ratio: 4 / 5;
-      max-height: none;
-      min-height: 58rem;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__veil {
-      background:
-        linear-gradient(0deg, rgba(6, 28, 18, 0.72) 0%, rgba(6, 28, 18, 0.3) 58%, rgba(6, 28, 18, 0.12) 100%),
-        rgba(6, 28, 18, var(--hero-overlay));
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__content {
-      align-self: end;
-      max-width: 100%;
-      padding: 6rem 5.4rem 8rem;
-      text-align: center;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__copy {
-      margin-inline: auto;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__heading {
-      font-size: clamp(4rem, 12vw, 6.2rem);
-      margin-inline: auto;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__text {
-      font-size: 1.65rem;
-      margin-inline: auto;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__button {
-      max-width: 100%;
-      white-space: normal;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__arrow {
-      height: 4rem;
-      width: 4rem;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__arrow--previous {
-      left: 0.8rem;
-    }
-
-    #GypseyHero-{{ section.id }} .gypsey-hero__arrow--next {
-      right: 0.8rem;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #GypseyHero-{{ section.id }} .gypsey-hero__slide,
-    #GypseyHero-{{ section.id }} .gypsey-hero__button,
-    #GypseyHero-{{ section.id }} .gypsey-hero__arrow,
-    #GypseyHero-{{ section.id }} .gypsey-hero__dot {
-      transition: none;
-    }
-  }
+#GypseyHero-{{ section.id }}{--hero-accent:#ec369f;--hero-green:#164f35;background:#173f2d;color:#fff;position:relative;overflow:hidden}
+#GypseyHero-{{ section.id }} .gypsey-hero__viewport{display:grid;grid-template-columns:minmax(0,1fr);position:relative;min-width:0}
+#GypseyHero-{{ section.id }} .gypsey-hero__slide{display:none;grid-area:1/1;grid-template-columns:1fr 1fr;min-width:0;margin:0}
+#GypseyHero-{{ section.id }} .gypsey-hero__slide.is-active{display:grid}
+#GypseyHero-{{ section.id }} .gypsey-hero__image{grid-column:2;grid-row:1;width:100%;height:520px;object-fit:contain;object-position:center;display:block}
+#GypseyHero-{{ section.id }} .gypsey-hero__veil{grid-column:1;grid-row:1;display:flex;align-items:center;min-width:0}
+#GypseyHero-{{ section.id }} .gypsey-hero__content{width:100%;box-sizing:border-box;padding:44px 64px}
+#GypseyHero-{{ section.id }} .gypsey-hero__eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 16px}
+#GypseyHero-{{ section.id }} .gypsey-hero__heading{color:inherit;font-size:clamp(34px,3.8vw,54px);line-height:1.08;letter-spacing:-.03em;margin:0;text-wrap:balance}
+#GypseyHero-{{ section.id }} .gypsey-hero__text{font-size:17px;line-height:1.6;margin:20px 0 0;max-width:38em}
+#GypseyHero-{{ section.id }} .gypsey-hero__button{display:inline-flex;align-items:center;justify-content:center;background:#ec369f;color:#fff;text-decoration:none;border-radius:4px;min-height:48px;padding:12px 24px;font-size:15px;font-weight:700;margin-top:24px}
+#GypseyHero-{{ section.id }} .gypsey-hero__arrow{position:absolute;top:45%;z-index:2;width:40px;height:40px;border:0;border-radius:50%;background:#fff;color:#164f35;display:grid;place-items:center;cursor:pointer}
+#GypseyHero-{{ section.id }} .gypsey-hero__arrow--previous{left:12px}#GypseyHero-{{ section.id }} .gypsey-hero__arrow--next{right:12px}
+#GypseyHero-{{ section.id }} .gypsey-hero__arrow svg{width:18px;height:18px}
+#GypseyHero-{{ section.id }} .gypsey-hero__dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:2}
+#GypseyHero-{{ section.id }} .gypsey-hero__dot{width:9px;height:9px;border:0;padding:0;border-radius:20px;background:#ffffff88;cursor:pointer}
+#GypseyHero-{{ section.id }} .gypsey-hero__dot.is-active{width:28px;background:#fff}
+@media(max-width:749px){#GypseyHero-{{ section.id }} .gypsey-hero__slide.is-active{display:flex;flex-direction:column}#GypseyHero-{{ section.id }} .gypsey-hero__image{height:260px;object-fit:contain}#GypseyHero-{{ section.id }} .gypsey-hero__content{padding:24px 28px 48px;text-align:center}#GypseyHero-{{ section.id }} .gypsey-hero__heading{font-size:32px}#GypseyHero-{{ section.id }} .gypsey-hero__text{font-size:16px;margin-top:14px}#GypseyHero-{{ section.id }} .gypsey-hero__button{margin-top:18px}#GypseyHero-{{ section.id }} .gypsey-hero__arrow{top:120px}}
+.gr-new-arrivals{padding:42px 0}.gr-new-arrivals__top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}.gr-new-arrivals h2{font-size:32px;margin:0;color:#164f35}.gr-new-arrivals__grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}.gr-new-arrivals__card{color:#173f2d;text-decoration:none;display:block}.gr-new-arrivals__card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}.gr-new-arrivals__card h3{font-family:inherit;font-size:15px;line-height:1.4;margin:12px 0 6px}.gr-new-arrivals__card p{margin:0;font-size:15px}.gr-new-arrivals__top a{color:#164f35;font-size:15px}@media(max-width:989px){.gr-new-arrivals__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:749px){.gr-new-arrivals{padding:28px 0}.gr-new-arrivals h2{font-size:27px}.gr-new-arrivals__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}}
 {% endstyle %}
 
 <section
@@ -357,6 +115,8 @@
     {% endif %}
   </div>
 </section>
+<section class="gr-new-arrivals page-width" aria-labelledby="gr-arrivals-title"><div class="gr-new-arrivals__top"><h2 id="gr-arrivals-title">New Arrivals</h2><a href="/collections/all?sort_by=created-descending">View all new arrivals</a></div><div class="gr-new-arrivals__grid">{% assign arrival_handles = 'kimmie-cropped-emerald-green-stand-tall,kimmie-cropped-off-white-fly-high,kimmie-cropped-bright-orange-be-kind,kimmie-cropped-bright-pink-monkey-mind,bird-dress-white-background-with-bold-and-bright-pink-and-red-proteas-and-turquoise-leaves,bird-dress-bright-coral-base-with-bold-white-cream-tropical-print-featuing-stylized-pineapple-peacocks-and-palm-fronds' | split: ',' %}{% for handle in arrival_handles %}{% assign arrival = all_products[handle] %}{% if arrival != blank and arrival.available %}<a class="gr-new-arrivals__card" href="{{ arrival.url }}">{{ arrival.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '200,400,600', sizes: '(max-width:749px) 45vw, 16vw', alt: arrival.title }}<h3>{{ arrival.title | escape }}</h3><p>{% if arrival.price_varies %}From {% endif %}{{ arrival.price | money }}</p></a>{% endif %}{% endfor %}</div></section>
+
 
 <script>
   (() => {
