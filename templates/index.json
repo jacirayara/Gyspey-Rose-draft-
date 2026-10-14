@@ -73,10 +73,10 @@
         "slide_sale"
       ],
       "custom_css": [
-        "h2 {font-size: 32px;}",
-        ".gypsey-hero__slide:nth-child(1) .gypsey-hero__image {object-position: 50% top;}",
-        ".gypsey-hero__slide:nth-child(2) .gypsey-hero__image {object-position: 72% top;}",
-        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__image {object-position: 60% top;}"
+        "h2{font-size:32px}",
+        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__image{object-fit:contain;object-position:right}",
+        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{background:#173f2d;width:60%}",
+        "@media(max-width:749px){.gypsey-hero__slide:nth-child(3) .gypsey-hero__image{height:340px;object-position:top}.gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{width:100%;margin-top:340px}.gypsey-hero__viewport:has(.gypsey-hero__slide:nth-child(3).is-active){min-height:850px}}"
       ],
       "settings": {
         "autoplay": true,
