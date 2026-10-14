@@ -74,8 +74,8 @@
       ],
       "custom_css": [
         ".gypsey-hero__slide:nth-child(3) img{object-fit:contain;object-position:right}",
-        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{background:#173f2d;width:60%}",
-        "@media(max-width:749px){.gypsey-hero__viewport{min-height:1000px;grid-template-columns:minmax(0,1fr)}article:nth-child(3) img{height:300px;object-position:center!important}.gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{width:100%;margin-top:300px;min-height:0}article:nth-child(3) .gypsey-hero__content{padding:24px 24px 64px}}"
+        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{width:60%}",
+        "@media(max-width:749px){.gypsey-hero__viewport{width:100vw;min-height:1000px;grid-template-columns:minmax(0,1fr)}article:nth-child(3) img{height:300px;object-position:center!important}.gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{width:100%;margin-top:300px;min-height:0}article:nth-child(3) .gypsey-hero__content{padding:24px 24px 64px}}"
       ],
       "settings": {
         "autoplay": true,
