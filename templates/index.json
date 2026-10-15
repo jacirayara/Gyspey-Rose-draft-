@@ -35,20 +35,20 @@
             "heading": "Isabella Dress",
             "text": "Designed in South Africa, with South African women in mind. Enjoy exploring our extensive range.\n\nEvery piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
             "button_label": "Shop Dresses",
-            "button_link": "/collections/rosie-wrap-skirt"
+            "button_link": "/collections/dresses"
           }
         },
         "slide_separates": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BeverleyBlouseLeopard_2.jpg",
-            "alt": "Beverley Blouse in cobalt blue with leopards and hot pink palms, displayed on a hanger",
-            "eyebrow": "Easy mix or match pieces",
+            "image": "shopify://shop_images/image_b235764b-f961-4eb4-befc-d957ec1aee2a.png",
+            "alt": "Two women wearing blue and colourful cotton dresses in a blossoming orchard",
+            "eyebrow": "Designed in South Africa",
             "badge": "",
-            "heading": "Timeless Cotton separates to elevate your outfit",
-            "text": "Pair your Beverley blouse or Kimmie crop top with any of our skirts or pants. Versatile, easy-wearing and breathable cotton.",
-            "button_label": "Shop Blouses and Pants",
-            "button_link": "https://gypsey-rose-cotton-clothing.myshopify.com/collections/all"
+            "heading": "Colourful cotton dresses",
+            "text": "Every piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
+            "button_label": "Shop Dresses",
+            "button_link": "/collections/dresses"
           }
         },
         "slide_sale": {
