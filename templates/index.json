@@ -15,8 +15,8 @@
         "slide_summer": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/image_44396734-32e6-475c-ba18-b316bb75c1d8.png",
-            "alt": "Model wearing a vibrant Gypsey Rose cotton dress",
+            "image": "shopify://shop_images/Isabella-IMG-8238.jpg",
+            "alt": "Two women modelling colourful Isabella cotton dresses in a blossoming orchard",
             "eyebrow": "Spring and summer 2026",
             "badge": "",
             "heading": "Colourful sustainable cotton clothing for women with a passion for colour and style!",
@@ -28,13 +28,13 @@
         "slide_layers": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Cobalt_blue_with_leopards_and_hot_pink_palms_with_Blouse.jpg",
-            "alt": "Woman wearing the cobalt-blue Rosie Wrap Skirt with matching Beverley Blouse on the beach",
+            "image": "shopify://shop_images/Isabella-IMG-8238.jpg",
+            "alt": "Two women modelling colourful Isabella cotton dresses in a blossoming orchard",
             "eyebrow": "Fresh styles for the new season",
             "badge": "",
-            "heading": "Rosie Wrap Skirt with matching Beverley Blouse",
-            "text": "Discover our new 100% cotton Rosie Wrap Skirt, styled with the matching Beverley Blouse.",
-            "button_label": "SHOP SKIRTS",
+            "heading": "Isabella Dress",
+            "text": "Designed in South Africa, with South African women in mind. Enjoy exploring our extensive range.\n\nEvery piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
+            "button_label": "Shop Dresses",
             "button_link": "/collections/rosie-wrap-skirt"
           }
         },
@@ -73,9 +73,9 @@
         "slide_sale"
       ],
       "custom_css": [
-        ".gypsey-hero__slide:nth-child(3) img{object-fit:contain;object-position:right}",
-        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{background:#173f2d;width:60%}",
-        "@media(max-width:749px){.gypsey-hero__viewport{min-height:1000px;grid-template-columns:minmax(0,1fr)}article:nth-child(3) img{height:300px;object-position:center!important}.gypsey-hero__slide:nth-child(3) .gypsey-hero__veil{width:100%;margin-top:300px;min-height:0}article:nth-child(3) .gypsey-hero__content{padding:24px 24px 64px}}"
+        ".gypsey-hero__slide:nth-child(3) img {object-fit: contain; object-position: right;}",
+        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {background: #173f2d; width: 60%;}",
+        "@media (max-width: 749px) {.gypsey-hero__viewport {min-height: 1000px; grid-template-columns: minmax(0, 1fr); } article:nth-child(3) img {height: 300px; object-position: center !important; } .gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {width: 100%; margin-top: 300px; min-height: 0; } article:nth-child(3) .gypsey-hero__content {padding: 24px 24px 64px; }}"
       ],
       "settings": {
         "autoplay": true,
