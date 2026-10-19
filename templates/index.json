@@ -32,10 +32,10 @@
             "alt": "Two women modelling colourful Isabella cotton dresses in a blossoming orchard",
             "eyebrow": "Fresh styles for the new season",
             "badge": "",
-            "heading": "Isabella Dress",
-            "text": "Designed in South Africa, with South African women in mind. Enjoy exploring our extensive range.\n\nEvery piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
-            "button_label": "Shop Dresses",
-            "button_link": "/collections/dresses"
+            "heading": "Discover our new 100% cotton Rosie Wrap skirt",
+            "text": "Wear it on its own or pair it with a matching Beverley blouse.",
+            "button_label": "Shop the Rosie Wrap Skirt",
+            "button_link": "/collections/rosie-wrap-skirt"
           }
         },
         "slide_separates": {
@@ -45,10 +45,14 @@
             "alt": "Two women wearing blue and colourful cotton dresses in a blossoming orchard",
             "eyebrow": "Designed in South Africa",
             "badge": "",
-            "heading": "Colourful cotton dresses",
-            "text": "Every piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
-            "button_label": "Shop Dresses",
-            "button_link": "/collections/dresses"
+            "heading": "Ready to wear every day of the year",
+            "text": "Colourful choices for every occasion - work, holidays, and that special event.\n\nExplore our skirts to suit your style: the long and full Susie skirt, the short and preppy Sophie skirt, or wrap yourself in our Rosie wrap skirt.",
+            "button_label": "Susie Skirt",
+            "button_link": "/collections/long-gypsey-skirts",
+            "button_2_label": "Sophie Skirt",
+            "button_2_link": "/collections/sophie-shirt-skirt",
+            "button_3_label": "Rosie Wrap Skirt",
+            "button_3_link": "/collections/rosie-wrap-skirt"
           }
         },
         "slide_sale": {
@@ -74,7 +78,7 @@
       ],
       "custom_css": [
         ".gypsey-hero__slide:nth-child(3) img {object-fit: contain; object-position: right;}",
-        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {background: #173f2d; width: 60%;}",
+        ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {background: #ec369f; width: 60%;}",
         "@media (max-width: 749px) {.gypsey-hero__slide:nth-child(3) img {object-fit: cover; object-position: center;} .gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {width: 100%;}}"
       ],
       "settings": {

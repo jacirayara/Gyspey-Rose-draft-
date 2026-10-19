@@ -6,9 +6,9 @@
 {% style %}
   #GypseyHero-{{ section.id }} {
     --hero-accent: #ec369f;
-    --hero-green: #164f35;
+    --hero-panel: #ec369f;
     --hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
-    background: #173f2d;
+    background: var(--hero-panel);
     color: #fff;
     overflow: hidden;
     position: relative;
@@ -56,8 +56,8 @@
 
   #GypseyHero-{{ section.id }} .gypsey-hero__veil {
     background:
-      linear-gradient(90deg, rgba(6, 28, 18, calc(var(--hero-overlay) + 0.26)) 0%, rgba(6, 28, 18, var(--hero-overlay)) 48%, rgba(6, 28, 18, 0.08) 100%),
-      linear-gradient(0deg, rgba(6, 28, 18, 0.3), transparent 45%);
+      linear-gradient(90deg, rgba(28, 8, 20, calc(var(--hero-overlay) + 0.26)) 0%, rgba(28, 8, 20, var(--hero-overlay)) 48%, rgba(28, 8, 20, 0.08) 100%),
+      linear-gradient(0deg, rgba(28, 8, 20, 0.3), transparent 45%);
     min-height: 100%;
     min-width: 0;
     position: relative;
@@ -126,16 +126,23 @@
     text-transform: uppercase;
   }
 
+  #GypseyHero-{{ section.id }} .gypsey-hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
   #GypseyHero-{{ section.id }} .gypsey-hero__button {
+    align-items: center;
     background: var(--hero-accent);
-    border: 0.1rem solid var(--hero-accent);
+    border: 0.1rem solid #fff;
     border-radius: 0.5rem;
     color: #fff;
     display: inline-flex;
     font-size: 1.5rem;
     font-weight: 900;
     justify-content: center;
-    margin-top: 3rem;
     min-height: 5.2rem;
     padding: 1.4rem 2.8rem;
     text-decoration: none;
@@ -144,7 +151,6 @@
 
   #GypseyHero-{{ section.id }} .gypsey-hero__button:hover {
     background: #c92487;
-    border-color: #c92487;
     transform: translateY(-0.2rem);
   }
 
@@ -153,7 +159,7 @@
     background: rgba(255, 255, 255, 0.92);
     border: 0;
     border-radius: 50%;
-    color: var(--hero-green);
+    color: var(--hero-accent);
     cursor: pointer;
     display: flex;
     height: 4.6rem;
@@ -221,7 +227,7 @@
 
     #GypseyHero-{{ section.id }} .gypsey-hero__slide {
       align-content: start;
-      background: #173f2d;
+      background: var(--hero-panel);
       grid-template-rows: auto 1fr;
     }
 
@@ -235,7 +241,7 @@
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__veil {
-      background: #173f2d;
+      background: var(--hero-panel);
       min-height: 0;
     }
 
@@ -259,6 +265,10 @@
     #GypseyHero-{{ section.id }} .gypsey-hero__text {
       font-size: 1.65rem;
       margin-inline: auto;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__buttons {
+      justify-content: center;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__button {
@@ -349,10 +359,19 @@
               {% if block.settings.text != blank %}
                 <p class="gypsey-hero__text">{{ block.settings.text }}</p>
               {% endif %}
-              {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-                <a class="gypsey-hero__button" href="{{ block.settings.button_link }}">
-                  {{ block.settings.button_label }}
-                </a>
+              {%- capture slide_buttons -%}
+                {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                  <a class="gypsey-hero__button" href="{{ block.settings.button_link }}">{{ block.settings.button_label }}</a>
+                {%- endif -%}
+                {%- if block.settings.button_2_label != blank and block.settings.button_2_link != blank -%}
+                  <a class="gypsey-hero__button" href="{{ block.settings.button_2_link }}">{{ block.settings.button_2_label }}</a>
+                {%- endif -%}
+                {%- if block.settings.button_3_label != blank and block.settings.button_3_link != blank -%}
+                  <a class="gypsey-hero__button" href="{{ block.settings.button_3_link }}">{{ block.settings.button_3_label }}</a>
+                {%- endif -%}
+              {%- endcapture -%}
+              {% if slide_buttons != blank %}
+                <div class="gypsey-hero__buttons">{{ slide_buttons }}</div>
               {% endif %}
             </div>
           </div>
@@ -525,6 +544,26 @@
           "type": "url",
           "id": "button_link",
           "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "button_2_label",
+          "label": "Second button label (optional)"
+        },
+        {
+          "type": "url",
+          "id": "button_2_link",
+          "label": "Second button link"
+        },
+        {
+          "type": "text",
+          "id": "button_3_label",
+          "label": "Third button label (optional)"
+        },
+        {
+          "type": "url",
+          "id": "button_3_link",
+          "label": "Third button link"
         }
       ]
     }
