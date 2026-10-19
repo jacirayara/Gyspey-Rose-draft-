@@ -217,6 +217,34 @@
     width: 3rem;
   }
 
+  #GypseyHero-{{ section.id }} .gypsey-hero__pause {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 0;
+    border-radius: 50%;
+    bottom: 1.2rem;
+    color: var(--hero-accent);
+    cursor: pointer;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    right: clamp(1.2rem, 2vw, 3rem);
+    width: 3rem;
+    z-index: 3;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__pause svg {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  #GypseyHero-{{ section.id }} .gypsey-hero__pause[data-state='playing'] .gypsey-hero__play-icon,
+  #GypseyHero-{{ section.id }} .gypsey-hero__pause[data-state='paused'] .gypsey-hero__pause-icon {
+    display: none;
+  }
+
   @media screen and (max-width: 749px) {
     /* Mobile: keep slide images landscape and stack the copy underneath */
     #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
@@ -398,6 +426,13 @@
           ></button>
         {% endfor %}
       </div>
+
+      {% if section.settings.autoplay %}
+        <button class="gypsey-hero__pause" type="button" data-pause data-state="playing" aria-label="Pause slideshow">
+          <svg class="gypsey-hero__pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/></svg>
+          <svg class="gypsey-hero__play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+        </button>
+      {% endif %}
     {% endif %}
   </div>
 </section>
@@ -412,11 +447,14 @@
     const previous = root.querySelector('[data-previous]');
     const next = root.querySelector('[data-next]');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const autoplay = root.dataset.autoplay === 'true' && !reduceMotion && slides.length > 1;
+    const pauseButton = root.querySelector('[data-pause]');
+    // Reduced-motion visitors still get auto-rotation, but slides switch without the slide animation
+    const autoplay = root.dataset.autoplay === 'true' && slides.length > 1;
     const rotation = Number(root.dataset.rotation) || 5500;
     let activeIndex = 0;
     let timer;
     let touchStartX = 0;
+    let paused = false;
 
     const showSlide = (newIndex, resetTimer = true) => {
       const direction = newIndex < activeIndex ? -1 : 1;
@@ -450,16 +488,26 @@
     const stopAutoplay = () => window.clearInterval(timer);
     const startAutoplay = () => {
       stopAutoplay();
-      if (autoplay) timer = window.setInterval(() => showSlide(activeIndex + 1, false), rotation);
+      if (autoplay && !paused) timer = window.setInterval(() => showSlide(activeIndex + 1, false), rotation);
     };
 
     previous?.addEventListener('click', () => showSlide(activeIndex - 1));
     next?.addEventListener('click', () => showSlide(activeIndex + 1));
     dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.dot))));
-    root.addEventListener('mouseenter', stopAutoplay);
-    root.addEventListener('mouseleave', startAutoplay);
-    root.addEventListener('focusin', stopAutoplay);
-    root.addEventListener('focusout', startAutoplay);
+    pauseButton?.addEventListener('click', () => {
+      paused = !paused;
+      pauseButton.dataset.state = paused ? 'paused' : 'playing';
+      pauseButton.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+      startAutoplay();
+    });
+    // Don't pause on mouse hover (the hero fills the top of the screen on desktop, so it would
+    // never move); only pause while a keyboard user is focused inside the carousel.
+    root.addEventListener('focusin', (event) => {
+      if (event.target.matches(':focus-visible')) stopAutoplay();
+    });
+    root.addEventListener('focusout', (event) => {
+      if (!root.contains(event.relatedTarget)) startAutoplay();
+    });
     root.addEventListener('touchstart', (event) => {
       touchStartX = event.changedTouches[0].clientX;
     }, { passive: true });
