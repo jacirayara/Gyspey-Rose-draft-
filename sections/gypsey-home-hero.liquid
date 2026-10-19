@@ -98,6 +98,13 @@
     text-wrap: balance;
   }
 
+  #GypseyHero-{{ section.id }} .gypsey-hero__heading--long {
+    font-size: clamp(3.6rem, 3.6vw, 5.6rem);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    max-width: 14em;
+  }
+
   #GypseyHero-{{ section.id }} .gypsey-hero__text {
     font-size: clamp(1.7rem, 1.7vw, 2.2rem);
     line-height: 1.55;
@@ -205,22 +212,37 @@
   }
 
   @media screen and (max-width: 749px) {
+    /* Mobile: keep slide images landscape and stack the copy underneath */
     #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
-      aspect-ratio: 4 / 5;
+      aspect-ratio: auto;
       max-height: none;
-      min-height: 58rem;
+      min-height: 0;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__slide {
+      align-content: start;
+      background: #173f2d;
+      grid-template-rows: auto 1fr;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__image,
+    #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+      aspect-ratio: 3 / 2;
+      height: auto;
+      inset: auto;
+      object-position: center;
+      position: relative;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__veil {
-      background:
-        linear-gradient(0deg, rgba(6, 28, 18, 0.72) 0%, rgba(6, 28, 18, 0.3) 58%, rgba(6, 28, 18, 0.12) 100%),
-        rgba(6, 28, 18, var(--hero-overlay));
+      background: #173f2d;
+      min-height: 0;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__content {
-      align-self: end;
+      align-self: start;
       max-width: 100%;
-      padding: 6rem 5.4rem 8rem;
+      padding: 3.2rem 2.4rem 6.4rem;
       text-align: center;
     }
 
@@ -229,8 +251,9 @@
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__heading {
-      font-size: clamp(4rem, 12vw, 6.2rem);
+      font-size: clamp(3.2rem, 9vw, 4.8rem);
       margin-inline: auto;
+      max-width: none;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__text {
@@ -245,6 +268,7 @@
 
     #GypseyHero-{{ section.id }} .gypsey-hero__arrow {
       height: 4rem;
+      top: calc(100vw / 3);
       width: 4rem;
     }
 
@@ -320,7 +344,8 @@
               {% if block.settings.eyebrow != blank %}
                 <p class="gypsey-hero__eyebrow">{{ block.settings.eyebrow }}</p>
               {% endif %}
-              <{{ heading_tag }} class="gypsey-hero__heading">{{ block.settings.heading }}</{{ heading_tag }}>
+              {%- assign heading_length = block.settings.heading | strip_html | size -%}
+              <{{ heading_tag }} class="gypsey-hero__heading{% if heading_length > 40 %} gypsey-hero__heading--long{% endif %}">{{ block.settings.heading }}</{{ heading_tag }}>
               {% if block.settings.text != blank %}
                 <p class="gypsey-hero__text">{{ block.settings.text }}</p>
               {% endif %}

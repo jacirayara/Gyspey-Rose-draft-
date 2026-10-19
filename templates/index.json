@@ -28,8 +28,8 @@
         "slide_layers": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Isabella-IMG-8238.jpg",
-            "alt": "Two women modelling colourful Isabella cotton dresses in a blossoming orchard",
+            "image": "shopify://shop_images/image_b235764b-f961-4eb4-befc-d957ec1aee2a.png",
+            "alt": "Gypsey Rose models wearing colourful Isabella cotton dresses in a blossoming orchard",
             "eyebrow": "Fresh styles for the new season",
             "badge": "",
             "heading": "Isabella Dress",
@@ -75,7 +75,7 @@
       "custom_css": [
         ".gypsey-hero__slide:nth-child(3) img {object-fit: contain; object-position: right;}",
         ".gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {background: #173f2d; width: 60%;}",
-        "@media (max-width: 749px) {.gypsey-hero__viewport {min-height: 1000px; grid-template-columns: minmax(0, 1fr); } article:nth-child(3) img {height: 300px; object-position: center !important; } .gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {width: 100%; margin-top: 300px; min-height: 0; } article:nth-child(3) .gypsey-hero__content {padding: 24px 24px 64px; }}"
+        "@media (max-width: 749px) {.gypsey-hero__slide:nth-child(3) img {object-fit: cover; object-position: center;} .gypsey-hero__slide:nth-child(3) .gypsey-hero__veil {width: 100%;}}"
       ],
       "settings": {
         "autoplay": true,
