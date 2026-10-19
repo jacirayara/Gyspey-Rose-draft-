@@ -29,18 +29,18 @@
     margin: 0;
     min-height: 0;
     min-width: 0;
-    opacity: 0;
     overflow: hidden;
     pointer-events: none;
     position: relative;
-    transition: opacity 700ms ease, visibility 700ms ease;
+    /* Outgoing slide stays visible while it slides away, then hides */
+    transition: transform 700ms ease, visibility 0s linear 700ms;
     visibility: hidden;
     width: 100%;
   }
 
   #GypseyHero-{{ section.id }} .gypsey-hero__slide.is-active {
-    opacity: 1;
     pointer-events: auto;
+    transition: transform 700ms ease;
     visibility: visible;
     z-index: 1;
   }
@@ -419,7 +419,21 @@
     let touchStartX = 0;
 
     const showSlide = (newIndex, resetTimer = true) => {
+      const direction = newIndex < activeIndex ? -1 : 1;
+      const outgoing = slides[activeIndex];
       activeIndex = (newIndex + slides.length) % slides.length;
+      const incoming = slides[activeIndex];
+
+      // Slide the new slide in from one side while the current one slides out the other
+      if (incoming !== outgoing && !reduceMotion) {
+        incoming.style.transition = 'none';
+        incoming.style.transform = `translateX(${direction * 100}%)`;
+        incoming.offsetWidth;
+        incoming.style.transition = '';
+        incoming.style.transform = '';
+        outgoing.style.transform = `translateX(${direction * -100}%)`;
+      }
+
       slides.forEach((slide, index) => {
         const isActive = index === activeIndex;
         slide.classList.toggle('is-active', isActive);
