@@ -408,8 +408,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".card{border-radius:30px}",
-      "@media(min-width:750px){#GypseyHero-template--21990941065446__hero{background:#ec369f;color:#fff;--hero-green:#ec369f}#GypseyHero-template--21990941065446__hero .gypsey-hero__viewport{aspect-ratio:auto;min-height:650px;max-height:none}#GypseyHero-template--21990941065446__hero article:nth-child(-n+3) img{width:58%;left:auto;object-fit:contain;object-position:center}#GypseyHero-template--21990941065446__hero article:nth-child(-n+3) .gypsey-hero__veil{width:42%;background:#ec369f}#GypseyHero-template--21990941065446__hero article:nth-child(-n+3) .gypsey-hero__content{padding:48px 60px}#GypseyHero-template--21990941065446__hero article:nth-child(-n+3) .gypsey-hero__heading{font-size:clamp(32px,3vw,48px);color:#fff}#GypseyHero-template--21990941065446__hero article:nth-child(-n+3) .gypsey-hero__text{font-size:18px;text-shadow:none}#GypseyHero-template--21990941065446__hero .gypsey-hero__button{border-color:#fff;color:#fff}}"
+      ".card{border-radius:30px}"
     ]
   }
 }

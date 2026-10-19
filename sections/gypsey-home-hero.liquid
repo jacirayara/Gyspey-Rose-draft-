@@ -245,6 +245,51 @@
     display: none;
   }
 
+  /* Desktop: pink text panel on the left, landscape image on the right.
+     Previously a store-level custom CSS rule tied to one theme's section ID; kept here so
+     every copy of the theme gets it. */
+  @media screen and (min-width: 750px) {
+    #GypseyHero-{{ section.id }} {
+      background: var(--hero-panel);
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
+      aspect-ratio: auto;
+      max-height: none;
+      min-height: 65rem;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__image,
+    #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+      left: auto;
+      object-fit: contain;
+      object-position: center;
+      width: 58%;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__veil {
+      background: var(--hero-panel);
+      width: 42%;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__content {
+      padding: 4.8rem 6rem;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__heading,
+    #GypseyHero-{{ section.id }} .gypsey-hero__heading--long {
+      font-size: clamp(3.2rem, 3vw, 4.8rem);
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      max-width: none;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__text {
+      font-size: 1.8rem;
+      text-shadow: none;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     /* Mobile: keep slide images landscape and stack the copy underneath */
     #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
