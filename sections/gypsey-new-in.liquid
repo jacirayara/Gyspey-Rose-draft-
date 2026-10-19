@@ -1,0 +1,264 @@
+{% comment %}
+  New In carousel: hand-picked latest products, shown right under the home hero.
+  Tess and Sam can swap the products in the theme editor each month.
+{% endcomment %}
+
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{% render 'gypsey-brand' %}
+
+{% style %}
+  .gypsey-new-in {
+    background: var(--gr-white);
+    padding-block: clamp(3.6rem, 5vw, 6rem);
+  }
+
+  .gypsey-new-in__header {
+    align-items: end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem 3rem;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+  }
+
+  .gypsey-new-in__header h2 {
+    font-size: clamp(2.8rem, 3.4vw, 4.2rem);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .gypsey-new-in__text {
+    color: var(--gr-body-soft);
+    font-size: 1.6rem;
+    margin: 0.8rem 0 0;
+  }
+
+  .gypsey-new-in__controls {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .gypsey-new-in__arrow {
+    align-items: center;
+    background: var(--gr-white);
+    border: 0.1rem solid var(--gr-line);
+    border-radius: 50%;
+    color: var(--gr-pink-deep);
+    cursor: pointer;
+    display: flex;
+    height: 4.4rem;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    width: 4.4rem;
+  }
+
+  .gypsey-new-in__arrow:hover {
+    background: var(--gr-blush);
+    border-color: var(--gr-pink);
+  }
+
+  .gypsey-new-in__arrow[disabled] {
+    cursor: default;
+    opacity: 0.35;
+  }
+
+  .gypsey-new-in__arrow svg {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  .gypsey-new-in__track {
+    display: grid;
+    gap: 1.6rem;
+    grid-auto-columns: calc((100% - 3 * 1.6rem) / 4);
+    grid-auto-flow: column;
+    list-style: none;
+    margin: 0;
+    overflow-x: auto;
+    padding: 0 0 1.2rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .gypsey-new-in__item {
+    scroll-snap-align: start;
+  }
+
+  .gypsey-new-in__badge {
+    background: var(--gr-pink);
+    border-radius: 999px;
+    color: var(--gr-white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    left: 1rem;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 1rem;
+    pointer-events: none;
+    position: absolute;
+    text-transform: uppercase;
+    top: 1rem;
+    z-index: 2;
+  }
+
+  .gypsey-new-in__card {
+    position: relative;
+  }
+
+  .gypsey-new-in__footer {
+    margin-top: 2.4rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 989px) {
+    .gypsey-new-in__track {
+      grid-auto-columns: calc((100% - 2 * 1.6rem) / 2.6);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .gypsey-new-in__controls {
+      display: none;
+    }
+
+    .gypsey-new-in__track {
+      gap: 1.2rem;
+      grid-auto-columns: 72%;
+    }
+  }
+{% endstyle %}
+
+<section class="gr-section gypsey-new-in" id="GypseyNewIn-{{ section.id }}" aria-labelledby="GypseyNewIn-title-{{ section.id }}">
+  <div class="page-width">
+    <div class="gypsey-new-in__header">
+      <div>
+        {% if section.settings.eyebrow != blank %}
+          <p class="gr-eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h2 id="GypseyNewIn-title-{{ section.id }}">{{ section.settings.heading }}</h2>
+        {% if section.settings.text != blank %}
+          <p class="gypsey-new-in__text">{{ section.settings.text }}</p>
+        {% endif %}
+      </div>
+      <div class="gypsey-new-in__controls">
+        <button class="gypsey-new-in__arrow" type="button" data-scroll="-1" aria-label="Scroll to previous products">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 19-7-7 7-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <button class="gypsey-new-in__arrow" type="button" data-scroll="1" aria-label="Scroll to more products">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <ul class="gypsey-new-in__track" data-track role="list">
+      {%- if section.settings.products != blank -%}
+        {%- for product in section.settings.products -%}
+          <li class="gypsey-new-in__item">
+            <div class="gypsey-new-in__card">
+              {% if section.settings.badge != blank %}
+                <span class="gypsey-new-in__badge">{{ section.settings.badge }}</span>
+              {% endif %}
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'portrait',
+                show_secondary_image: true,
+                lazy_load: true
+              %}
+            </div>
+          </li>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <li class="gypsey-new-in__item">{% render 'card-product' %}</li>
+        {%- endfor -%}
+      {%- endif -%}
+    </ul>
+
+    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+      <div class="gypsey-new-in__footer">
+        <a class="gr-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  (() => {
+    const root = document.getElementById('GypseyNewIn-{{ section.id }}');
+    if (!root) return;
+    const track = root.querySelector('[data-track]');
+    const buttons = root.querySelectorAll('[data-scroll]');
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      buttons[0].disabled = track.scrollLeft <= 2;
+      buttons[1].disabled = track.scrollLeft >= max;
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        track.scrollBy({ left: Number(button.dataset.scroll) * track.clientWidth * 0.9 });
+      });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Gypsey new in",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Just landed"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "New In"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Products",
+      "limit": 16,
+      "info": "Pick the latest products to feature. Change these monthly to highlight new garments."
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge on each product",
+      "default": "New"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop all new arrivals"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey new in"
+    }
+  ]
+}
+{% endschema %}

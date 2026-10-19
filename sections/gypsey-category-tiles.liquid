@@ -1,0 +1,193 @@
+{% comment %}
+  Shop by category: image tiles that link straight to a collection.
+  Image falls back to the collection image, then its first product's image.
+{% endcomment %}
+
+{% render 'gypsey-brand' %}
+
+{% style %}
+  .gypsey-categories {
+    background: var(--gr-blush);
+    padding-block: clamp(3.6rem, 5vw, 6rem);
+  }
+
+  .gypsey-categories__header {
+    margin-bottom: 2.4rem;
+    text-align: center;
+  }
+
+  .gypsey-categories__header h2 {
+    font-size: clamp(2.8rem, 3.4vw, 4.2rem);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .gypsey-categories__grid {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gypsey-categories__tile {
+    aspect-ratio: 4 / 5;
+    background: var(--gr-blush-deep);
+    border-radius: var(--gr-radius);
+    color: var(--gr-white);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .gypsey-categories__tile img,
+  .gypsey-categories__tile .placeholder-svg {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    position: absolute;
+    transition: transform 0.5s ease;
+    width: 100%;
+  }
+
+  .gypsey-categories__tile:hover img {
+    transform: scale(1.04);
+  }
+
+  .gypsey-categories__label {
+    align-items: center;
+    background: linear-gradient(0deg, rgba(28, 8, 20, 0.62) 0%, rgba(28, 8, 20, 0) 100%);
+    bottom: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    left: 0;
+    padding: 4.8rem 2rem 2rem;
+    position: absolute;
+    right: 0;
+  }
+
+  .gypsey-categories__name {
+    font-family: var(--gr-serif);
+    font-size: clamp(2rem, 2.2vw, 2.8rem);
+    line-height: 1.1;
+  }
+
+  .gypsey-categories__cta {
+    background: var(--gr-pink);
+    border-radius: var(--gr-radius);
+    flex: 0 0 auto;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.8rem 1.4rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .gypsey-categories__grid {
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gypsey-categories__label {
+      padding: 3.2rem 1.2rem 1.2rem;
+    }
+
+    .gypsey-categories__cta {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+<section class="gr-section gypsey-categories" aria-labelledby="GypseyCategories-{{ section.id }}">
+  <div class="page-width">
+    <div class="gypsey-categories__header">
+      {% if section.settings.eyebrow != blank %}
+        <p class="gr-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h2 id="GypseyCategories-{{ section.id }}">{{ section.settings.heading }}</h2>
+    </div>
+
+    <ul class="gypsey-categories__grid" role="list">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign tile_collection = block.settings.collection
+          assign tile_image = block.settings.image
+          if tile_image == blank and tile_collection != blank
+            assign tile_image = tile_collection.featured_image | default: tile_collection.products.first.featured_image
+          endif
+          assign tile_label = block.settings.label | default: tile_collection.title
+        -%}
+        <li {{ block.shopify_attributes }}>
+          <a class="gypsey-categories__tile" href="{{ tile_collection.url | default: '#' }}">
+            {%- if tile_image != blank -%}
+              {{ tile_image | image_url: width: 900 | image_tag: widths: '360, 540, 720, 900', sizes: '(min-width: 750px) 33vw, 50vw', loading: 'lazy', alt: tile_label }}
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+            <span class="gypsey-categories__label">
+              <span class="gypsey-categories__name">{{ tile_label }}</span>
+              <span class="gypsey-categories__cta" aria-hidden="true">Shop</span>
+            </span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gypsey category tiles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by category"
+    }
+  ],
+  "max_blocks": 9,
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "info": "Leave empty to use the collection name."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Leave empty to use the collection's first product image."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gypsey category tiles",
+      "blocks": [
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -91,76 +91,9 @@
         "image_alt": "Gypsey Rose mother and daughter in India-inspired cotton clothing with an India travel book",
         "eyebrow": "From India, with love",
         "heading": "A mother-daughter story of love, passion and style, told in colour.",
-        "lead": "Gypsey Rose is a mother-daughter story shaped by a love of colour, cotton and meaningful moments. Our garments are designed in South Africa for South African women, then made in India using 100% cotton and traditional craftsmanship—bringing the spirit of Manifesting Mantras and Magical Moments to everyday dressing.",
+        "lead": "Designed in South Africa by mother and daughter Tess and Sam, and made in India from 100% cotton using traditional craftsmanship.",
         "button_label": "Read Our Story",
         "button_link": "/pages/our-story"
-      }
-    },
-    "shop_categories": {
-      "type": "multicolumn",
-      "blocks": {
-        "dresses": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/6.jpg",
-            "title": "Dresses with movement",
-            "text": "<p>Easy cotton silhouettes in confident prints for market mornings, holidays, and everyday colour.</p>",
-            "link_label": "Shop Dresses",
-            "link": "shopify://collections/dresses"
-          }
-        },
-        "jackets": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/5_a71e2cfd-3286-4550-83c5-2f8b5b20c46f.jpg",
-            "title": "Collected jackets",
-            "text": "<p>Statement layers with a hand-sourced feel, designed to make a simple outfit memorable.</p>",
-            "link_label": "Shop Jackets",
-            "link": "shopify://collections/jackets"
-          }
-        },
-        "pants": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PINK_BANANA_LEAF_PANTS_PRINT.jpg",
-            "title": "Easy Cotton Pants",
-            "text": "<p>Relaxed cotton pieces that move easily through warm South African days.</p>",
-            "link_label": "Shop Pants",
-            "link": "shopify://collections/pants"
-          }
-        },
-        "kaftans": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/JUNGLI_TIERED_DRESS_COTTON.jpg",
-            "title": "Kaftans & kimonos",
-            "text": "<p>Soft, expressive layers for travel, markets, slow weekends, and everyday colour.</p>",
-            "link_label": "Shop Kaftans",
-            "link": "shopify://collections/kaftan-kimonos"
-          }
-        }
-      },
-      "block_order": [
-        "dresses",
-        "jackets",
-        "pants",
-        "kaftans"
-      ],
-      "settings": {
-        "title": "Shop the lifestyle",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 28
       }
     },
     "gypsey_faq": {
@@ -203,12 +136,150 @@
         "padding_top": 32,
         "padding_bottom": 40
       }
+    },
+    "trust_bar": {
+      "type": "gypsey-trust-bar",
+      "blocks": {
+        "shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free shipping",
+            "text": "On all orders above R1800",
+            "link": ""
+          }
+        },
+        "cotton": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "100% cotton",
+            "text": "Designed in SA, made in India",
+            "link": ""
+          }
+        },
+        "returns": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "7-day returns",
+            "text": "Exchanges & refunds on full-price items",
+            "link": "/policies/refund-policy"
+          }
+        },
+        "secure": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure checkout",
+            "text": "Safe, trusted payments",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "shipping",
+        "cotton",
+        "returns",
+        "secure"
+      ],
+      "settings": {}
+    },
+    "new_in": {
+      "type": "gypsey-new-in",
+      "settings": {
+        "eyebrow": "Just landed",
+        "heading": "New In",
+        "text": "The latest prints and styles, fresh from India.",
+        "products": [
+          "kimmie-cropped-bright-pink-monkey-mind",
+          "kimmie-cropped-bright-orange-be-kind",
+          "kimmie-cropped-emerald-green-stand-tall",
+          "kimmie-cropped-off-white-fly-high",
+          "rosie-wrap-skirt",
+          "rosie-wrap-skirt-cobalt-blue-with-leopards-and-hot-pink-palms",
+          "rosie-wrap-skirt-forest-green",
+          "bird-dress-white-background-with-bold-and-bright-pink-and-red-proteas-and-turquoise-leaves",
+          "bird-dress-bright-coral-base-with-bold-white-cream-tropical-print-featuing-stylized-pineapple-peacocks-and-palm-fronds",
+          "dewy-dress-bold-red-hibiscus-flowers-on-a-white-base-with-fine-vertical-pinstripes",
+          "dewy-dress-olive-green-with-pink-and-red-proteas",
+          "avatar-dress-vibrant-green-base-with-hot-pink-lime-green-and-mustard-accents-in-an-abstract-tropical-palm-leaf-print"
+        ],
+        "badge": "New",
+        "button_label": "Shop all new arrivals",
+        "button_link": "/collections/all?sort_by=created-descending"
+      }
+    },
+    "categories": {
+      "type": "gypsey-category-tiles",
+      "settings": {
+        "eyebrow": "Find your favourite",
+        "heading": "Shop by category"
+      },
+      "blocks": {
+        "dresses": {
+          "type": "category",
+          "settings": {
+            "collection": "dresses",
+            "label": "Dresses",
+            "image": "shopify://shop_images/6.jpg"
+          }
+        },
+        "skirts": {
+          "type": "category",
+          "settings": {
+            "collection": "skirts-pants",
+            "label": "Skirts"
+          }
+        },
+        "blouses": {
+          "type": "category",
+          "settings": {
+            "collection": "blouses",
+            "label": "Blouses"
+          }
+        },
+        "kaftans": {
+          "type": "category",
+          "settings": {
+            "collection": "kaftan-kimonos",
+            "label": "Kaftans & Kimonos",
+            "image": "shopify://shop_images/JUNGLI_TIERED_DRESS_COTTON.jpg"
+          }
+        },
+        "jackets": {
+          "type": "category",
+          "settings": {
+            "collection": "jackets",
+            "label": "Jackets",
+            "image": "shopify://shop_images/5_a71e2cfd-3286-4550-83c5-2f8b5b20c46f.jpg"
+          }
+        },
+        "pants": {
+          "type": "category",
+          "settings": {
+            "collection": "pants",
+            "label": "Pants",
+            "image": "shopify://shop_images/PINK_BANANA_LEAF_PANTS_PRINT.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "dresses",
+        "skirts",
+        "blouses",
+        "kaftans",
+        "jackets",
+        "pants"
+      ]
     }
   },
   "order": [
     "hero",
+    "trust_bar",
+    "new_in",
+    "categories",
     "gypsey_story",
-    "shop_categories",
     "gypsey_faq",
     "newsletter"
   ]
