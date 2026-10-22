@@ -26,7 +26,8 @@
         "heading": "A mother-daughter story of love, passion, and style, told in colour.",
         "lead": "Gypsey Rose begins in South Africa, where each garment is designed with South African women in mind. The designs are then brought to life in India using breathable 100% cotton and traditional craftsmanship.",
         "button_label": "Shop the Collection",
-        "button_link": "/collections"
+        "button_link": "/collections",
+        "badge_2": ""
       }
     },
     "chapters": {
@@ -102,7 +103,8 @@
       "settings": {
         "eyebrow": "Shop with confidence",
         "heading": "Everything you need to shop with confidence.",
-        "text": "Discover the Gypsey Rose story and find helpful information about our cotton garments, sizing, care, delivery and returns."
+        "text": "Discover the Gypsey Rose story and find helpful information about our cotton garments, sizing, care, delivery and returns.",
+        "signal_1": ""
       }
     }
   },

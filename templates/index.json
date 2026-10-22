@@ -93,7 +93,8 @@
         "heading": "A mother-daughter story of love, passion, and style, told in colour.",
         "lead": "More than ten years ago, Gypsey Rose began as a one-woman adventure to India. A few years into the journey, Tess was joined by her beautiful daughter, Sam. Together, Tess and Sam have nurtured a rare and beautiful partnership.",
         "button_label": "Read Our Story",
-        "button_link": "/pages/about-us"
+        "button_link": "/pages/about-us",
+        "badge_2": ""
       }
     },
     "gypsey_faq": {
@@ -101,7 +102,8 @@
       "settings": {
         "eyebrow": "Before you buy",
         "heading": "A little more about Gypsey Rose",
-        "text": "Thoughtful South African design, 100% cotton and traditional Indian craftsmanship come together in clothing made for South African women. Find helpful details about our garments, sizing, care, delivery and returns below."
+        "text": "Thoughtful South African design, 100% cotton and traditional Indian craftsmanship come together in clothing made for South African women. Find helpful details about our garments, sizing, care, delivery and returns below.",
+        "signal_1": ""
       }
     },
     "newsletter": {
