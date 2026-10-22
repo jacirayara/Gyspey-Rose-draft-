@@ -87,11 +87,11 @@
     "gypsey_story": {
       "type": "gypsey-story",
       "settings": {
-        "feature_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.16.jpg",
-        "image_alt": "Gypsey Rose mother and daughter in India-inspired cotton clothing with an India travel book",
+        "feature_image": "",
+        "image_alt": "Tess and Sam of Gypsey Rose in matching red and white floral cotton dresses",
         "eyebrow": "From India, with love",
-        "heading": "A mother-daughter story of love, passion and style, told in colour.",
-        "lead": "Designed in South Africa by mother and daughter Tess and Sam, and made in India from 100% cotton using traditional craftsmanship.",
+        "heading": "A mother-daughter story of love, passion, and style, told in colour.",
+        "lead": "More than ten years ago, Gypsey Rose began as a one-woman adventure to India. A few years into the journey, Tess was joined by her beautiful daughter, Sam. Together, Tess and Sam have nurtured a rare and beautiful partnership.",
         "button_label": "Read Our Story",
         "button_link": "/pages/about-us"
       }
