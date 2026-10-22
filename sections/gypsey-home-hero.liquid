@@ -256,20 +256,41 @@
     #GypseyHero-{{ section.id }} .gypsey-hero__viewport {
       aspect-ratio: auto;
       max-height: none;
-      min-height: 65rem;
+      min-height: 0;
+    }
+
+    /* Text panel left, photo right at its own shape so it is never trimmed.
+       When the text is taller than the photo, the photo sits centred on the pink panel. */
+    #GypseyHero-{{ section.id }} .gypsey-hero__slide {
+      align-items: center;
+      background: var(--hero-panel);
+      grid-template-columns: 42% 58%;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__image,
     #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
-      left: auto;
-      object-fit: cover;
-      object-position: center;
-      width: 58%;
+      grid-column: 2;
+      grid-row: 1;
+      height: auto;
+      inset: auto;
+      max-height: 85vh;
+      object-fit: contain;
+      position: relative;
+      width: 100%;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+      aspect-ratio: 3 / 2;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__veil {
+      align-self: stretch;
       background: var(--hero-panel);
-      width: 42%;
+      display: flex;
+      align-items: center;
+      grid-column: 1;
+      grid-row: 1;
+      width: auto;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__content {
@@ -306,11 +327,14 @@
 
     #GypseyHero-{{ section.id }} .gypsey-hero__image,
     #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
-      aspect-ratio: 3 / 2;
       height: auto;
       inset: auto;
-      object-position: center;
+      object-fit: contain;
       position: relative;
+    }
+
+    #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+      aspect-ratio: 3 / 2;
     }
 
     #GypseyHero-{{ section.id }} .gypsey-hero__veil {
