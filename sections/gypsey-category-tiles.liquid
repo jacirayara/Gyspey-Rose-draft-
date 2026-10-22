@@ -128,7 +128,9 @@
             {%- endif -%}
             <span class="gypsey-categories__label">
               <span class="gypsey-categories__name">{{ tile_label }}</span>
-              <span class="gypsey-categories__cta" aria-hidden="true">Shop</span>
+              {%- if section.settings.tile_button != blank -%}
+                <span class="gypsey-categories__cta" aria-hidden="true">{{ section.settings.tile_button }}</span>
+              {%- endif -%}
             </span>
           </a>
         </li>
@@ -151,6 +153,12 @@
       "id": "heading",
       "label": "Heading",
       "default": "Shop by category"
+    },
+    {
+      "type": "text",
+      "id": "tile_button",
+      "label": "Button text on each tile",
+      "default": "Shop"
     }
   ],
   "max_blocks": 9,

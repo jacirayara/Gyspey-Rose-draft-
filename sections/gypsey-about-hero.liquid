@@ -56,13 +56,17 @@
 <section class="gr-section gypsey-about-hero" aria-labelledby="gypsey-about-hero-title">
   <div class="gypsey-about-hero__inner page-width">
     <figure class="gypsey-about-hero__media">
-      <img
-        src="{{ 'gypsey-about-founders.png' | asset_url }}"
-        alt="Gypsey Rose mother and daughter founders wearing red floral cotton dresses"
-        width="1127"
-        height="2000"
-        loading="eager"
-      >
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1200 | image_tag: widths: '600, 900, 1200', loading: 'eager', alt: section.settings.image_alt }}
+      {%- else -%}
+        <img
+          src="{{ 'gypsey-about-founders.png' | asset_url }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="1127"
+          height="2000"
+          loading="eager"
+        >
+      {%- endif -%}
     </figure>
     <div class="gypsey-about-hero__copy">
       {% if section.settings.eyebrow != blank %}
@@ -78,6 +82,18 @@
 {
   "name": "Gypsey about hero",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Photo",
+      "info": "Leave empty to use the founders photo included with the theme."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Photo description (for accessibility)",
+      "default": "Gypsey Rose mother and daughter founders wearing red floral cotton dresses"
+    },
     {
       "type": "text",
       "id": "eyebrow",

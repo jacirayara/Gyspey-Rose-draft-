@@ -89,11 +89,13 @@
       {% endif %}
       <h2 id="gypsey-story-title">{{ section.settings.heading }}</h2>
       <p class="gypsey-story__lead">{{ section.settings.lead }}</p>
-      <div class="gypsey-story__proof" aria-label="Gypsey Rose values">
-        <span>100% Pure Cotton</span>
-        <span>Handmade in India</span>
-        <span>Designed in South Africa</span>
-      </div>
+      {%- if section.settings.badge_1 != blank or section.settings.badge_2 != blank or section.settings.badge_3 != blank -%}
+        <div class="gypsey-story__proof" aria-label="Gypsey Rose values">
+          {%- if section.settings.badge_1 != blank %}<span>{{ section.settings.badge_1 }}</span>{% endif -%}
+          {%- if section.settings.badge_2 != blank %}<span>{{ section.settings.badge_2 }}</span>{% endif -%}
+          {%- if section.settings.badge_3 != blank %}<span>{{ section.settings.badge_3 }}</span>{% endif -%}
+        </div>
+      {%- endif -%}
       {% if section.settings.button_label != blank %}
         <a class="gr-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
       {% endif %}
@@ -156,6 +158,24 @@
       "id": "lead",
       "label": "Lead text",
       "default": "Gypsey Rose is built around face-to-face sourcing, breathable 100% pure cotton, and joyful pieces chosen for real women living bright, textured lives."
+    },
+    {
+      "type": "text",
+      "id": "badge_1",
+      "label": "Badge 1",
+      "default": "100% Pure Cotton"
+    },
+    {
+      "type": "text",
+      "id": "badge_2",
+      "label": "Badge 2",
+      "default": "Handmade in India"
+    },
+    {
+      "type": "text",
+      "id": "badge_3",
+      "label": "Badge 3",
+      "default": "Designed in South Africa"
     },
     {
       "type": "text",
