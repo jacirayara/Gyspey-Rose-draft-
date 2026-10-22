@@ -22,7 +22,11 @@
             "heading": "Colourful sustainable cotton clothing for women with a passion for colour and style!",
             "text": "Designed in South Africa, with South African women in mind. Enjoy exploring our extensive range.\n\nEvery piece starts in India, where our fabrics are sourced and made, before coming home to you as 100% cotton clothing that's a pleasure to wear.",
             "button_label": "Shop Summer Dresses",
-            "button_link": "/collections/dresses"
+            "button_link": "/collections/dresses",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_3_label": "",
+            "button_3_link": ""
           }
         },
         "slide_layers": {
@@ -54,7 +58,9 @@
             "button_label": "Shop Blouses",
             "button_link": "/collections/blouses",
             "button_2_label": "Shop Pants",
-            "button_2_link": "/collections/pants"
+            "button_2_link": "/collections/pants",
+            "button_3_label": "",
+            "button_3_link": ""
           }
         },
         "slide_sale": {
@@ -68,7 +74,11 @@
             "heading": "End of Season Sale: Up to 38% Off",
             "text": "Save on selected 100% cotton dresses, jumpsuits, and blouses. Final sale, while stocks last.",
             "button_label": "Shop Sale Now",
-            "button_link": "/collections/christmas-gift-guide"
+            "button_link": "/collections/christmas-gift-guide",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_3_label": "",
+            "button_3_link": ""
           }
         }
       },
@@ -82,61 +92,6 @@
         "autoplay": true,
         "rotation_seconds": 5.5,
         "overlay_opacity": 20
-      }
-    },
-    "gypsey_story": {
-      "type": "gypsey-story",
-      "settings": {
-        "feature_image": "",
-        "image_alt": "Tess and Sam of Gypsey Rose in matching red and white floral cotton dresses",
-        "eyebrow": "From India, with love",
-        "heading": "A mother-daughter story of love, passion, and style, told in colour.",
-        "lead": "More than ten years ago, Gypsey Rose began as a one-woman adventure to India. A few years into the journey, Tess was joined by her beautiful daughter, Sam. Together, Tess and Sam have nurtured a rare and beautiful partnership.",
-        "button_label": "Read Our Story",
-        "button_link": "/pages/about-us?view=our-story",
-        "badge_2": ""
-      }
-    },
-    "gypsey_faq": {
-      "type": "gypsey-trust-faq",
-      "settings": {
-        "eyebrow": "Before you buy",
-        "heading": "A little more about Gypsey Rose",
-        "text": "Thoughtful South African design, 100% cotton and traditional Indian craftsmanship come together in clothing made for South African women. Find helpful details about our garments, sizing, care, delivery and returns below.",
-        "signal_1": ""
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Join the Gypsey Rose circle",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>New drops, styling ideas, and stories from the sourcing journey.</p>"
-          }
-        },
-        "email_form": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading",
-        "paragraph",
-        "email_form"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 32,
-        "padding_bottom": 40
       }
     },
     "trust_bar": {
@@ -214,10 +169,6 @@
     },
     "categories": {
       "type": "gypsey-category-tiles",
-      "settings": {
-        "eyebrow": "Find your favourite",
-        "heading": "Shop by category"
-      },
       "blocks": {
         "dresses": {
           "type": "category",
@@ -273,7 +224,88 @@
         "kaftans",
         "jackets",
         "pants"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Find your favourite",
+        "heading": "Shop by category",
+        "tile_button": "Shop"
+      }
+    },
+    "gypsey_story": {
+      "type": "gypsey-story",
+      "settings": {
+        "image_alt": "Tess and Sam of Gypsey Rose in matching red and white floral cotton dresses",
+        "eyebrow": "From India, with love",
+        "heading": "A mother-daughter story of love, passion, and style, told in colour.",
+        "lead": "More than ten years ago, Gypsey Rose began as a one-woman adventure to India. A few years into the journey, Tess was joined by her beautiful daughter, Sam. Together, Tess and Sam have nurtured a rare and beautiful partnership.",
+        "badge_1": "100% Pure Cotton",
+        "badge_2": "",
+        "badge_3": "Designed in South Africa",
+        "button_label": "Read Our Story",
+        "button_link": "/pages/about-us?view=our-story"
+      }
+    },
+    "gypsey_faq": {
+      "type": "gypsey-trust-faq",
+      "settings": {
+        "eyebrow": "Before you buy",
+        "heading": "A little more about Gypsey Rose",
+        "text": "Designed in South Africa, made from 100% cotton, and brought to life by traditional Indian craftsmanship, Gypsey Rose is clothing made with love for South African women. Everything you need to know about sizing, care, delivery and returns is right below",
+        "signal_1": "",
+        "signal_2": "7 Day Returns",
+        "signal_3": "Fast Delivery",
+        "signal_4": "Made for South African women",
+        "question_1": "How long does shipping take?",
+        "answer_1": "Delivery generally takes 3–5 working days. Please contact us if you need your item sooner and we will see what we can do.",
+        "question_2": "What is the return policy?",
+        "answer_2": "Items can be returned within 7 days if the labels are attached and the garment is in the same condition as received. Please see our detailed Returns & Refunds policy for more details.",
+        "question_3": "How do I wash 100% pure cotton?",
+        "answer_3": "100% Cotton \nMade in India\nWash seperately in cold water with mild detergent\nAdd a handful of course salt to preserve colour \nDo not scrub or wring \nDo not Spin Dry \nDry in shade \nCool Iron \n\nHandcrafted cotton \nSlight variations on colour and texture are part of its character.\nPlease handle with care to preserve its beauty and longevity.",
+        "question_4": "How do I choose my size?",
+        "answer_4": "Use the size guide on each product page and choose the fit you prefer. Our cotton pieces are cut to feel easy and breathable.",
+        "question_5": "",
+        "answer_5": "",
+        "question_6": "",
+        "answer_6": "",
+        "question_7": "",
+        "answer_7": "",
+        "question_8": "",
+        "answer_8": "",
+        "open_first": true
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the Gypsey Rose circle",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>New drops, styling ideas, and stories from the sourcing journey.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
