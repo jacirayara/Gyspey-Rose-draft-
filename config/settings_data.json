@@ -148,7 +148,7 @@
             "type": "text",
             "settings": {
               "heading": "Come Visit Us",
-              "subtext": "<p>106 Beyers Naudé Drive </p><p>Franklin Roosevelt Park </p><p>Randburg </p><p><strong>Phone</strong>: +27 83 325 0441</p>"
+              "subtext": "<p>106 Beyers Naudé Drive, Franklin Roosevelt Park, Johannesburg&nbsp;</p><p>Open Monday - Friday 8am - 4pm&nbsp;</p><p><strong>Phone</strong>: +27 83 325 0441</p><p>Or visit us @Calitzcollective&nbsp;</p><p>53 Wesoewer Road, Calitzdorp, Western Cape.</p><p>Open Friday - Monday 8am -3pm.</p>"
             }
           },
           "footer-0": {
@@ -408,7 +408,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".card{border-radius:30px}"
+      ".card {border-radius: 30px;}"
     ]
   }
 }
