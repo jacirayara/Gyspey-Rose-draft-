@@ -116,29 +116,23 @@
     </div>
 
     <div class="gypsey-trust-faq__signals" aria-label="Store trust signals">
-      <span>Handmade in India</span>
-      <span>7-day returns</span>
-      <span>Cool-wash cotton care</span>
-      <span>Made for South African women</span>
+      {% if section.settings.signal_1 != blank %}<span>{{ section.settings.signal_1 | escape }}</span>{% endif %}
+      {% if section.settings.signal_2 != blank %}<span>{{ section.settings.signal_2 | escape }}</span>{% endif %}
+      {% if section.settings.signal_3 != blank %}<span>{{ section.settings.signal_3 | escape }}</span>{% endif %}
+      {% if section.settings.signal_4 != blank %}<span>{{ section.settings.signal_4 | escape }}</span>{% endif %}
     </div>
 
     <div class="gypsey-trust-faq__questions">
-      <details open>
-        <summary>How long does shipping take?</summary>
-        <p>Delivery takes 3–5 working days.</p>
-      </details>
-      <details>
-        <summary>What is the return policy?</summary>
-        <p>Items can be returned within 7 days if the labels are attached and the garment is in the same condition as received.</p>
-      </details>
-      <details>
-        <summary>How do I wash 100% pure cotton?</summary>
-        <p>Use a cool machine wash, avoid wringing, and dry in the shade. Hand wash jackets in cold water to protect the fabric and embroidery.</p>
-      </details>
-      <details>
-        <summary>How do I choose my size?</summary>
-        <p>Use the size guide on each product page and choose the fit you prefer. Our cotton pieces are cut to feel easy, breathable, and forgiving on the body.</p>
-      </details>
+      {% for i in (1..8) %}
+        {% assign question_key = 'question_' | append: i %}
+        {% assign answer_key = 'answer_' | append: i %}
+        {% if section.settings[question_key] != blank %}
+          <details{% if forloop.first and section.settings.open_first %} open{% endif %}>
+            <summary>{{ section.settings[question_key] | escape }}</summary>
+            <p>{{ section.settings[answer_key] | escape | newline_to_br }}</p>
+          </details>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -164,6 +158,156 @@
       "id": "text",
       "label": "Intro text",
       "default": "Clear shipping, returns, cotton care, and sizing details, so every visitor can move from discovery to checkout with ease."
+    },
+    {
+      "type": "text",
+      "id": "signal_1",
+      "label": "Trust badge 1",
+      "default": "Handmade in India"
+    },
+    {
+      "type": "text",
+      "id": "signal_2",
+      "label": "Trust badge 2",
+      "default": "7-day returns"
+    },
+    {
+      "type": "text",
+      "id": "signal_3",
+      "label": "Trust badge 3",
+      "default": "Cool-wash cotton care"
+    },
+    {
+      "type": "text",
+      "id": "signal_4",
+      "label": "Trust badge 4",
+      "default": "Made for South African women"
+    },
+    {
+      "type": "header",
+      "content": "Question 1"
+    },
+    {
+      "type": "text",
+      "id": "question_1",
+      "label": "Question",
+      "default": "How long does shipping take?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_1",
+      "label": "Answer",
+      "default": "Delivery takes 3–5 working days."
+    },
+    {
+      "type": "header",
+      "content": "Question 2"
+    },
+    {
+      "type": "text",
+      "id": "question_2",
+      "label": "Question",
+      "default": "What is the return policy?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_2",
+      "label": "Answer",
+      "default": "Items can be returned within 7 days if the labels are attached and the garment is in the same condition as received."
+    },
+    {
+      "type": "header",
+      "content": "Question 3"
+    },
+    {
+      "type": "text",
+      "id": "question_3",
+      "label": "Question",
+      "default": "How do I wash 100% pure cotton?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_3",
+      "label": "Answer",
+      "default": "Use a cool machine wash, avoid wringing, and dry in the shade. Hand wash jackets in cold water to protect the fabric and embroidery."
+    },
+    {
+      "type": "header",
+      "content": "Question 4"
+    },
+    {
+      "type": "text",
+      "id": "question_4",
+      "label": "Question",
+      "default": "How do I choose my size?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_4",
+      "label": "Answer",
+      "default": "Use the size guide on each product page and choose the fit you prefer. Our cotton pieces are cut to feel easy, breathable, and forgiving on the body."
+    },
+    {
+      "type": "header",
+      "content": "Question 5"
+    },
+    {
+      "type": "text",
+      "id": "question_5",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_5",
+      "label": "Answer"
+    },
+    {
+      "type": "header",
+      "content": "Question 6"
+    },
+    {
+      "type": "text",
+      "id": "question_6",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_6",
+      "label": "Answer"
+    },
+    {
+      "type": "header",
+      "content": "Question 7"
+    },
+    {
+      "type": "text",
+      "id": "question_7",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_7",
+      "label": "Answer"
+    },
+    {
+      "type": "header",
+      "content": "Question 8"
+    },
+    {
+      "type": "text",
+      "id": "question_8",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_8",
+      "label": "Answer"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question",
+      "default": true
     }
   ],
   "presets": [
