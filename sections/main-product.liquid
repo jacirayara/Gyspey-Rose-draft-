@@ -242,6 +242,18 @@ endif
             {%- endif -%}
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
+          {%- when 'gypsey_note' -%}
+            <div class="gypsey-product-note" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <p class="gypsey-product-note__eyebrow">{{ block.settings.heading }}</p>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p>{{ block.settings.text }}</p>
+              {%- endif -%}
+              {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+                <p><a href="{{ block.settings.link }}">{{ block.settings.link_label }}</a></p>
+              {%- endif -%}
+            </div>
           {%- when 'collapsible_tab' -%}
             <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
               <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -750,6 +762,35 @@ endif
           "id": "custom_liquid",
           "label": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.label",
           "info": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "gypsey_note",
+      "name": "Gypsey note",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Why Gypsey Rose"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "100% cotton, vibrant prints, and pieces sourced through real relationships in India."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
         }
       ]
     },

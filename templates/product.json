@@ -48,9 +48,12 @@
           "settings": {}
         },
         "story_note": {
-          "type": "custom_liquid",
+          "type": "gypsey_note",
           "settings": {
-            "custom_liquid": "<div class=\"gypsey-product-note\"><p class=\"gypsey-product-note__eyebrow\">Why Gypsey Rose</p><p>100% cotton, vibrant prints, and pieces sourced through real relationships in India.</p><p><a href=\"/search?q=silver%20necklace\">Complete the look with hand-sourced Indian silver.</a></p></div>"
+            "heading": "Why Gypsey Rose",
+            "text": "100% cotton, vibrant prints, and pieces sourced through real relationships in India.",
+            "link_label": "Complete the look with hand-sourced Indian silver.",
+            "link": "/search?q=silver%20necklace"
           }
         },
         "collapsible-row-0": {
