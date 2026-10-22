@@ -71,6 +71,16 @@
     margin: 0.8rem 0 0;
   }
 
+  .gypsey-story-chapters__text a {
+    color: var(--gr-pink-deep);
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+  }
+
+  .gypsey-story-chapters__text strong {
+    color: var(--gr-body);
+  }
+
   @media screen and (max-width: 899px) {
     .gypsey-story-chapters__inner {
       grid-template-columns: 1fr;
@@ -98,7 +108,7 @@
           <span class="gypsey-story-chapters__number">{{ forloop.index }}</span>
           <div>
             <h3>{{ block.settings.heading }}</h3>
-            <p>{{ block.settings.text | newline_to_br }}</p>
+            <div class="gypsey-story-chapters__text">{{ block.settings.text }}</div>
           </div>
         </article>
       {% endfor %}
@@ -141,10 +151,10 @@
           "default": "Chapter heading"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "text",
           "label": "Text",
-          "default": "Chapter copy"
+          "default": "<p>Chapter copy</p>"
         }
       ]
     }

@@ -23,7 +23,7 @@
         "feature_image": "shopify://shop_images/WhatsApp_Image_2026-03-03_at_14.47.17.jpg",
         "image_alt": "Gypsey Rose mother and daughter in vibrant cotton clothing",
         "eyebrow": "From India, with heart",
-        "heading": "A mother-daughter story of love, passion and style, told in colour.",
+        "heading": "A mother-daughter story of love, passion, and style, told in colour.",
         "lead": "Gypsey Rose begins in South Africa, where each garment is designed with South African women in mind. The designs are then brought to life in India using breathable 100% cotton and traditional craftsmanship.",
         "button_label": "Shop the Collection",
         "button_link": "/collections"
@@ -36,49 +36,49 @@
           "type": "chapter",
           "settings": {
             "heading": "The Journey Begins",
-            "text": "More than ten years ago, Gypsey Rose started as a one-woman adventure to India. The founder, Tess, found herself completely fascinated by the ancient art of block printing, the purity of 100% cotton, the intricate, unique embroidery, and the incredible, timeless skills of Indian artisans."
+            "text": "<p>More than ten years ago, Gypsey Rose began as a one-woman adventure to India. The founder, Tess, became fascinated by the ancient art of block printing, the purity of 100% cotton, the intricate and unique embroidery, and the incredible, timeless skills of Indian artisans.</p>"
           }
         },
         "mother_daughter": {
           "type": "chapter",
           "settings": {
             "heading": "A Rare and Beautiful Partnership",
-            "text": "Some years into the journey, Tess was joined by her beautiful daughter, Sam. Sharing a deep passion for the beauty that only India has to offer with a loved one is a true gift, and together, Tess and Sam have nurtured a rare and beautiful partnership.\n\nThe duo travels biannually to India to personally source and design fabrics, translating their shared inspiration into thoughtfully created garments."
+            "text": "<p>A few years into the journey, Tess was joined by her beautiful daughter, Sam. Sharing a deep passion for the beauty that India has to offer with a loved one is a true gift. Together, Tess and Sam have nurtured a rare and beautiful partnership.</p><p>The duo travels to India twice a year to personally source and design fabrics, translating their shared inspiration into thoughtfully created garments.</p>"
           }
         },
         "india": {
           "type": "chapter",
           "settings": {
             "heading": "Crafted with Love",
-            "text": "Over the years, Gypsey Rose has built special, close relationships with its manufacturers. Even when things are occasionally lost in translation, the journey continues to be walked with absolute love, patience, and passion. The brand embraces “Manifesting, Mantras, and Magical Moments” at every step of the way."
+            "text": "<p>Over the years, Gypsey Rose has built special, close relationships with its manufacturers. Even when things are occasionally lost in translation, the journey continues with absolute love, patience, and passion. The brand embraces <strong>“Manifesting, Mantras, and Magical Moments”</strong> at every step of the way.</p>"
           }
         },
         "cotton": {
           "type": "chapter",
           "settings": {
             "heading": "Travel with Tess",
-            "text": "Running alongside the clothing manufacturing is Tess’s deep love for exploring India. For those who share a passion to travel, Tess also facilitates and hosts small group journeys to many of her favourite, diverse destinations across the country."
+            "text": "<p>Alongside clothing production, Tess nurtures her deep love for exploring India. For those who share her passion for travel, Tess also facilitates and hosts small-group journeys to many of her favourite and diverse destinations across the country.</p>"
           }
         },
         "chapter_wXYdFC": {
           "type": "chapter",
           "settings": {
             "heading": "The Johannesburg-Based Studio",
-            "text": "Locally, the unique garments can be explored in person at the Gypsey Rose Showroom in Roosevelt Park, Johannesburg."
-          }
-        },
-        "lifestyle": {
-          "type": "chapter",
-          "settings": {
-            "heading": "The Calitz Collective",
-            "text": "Find Sam in Calitzdorp.\n\nStop over for a delicious coffee at KLEI(N), or stay for a weekend at Prashanthi – The Pink House. For enquiries, email sammyjoy@gypseyrose.co.za."
+            "text": "<p>Locally, the unique garments can be explored in person at the <a href=\"/pages/contact\" title=\"Gypsey Rose Showroom in Roosevelt Park, Johannesburg\">Gypsey Rose Showroom in Roosevelt Park, Johannesburg</a>.</p>"
           }
         },
         "contact_info": {
           "type": "chapter",
           "settings": {
             "heading": "✉️ Contact Information",
-            "text": "For more information regarding collections or curated travel experiences, enquiries can be sent to: tess@gypseyrose.co.za"
+            "text": "<p>For more information about the collections or curated travel experiences, enquiries can be sent to: <a href=\"mailto:tess@gypseyrose.co.za\" title=\"Email Tess\"><strong>tess@gypseyrose.co.za</strong></a>.</p>"
+          }
+        },
+        "lifestyle": {
+          "type": "chapter",
+          "settings": {
+            "heading": "The Calitz Collective",
+            "text": "<p><strong>Find Sam in Calitzdorp.</strong></p><p>Stop by KLEI(N) for a delicious coffee, or stay for a weekend at Prashanthi, The Pink House.</p><p>For accommodation enquiries, contact <a href=\"mailto:Sammyjoy@gypseyrose.co.za\" title=\"Email Sam\">Sammyjoy@gypseyrose.co.za</a>.</p>"
           }
         }
       },
