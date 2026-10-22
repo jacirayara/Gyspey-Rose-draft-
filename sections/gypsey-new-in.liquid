@@ -108,6 +108,12 @@
     position: relative;
   }
 
+  /* Product photos are shot 9:16 (phone portrait); show them uncropped, all the same height */
+  .gypsey-new-in__card .card,
+  .gypsey-new-in__card .card__inner {
+    --ratio-percent: 177.78% !important;
+  }
+
   .gypsey-new-in__footer {
     margin-top: 2.4rem;
     text-align: center;
@@ -163,7 +169,7 @@
               {% endif %}
               {% render 'card-product',
                 card_product: product,
-                media_aspect_ratio: 'portrait',
+                media_aspect_ratio: 'adapt',
                 show_secondary_image: true,
                 lazy_load: true
               %}
