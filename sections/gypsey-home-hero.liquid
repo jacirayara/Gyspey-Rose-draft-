@@ -589,6 +589,14 @@
       if (selectedSlide && root.contains(selectedSlide)) showSlide(slides.indexOf(selectedSlide));
     });
 
+    // Later slides' photos are lazy-loaded; fetch them once the page has loaded so they are
+    // ready before they slide in.
+    const loadAllSlideImages = () => {
+      root.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
+    };
+    if (document.readyState === 'complete') loadAllSlideImages();
+    else window.addEventListener('load', loadAllSlideImages, { once: true });
+
     root.dataset.ready = 'true';
     startAutoplay();
   })();
