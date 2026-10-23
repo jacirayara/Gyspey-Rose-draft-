@@ -269,12 +269,15 @@
 
     #GypseyHero-{{ section.id }} .gypsey-hero__image,
     #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+      /* Every slide's photo area is 3:2 (the shape of the campaign photos), so 3:2 photos show
+         in full and other shapes fill it edge to edge instead of leaving pink gaps. */
+      aspect-ratio: 3 / 2;
       grid-column: 2;
       grid-row: 1;
       height: auto;
       inset: auto;
-      max-height: 85vh;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center;
       position: relative;
       width: 100%;
     }
@@ -327,9 +330,11 @@
 
     #GypseyHero-{{ section.id }} .gypsey-hero__image,
     #GypseyHero-{{ section.id }} .gypsey-hero__placeholder {
+      aspect-ratio: 3 / 2;
       height: auto;
       inset: auto;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center;
       position: relative;
     }
 
