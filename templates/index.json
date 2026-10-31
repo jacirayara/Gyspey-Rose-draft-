@@ -145,7 +145,7 @@
     "new_in": {
       "type": "gypsey-new-in",
       "settings": {
-        "eyebrow": "Just landed",
+        "eyebrow": "",
         "heading": "New In",
         "text": "The latest prints and styles, fresh from India.",
         "products": [
